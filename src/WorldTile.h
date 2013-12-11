@@ -30,6 +30,9 @@ public:
     // When first discovered we must visit it to find out
     // Empty tiles are always known
     bool known;
+    
+    // Elevation above sea level - negative=below
+    double elevation;
 };
 
 #endif /* defined(__forogue__WorldTile__) */

@@ -13,6 +13,41 @@
 		230B7EE318582857009722D9 /* Ai.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EE118582857009722D9 /* Ai.cpp */; };
 		230B7EE6185834D0009722D9 /* WorldSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EE4185834D0009722D9 /* WorldSpec.cpp */; };
 		230B7EE91858352B009722D9 /* WorldTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EE71858352B009722D9 /* WorldTile.cpp */; };
+		230B7EF618584A7F009722D9 /* latlon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EEE18584A7F009722D9 /* latlon.cpp */; };
+		230B7EF718584A7F009722D9 /* noisegen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EF318584A7F009722D9 /* noisegen.cpp */; };
+		230B7F0118584B9E009722D9 /* cylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EF818584B9E009722D9 /* cylinder.cpp */; };
+		230B7F0218584B9E009722D9 /* line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EFA18584B9E009722D9 /* line.cpp */; };
+		230B7F0318584B9E009722D9 /* plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EFD18584B9E009722D9 /* plane.cpp */; };
+		230B7F0418584B9E009722D9 /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EFF18584B9E009722D9 /* sphere.cpp */; };
+		230B7F4018584C0D009722D9 /* abs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F0518584C0D009722D9 /* abs.cpp */; };
+		230B7F4118584C0D009722D9 /* add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F0718584C0D009722D9 /* add.cpp */; };
+		230B7F4218584C0D009722D9 /* billow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F0918584C0D009722D9 /* billow.cpp */; };
+		230B7F4318584C0D009722D9 /* blend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F0B18584C0D009722D9 /* blend.cpp */; };
+		230B7F4418584C0D009722D9 /* cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F0D18584C0D009722D9 /* cache.cpp */; };
+		230B7F4518584C0D009722D9 /* checkerboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F0F18584C0D009722D9 /* checkerboard.cpp */; };
+		230B7F4618584C0D009722D9 /* clamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1118584C0D009722D9 /* clamp.cpp */; };
+		230B7F4718584C0D009722D9 /* const.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1318584C0D009722D9 /* const.cpp */; };
+		230B7F4818584C0D009722D9 /* curve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1518584C0D009722D9 /* curve.cpp */; };
+		230B7F4918584C0D009722D9 /* cylinders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1718584C0D009722D9 /* cylinders.cpp */; };
+		230B7F4A18584C0D009722D9 /* displace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1918584C0D009722D9 /* displace.cpp */; };
+		230B7F4B18584C0D009722D9 /* exponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1B18584C0D009722D9 /* exponent.cpp */; };
+		230B7F4C18584C0D009722D9 /* invert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1D18584C0D009722D9 /* invert.cpp */; };
+		230B7F4D18584C0D009722D9 /* max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F1F18584C0D009722D9 /* max.cpp */; };
+		230B7F4E18584C0D009722D9 /* min.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F2118584C0D009722D9 /* min.cpp */; };
+		230B7F4F18584C0D009722D9 /* modulebase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F2418584C0D009722D9 /* modulebase.cpp */; };
+		230B7F5018584C0D009722D9 /* multiply.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F2618584C0D009722D9 /* multiply.cpp */; };
+		230B7F5118584C0D009722D9 /* perlin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F2818584C0D009722D9 /* perlin.cpp */; };
+		230B7F5218584C0D009722D9 /* power.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F2A18584C0D009722D9 /* power.cpp */; };
+		230B7F5318584C0D009722D9 /* ridgedmulti.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F2C18584C0D009722D9 /* ridgedmulti.cpp */; };
+		230B7F5418584C0D009722D9 /* rotatepoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F2E18584C0D009722D9 /* rotatepoint.cpp */; };
+		230B7F5518584C0D009722D9 /* scalebias.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3018584C0D009722D9 /* scalebias.cpp */; };
+		230B7F5618584C0D009722D9 /* scalepoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3218584C0D009722D9 /* scalepoint.cpp */; };
+		230B7F5718584C0D009722D9 /* select.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3418584C0D009722D9 /* select.cpp */; };
+		230B7F5818584C0D009722D9 /* spheres.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3618584C0D009722D9 /* spheres.cpp */; };
+		230B7F5918584C0D009722D9 /* terrace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3818584C0D009722D9 /* terrace.cpp */; };
+		230B7F5A18584C0D009722D9 /* translatepoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3A18584C0D009722D9 /* translatepoint.cpp */; };
+		230B7F5B18584C0D009722D9 /* turbulence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3C18584C0D009722D9 /* turbulence.cpp */; };
+		230B7F5C18584C0D009722D9 /* voronoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3E18584C0D009722D9 /* voronoi.cpp */; };
 		230BC2F4185556D500CC65F2 /* Visibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2F2185556D500CC65F2 /* Visibility.cpp */; };
 		230BC2FE1855B30600CC65F2 /* libxerces-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230BC2FD1855B30600CC65F2 /* libxerces-c.a */; };
 		230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2FF1855B36300CC65F2 /* XmlParser.cpp */; };
@@ -90,6 +125,85 @@
 		230B7EE5185834D0009722D9 /* WorldSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldSpec.h; sourceTree = "<group>"; };
 		230B7EE71858352B009722D9 /* WorldTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldTile.cpp; sourceTree = "<group>"; };
 		230B7EE81858352B009722D9 /* WorldTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldTile.h; sourceTree = "<group>"; };
+		230B7EEB18584A7F009722D9 /* basictypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = basictypes.h; path = "libnoisesrc-1.0.0/noise/src/basictypes.h"; sourceTree = "<group>"; };
+		230B7EEC18584A7F009722D9 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = exception.h; path = "libnoisesrc-1.0.0/noise/src/exception.h"; sourceTree = "<group>"; };
+		230B7EED18584A7F009722D9 /* interp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = interp.h; path = "libnoisesrc-1.0.0/noise/src/interp.h"; sourceTree = "<group>"; };
+		230B7EEE18584A7F009722D9 /* latlon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = latlon.cpp; path = "libnoisesrc-1.0.0/noise/src/latlon.cpp"; sourceTree = "<group>"; };
+		230B7EEF18584A7F009722D9 /* latlon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = latlon.h; path = "libnoisesrc-1.0.0/noise/src/latlon.h"; sourceTree = "<group>"; };
+		230B7EF018584A7F009722D9 /* mathconsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mathconsts.h; path = "libnoisesrc-1.0.0/noise/src/mathconsts.h"; sourceTree = "<group>"; };
+		230B7EF118584A7F009722D9 /* misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = misc.h; path = "libnoisesrc-1.0.0/noise/src/misc.h"; sourceTree = "<group>"; };
+		230B7EF218584A7F009722D9 /* noise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = noise.h; path = "libnoisesrc-1.0.0/noise/src/noise.h"; sourceTree = "<group>"; };
+		230B7EF318584A7F009722D9 /* noisegen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = noisegen.cpp; path = "libnoisesrc-1.0.0/noise/src/noisegen.cpp"; sourceTree = "<group>"; };
+		230B7EF418584A7F009722D9 /* noisegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = noisegen.h; path = "libnoisesrc-1.0.0/noise/src/noisegen.h"; sourceTree = "<group>"; };
+		230B7EF518584A7F009722D9 /* vectortable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vectortable.h; path = "libnoisesrc-1.0.0/noise/src/vectortable.h"; sourceTree = "<group>"; };
+		230B7EF818584B9E009722D9 /* cylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cylinder.cpp; path = "libnoisesrc-1.0.0/noise/src/model/cylinder.cpp"; sourceTree = "<group>"; };
+		230B7EF918584B9E009722D9 /* cylinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cylinder.h; path = "libnoisesrc-1.0.0/noise/src/model/cylinder.h"; sourceTree = "<group>"; };
+		230B7EFA18584B9E009722D9 /* line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = line.cpp; path = "libnoisesrc-1.0.0/noise/src/model/line.cpp"; sourceTree = "<group>"; };
+		230B7EFB18584B9E009722D9 /* line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = line.h; path = "libnoisesrc-1.0.0/noise/src/model/line.h"; sourceTree = "<group>"; };
+		230B7EFC18584B9E009722D9 /* model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = model.h; path = "libnoisesrc-1.0.0/noise/src/model/model.h"; sourceTree = "<group>"; };
+		230B7EFD18584B9E009722D9 /* plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = plane.cpp; path = "libnoisesrc-1.0.0/noise/src/model/plane.cpp"; sourceTree = "<group>"; };
+		230B7EFE18584B9E009722D9 /* plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plane.h; path = "libnoisesrc-1.0.0/noise/src/model/plane.h"; sourceTree = "<group>"; };
+		230B7EFF18584B9E009722D9 /* sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sphere.cpp; path = "libnoisesrc-1.0.0/noise/src/model/sphere.cpp"; sourceTree = "<group>"; };
+		230B7F0018584B9E009722D9 /* sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sphere.h; path = "libnoisesrc-1.0.0/noise/src/model/sphere.h"; sourceTree = "<group>"; };
+		230B7F0518584C0D009722D9 /* abs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = abs.cpp; path = "libnoisesrc-1.0.0/noise/src/module/abs.cpp"; sourceTree = "<group>"; };
+		230B7F0618584C0D009722D9 /* abs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = abs.h; path = "libnoisesrc-1.0.0/noise/src/module/abs.h"; sourceTree = "<group>"; };
+		230B7F0718584C0D009722D9 /* add.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = add.cpp; path = "libnoisesrc-1.0.0/noise/src/module/add.cpp"; sourceTree = "<group>"; };
+		230B7F0818584C0D009722D9 /* add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = add.h; path = "libnoisesrc-1.0.0/noise/src/module/add.h"; sourceTree = "<group>"; };
+		230B7F0918584C0D009722D9 /* billow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = billow.cpp; path = "libnoisesrc-1.0.0/noise/src/module/billow.cpp"; sourceTree = "<group>"; };
+		230B7F0A18584C0D009722D9 /* billow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = billow.h; path = "libnoisesrc-1.0.0/noise/src/module/billow.h"; sourceTree = "<group>"; };
+		230B7F0B18584C0D009722D9 /* blend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = blend.cpp; path = "libnoisesrc-1.0.0/noise/src/module/blend.cpp"; sourceTree = "<group>"; };
+		230B7F0C18584C0D009722D9 /* blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blend.h; path = "libnoisesrc-1.0.0/noise/src/module/blend.h"; sourceTree = "<group>"; };
+		230B7F0D18584C0D009722D9 /* cache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cache.cpp; path = "libnoisesrc-1.0.0/noise/src/module/cache.cpp"; sourceTree = "<group>"; };
+		230B7F0E18584C0D009722D9 /* cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cache.h; path = "libnoisesrc-1.0.0/noise/src/module/cache.h"; sourceTree = "<group>"; };
+		230B7F0F18584C0D009722D9 /* checkerboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = checkerboard.cpp; path = "libnoisesrc-1.0.0/noise/src/module/checkerboard.cpp"; sourceTree = "<group>"; };
+		230B7F1018584C0D009722D9 /* checkerboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = checkerboard.h; path = "libnoisesrc-1.0.0/noise/src/module/checkerboard.h"; sourceTree = "<group>"; };
+		230B7F1118584C0D009722D9 /* clamp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = clamp.cpp; path = "libnoisesrc-1.0.0/noise/src/module/clamp.cpp"; sourceTree = "<group>"; };
+		230B7F1218584C0D009722D9 /* clamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = clamp.h; path = "libnoisesrc-1.0.0/noise/src/module/clamp.h"; sourceTree = "<group>"; };
+		230B7F1318584C0D009722D9 /* const.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = const.cpp; path = "libnoisesrc-1.0.0/noise/src/module/const.cpp"; sourceTree = "<group>"; };
+		230B7F1418584C0D009722D9 /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = const.h; path = "libnoisesrc-1.0.0/noise/src/module/const.h"; sourceTree = "<group>"; };
+		230B7F1518584C0D009722D9 /* curve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = curve.cpp; path = "libnoisesrc-1.0.0/noise/src/module/curve.cpp"; sourceTree = "<group>"; };
+		230B7F1618584C0D009722D9 /* curve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = curve.h; path = "libnoisesrc-1.0.0/noise/src/module/curve.h"; sourceTree = "<group>"; };
+		230B7F1718584C0D009722D9 /* cylinders.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cylinders.cpp; path = "libnoisesrc-1.0.0/noise/src/module/cylinders.cpp"; sourceTree = "<group>"; };
+		230B7F1818584C0D009722D9 /* cylinders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cylinders.h; path = "libnoisesrc-1.0.0/noise/src/module/cylinders.h"; sourceTree = "<group>"; };
+		230B7F1918584C0D009722D9 /* displace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = displace.cpp; path = "libnoisesrc-1.0.0/noise/src/module/displace.cpp"; sourceTree = "<group>"; };
+		230B7F1A18584C0D009722D9 /* displace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = displace.h; path = "libnoisesrc-1.0.0/noise/src/module/displace.h"; sourceTree = "<group>"; };
+		230B7F1B18584C0D009722D9 /* exponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = exponent.cpp; path = "libnoisesrc-1.0.0/noise/src/module/exponent.cpp"; sourceTree = "<group>"; };
+		230B7F1C18584C0D009722D9 /* exponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = exponent.h; path = "libnoisesrc-1.0.0/noise/src/module/exponent.h"; sourceTree = "<group>"; };
+		230B7F1D18584C0D009722D9 /* invert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = invert.cpp; path = "libnoisesrc-1.0.0/noise/src/module/invert.cpp"; sourceTree = "<group>"; };
+		230B7F1E18584C0D009722D9 /* invert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = invert.h; path = "libnoisesrc-1.0.0/noise/src/module/invert.h"; sourceTree = "<group>"; };
+		230B7F1F18584C0D009722D9 /* max.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = max.cpp; path = "libnoisesrc-1.0.0/noise/src/module/max.cpp"; sourceTree = "<group>"; };
+		230B7F2018584C0D009722D9 /* max.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = max.h; path = "libnoisesrc-1.0.0/noise/src/module/max.h"; sourceTree = "<group>"; };
+		230B7F2118584C0D009722D9 /* min.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = min.cpp; path = "libnoisesrc-1.0.0/noise/src/module/min.cpp"; sourceTree = "<group>"; };
+		230B7F2218584C0D009722D9 /* min.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = min.h; path = "libnoisesrc-1.0.0/noise/src/module/min.h"; sourceTree = "<group>"; };
+		230B7F2318584C0D009722D9 /* module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = module.h; path = "libnoisesrc-1.0.0/noise/src/module/module.h"; sourceTree = "<group>"; };
+		230B7F2418584C0D009722D9 /* modulebase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = modulebase.cpp; path = "libnoisesrc-1.0.0/noise/src/module/modulebase.cpp"; sourceTree = "<group>"; };
+		230B7F2518584C0D009722D9 /* modulebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = modulebase.h; path = "libnoisesrc-1.0.0/noise/src/module/modulebase.h"; sourceTree = "<group>"; };
+		230B7F2618584C0D009722D9 /* multiply.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = multiply.cpp; path = "libnoisesrc-1.0.0/noise/src/module/multiply.cpp"; sourceTree = "<group>"; };
+		230B7F2718584C0D009722D9 /* multiply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = multiply.h; path = "libnoisesrc-1.0.0/noise/src/module/multiply.h"; sourceTree = "<group>"; };
+		230B7F2818584C0D009722D9 /* perlin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = perlin.cpp; path = "libnoisesrc-1.0.0/noise/src/module/perlin.cpp"; sourceTree = "<group>"; };
+		230B7F2918584C0D009722D9 /* perlin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = perlin.h; path = "libnoisesrc-1.0.0/noise/src/module/perlin.h"; sourceTree = "<group>"; };
+		230B7F2A18584C0D009722D9 /* power.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = power.cpp; path = "libnoisesrc-1.0.0/noise/src/module/power.cpp"; sourceTree = "<group>"; };
+		230B7F2B18584C0D009722D9 /* power.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = power.h; path = "libnoisesrc-1.0.0/noise/src/module/power.h"; sourceTree = "<group>"; };
+		230B7F2C18584C0D009722D9 /* ridgedmulti.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ridgedmulti.cpp; path = "libnoisesrc-1.0.0/noise/src/module/ridgedmulti.cpp"; sourceTree = "<group>"; };
+		230B7F2D18584C0D009722D9 /* ridgedmulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ridgedmulti.h; path = "libnoisesrc-1.0.0/noise/src/module/ridgedmulti.h"; sourceTree = "<group>"; };
+		230B7F2E18584C0D009722D9 /* rotatepoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rotatepoint.cpp; path = "libnoisesrc-1.0.0/noise/src/module/rotatepoint.cpp"; sourceTree = "<group>"; };
+		230B7F2F18584C0D009722D9 /* rotatepoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rotatepoint.h; path = "libnoisesrc-1.0.0/noise/src/module/rotatepoint.h"; sourceTree = "<group>"; };
+		230B7F3018584C0D009722D9 /* scalebias.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = scalebias.cpp; path = "libnoisesrc-1.0.0/noise/src/module/scalebias.cpp"; sourceTree = "<group>"; };
+		230B7F3118584C0D009722D9 /* scalebias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scalebias.h; path = "libnoisesrc-1.0.0/noise/src/module/scalebias.h"; sourceTree = "<group>"; };
+		230B7F3218584C0D009722D9 /* scalepoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = scalepoint.cpp; path = "libnoisesrc-1.0.0/noise/src/module/scalepoint.cpp"; sourceTree = "<group>"; };
+		230B7F3318584C0D009722D9 /* scalepoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scalepoint.h; path = "libnoisesrc-1.0.0/noise/src/module/scalepoint.h"; sourceTree = "<group>"; };
+		230B7F3418584C0D009722D9 /* select.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = select.cpp; path = "libnoisesrc-1.0.0/noise/src/module/select.cpp"; sourceTree = "<group>"; };
+		230B7F3518584C0D009722D9 /* select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = select.h; path = "libnoisesrc-1.0.0/noise/src/module/select.h"; sourceTree = "<group>"; };
+		230B7F3618584C0D009722D9 /* spheres.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = spheres.cpp; path = "libnoisesrc-1.0.0/noise/src/module/spheres.cpp"; sourceTree = "<group>"; };
+		230B7F3718584C0D009722D9 /* spheres.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = spheres.h; path = "libnoisesrc-1.0.0/noise/src/module/spheres.h"; sourceTree = "<group>"; };
+		230B7F3818584C0D009722D9 /* terrace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = terrace.cpp; path = "libnoisesrc-1.0.0/noise/src/module/terrace.cpp"; sourceTree = "<group>"; };
+		230B7F3918584C0D009722D9 /* terrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = terrace.h; path = "libnoisesrc-1.0.0/noise/src/module/terrace.h"; sourceTree = "<group>"; };
+		230B7F3A18584C0D009722D9 /* translatepoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = translatepoint.cpp; path = "libnoisesrc-1.0.0/noise/src/module/translatepoint.cpp"; sourceTree = "<group>"; };
+		230B7F3B18584C0D009722D9 /* translatepoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = translatepoint.h; path = "libnoisesrc-1.0.0/noise/src/module/translatepoint.h"; sourceTree = "<group>"; };
+		230B7F3C18584C0D009722D9 /* turbulence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = turbulence.cpp; path = "libnoisesrc-1.0.0/noise/src/module/turbulence.cpp"; sourceTree = "<group>"; };
+		230B7F3D18584C0D009722D9 /* turbulence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = turbulence.h; path = "libnoisesrc-1.0.0/noise/src/module/turbulence.h"; sourceTree = "<group>"; };
+		230B7F3E18584C0D009722D9 /* voronoi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = voronoi.cpp; path = "libnoisesrc-1.0.0/noise/src/module/voronoi.cpp"; sourceTree = "<group>"; };
+		230B7F3F18584C0D009722D9 /* voronoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = voronoi.h; path = "libnoisesrc-1.0.0/noise/src/module/voronoi.h"; sourceTree = "<group>"; };
 		230BC2F2185556D500CC65F2 /* Visibility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visibility.cpp; sourceTree = "<group>"; };
 		230BC2F3185556D500CC65F2 /* Visibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visibility.h; sourceTree = "<group>"; };
 		230BC2FD1855B30600CC65F2 /* libxerces-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libxerces-c.a"; path = "xerces-c-3.1.1/libs/libxerces-c.a"; sourceTree = "<group>"; };
@@ -205,6 +319,92 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		230B7EEA18584A5C009722D9 /* libnoise */ = {
+			isa = PBXGroup;
+			children = (
+				230B7F0518584C0D009722D9 /* abs.cpp */,
+				230B7F0618584C0D009722D9 /* abs.h */,
+				230B7F0718584C0D009722D9 /* add.cpp */,
+				230B7F0818584C0D009722D9 /* add.h */,
+				230B7F0918584C0D009722D9 /* billow.cpp */,
+				230B7F0A18584C0D009722D9 /* billow.h */,
+				230B7F0B18584C0D009722D9 /* blend.cpp */,
+				230B7F0C18584C0D009722D9 /* blend.h */,
+				230B7F0D18584C0D009722D9 /* cache.cpp */,
+				230B7F0E18584C0D009722D9 /* cache.h */,
+				230B7F0F18584C0D009722D9 /* checkerboard.cpp */,
+				230B7F1018584C0D009722D9 /* checkerboard.h */,
+				230B7F1118584C0D009722D9 /* clamp.cpp */,
+				230B7F1218584C0D009722D9 /* clamp.h */,
+				230B7F1318584C0D009722D9 /* const.cpp */,
+				230B7F1418584C0D009722D9 /* const.h */,
+				230B7F1518584C0D009722D9 /* curve.cpp */,
+				230B7F1618584C0D009722D9 /* curve.h */,
+				230B7F1718584C0D009722D9 /* cylinders.cpp */,
+				230B7F1818584C0D009722D9 /* cylinders.h */,
+				230B7F1918584C0D009722D9 /* displace.cpp */,
+				230B7F1A18584C0D009722D9 /* displace.h */,
+				230B7F1B18584C0D009722D9 /* exponent.cpp */,
+				230B7F1C18584C0D009722D9 /* exponent.h */,
+				230B7F1D18584C0D009722D9 /* invert.cpp */,
+				230B7F1E18584C0D009722D9 /* invert.h */,
+				230B7F1F18584C0D009722D9 /* max.cpp */,
+				230B7F2018584C0D009722D9 /* max.h */,
+				230B7F2118584C0D009722D9 /* min.cpp */,
+				230B7F2218584C0D009722D9 /* min.h */,
+				230B7F2318584C0D009722D9 /* module.h */,
+				230B7F2418584C0D009722D9 /* modulebase.cpp */,
+				230B7F2518584C0D009722D9 /* modulebase.h */,
+				230B7F2618584C0D009722D9 /* multiply.cpp */,
+				230B7F2718584C0D009722D9 /* multiply.h */,
+				230B7F2818584C0D009722D9 /* perlin.cpp */,
+				230B7F2918584C0D009722D9 /* perlin.h */,
+				230B7F2A18584C0D009722D9 /* power.cpp */,
+				230B7F2B18584C0D009722D9 /* power.h */,
+				230B7F2C18584C0D009722D9 /* ridgedmulti.cpp */,
+				230B7F2D18584C0D009722D9 /* ridgedmulti.h */,
+				230B7F2E18584C0D009722D9 /* rotatepoint.cpp */,
+				230B7F2F18584C0D009722D9 /* rotatepoint.h */,
+				230B7F3018584C0D009722D9 /* scalebias.cpp */,
+				230B7F3118584C0D009722D9 /* scalebias.h */,
+				230B7F3218584C0D009722D9 /* scalepoint.cpp */,
+				230B7F3318584C0D009722D9 /* scalepoint.h */,
+				230B7F3418584C0D009722D9 /* select.cpp */,
+				230B7F3518584C0D009722D9 /* select.h */,
+				230B7F3618584C0D009722D9 /* spheres.cpp */,
+				230B7F3718584C0D009722D9 /* spheres.h */,
+				230B7F3818584C0D009722D9 /* terrace.cpp */,
+				230B7F3918584C0D009722D9 /* terrace.h */,
+				230B7F3A18584C0D009722D9 /* translatepoint.cpp */,
+				230B7F3B18584C0D009722D9 /* translatepoint.h */,
+				230B7F3C18584C0D009722D9 /* turbulence.cpp */,
+				230B7F3D18584C0D009722D9 /* turbulence.h */,
+				230B7F3E18584C0D009722D9 /* voronoi.cpp */,
+				230B7F3F18584C0D009722D9 /* voronoi.h */,
+				230B7EF818584B9E009722D9 /* cylinder.cpp */,
+				230B7EF918584B9E009722D9 /* cylinder.h */,
+				230B7EFA18584B9E009722D9 /* line.cpp */,
+				230B7EFB18584B9E009722D9 /* line.h */,
+				230B7EFC18584B9E009722D9 /* model.h */,
+				230B7EFD18584B9E009722D9 /* plane.cpp */,
+				230B7EFE18584B9E009722D9 /* plane.h */,
+				230B7EFF18584B9E009722D9 /* sphere.cpp */,
+				230B7F0018584B9E009722D9 /* sphere.h */,
+				230B7EEB18584A7F009722D9 /* basictypes.h */,
+				230B7EEC18584A7F009722D9 /* exception.h */,
+				230B7EED18584A7F009722D9 /* interp.h */,
+				230B7EEE18584A7F009722D9 /* latlon.cpp */,
+				230B7EEF18584A7F009722D9 /* latlon.h */,
+				230B7EF018584A7F009722D9 /* mathconsts.h */,
+				230B7EF118584A7F009722D9 /* misc.h */,
+				230B7EF218584A7F009722D9 /* noise.h */,
+				230B7EF318584A7F009722D9 /* noisegen.cpp */,
+				230B7EF418584A7F009722D9 /* noisegen.h */,
+				230B7EF518584A7F009722D9 /* vectortable.h */,
+			);
+			name = libnoise;
+			sourceTree = "<group>";
+		};
 		23322BEE18491557004CC64F /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +435,7 @@
 		23419DA818486661000B9EFD = {
 			isa = PBXGroup;
 			children = (
+				230B7EEA18584A5C009722D9 /* libnoise */,
 				230B7ED318580AB8009722D9 /* Data */,
 				230BC2FD1855B30600CC65F2 /* libxerces-c.a */,
 				23B0EE03184BD5B0001C17A2 /* Files */,
@@ -420,28 +621,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230B7F4D18584C0D009722D9 /* max.cpp in Sources */,
+				230B7F0118584B9E009722D9 /* cylinder.cpp in Sources */,
 				23419DCC18486ABC000B9EFD /* Item.cpp in Sources */,
 				23419DC318486807000B9EFD /* Special.cpp in Sources */,
 				23B0EE12184BDAD9001C17A2 /* Location.cpp in Sources */,
+				230B7EF618584A7F009722D9 /* latlon.cpp in Sources */,
+				230B7F4018584C0D009722D9 /* abs.cpp in Sources */,
+				230B7F4618584C0D009722D9 /* clamp.cpp in Sources */,
 				230BC3E31856843D00CC65F2 /* CreatureParser.cpp in Sources */,
+				230B7EF718584A7F009722D9 /* noisegen.cpp in Sources */,
+				230B7F5318584C0D009722D9 /* ridgedmulti.cpp in Sources */,
+				230B7F5718584C0D009722D9 /* select.cpp in Sources */,
 				230BC3D218566B4900CC65F2 /* Armor.cpp in Sources */,
 				23DD7D00184A5A4800E3B265 /* WorldWindow.cpp in Sources */,
+				230B7F5C18584C0D009722D9 /* voronoi.cpp in Sources */,
 				230B7EE91858352B009722D9 /* WorldTile.cpp in Sources */,
 				230BC3E61856844800CC65F2 /* FactionParser.cpp in Sources */,
+				230B7F0318584B9E009722D9 /* plane.cpp in Sources */,
 				23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */,
 				23DD7CF4184A57E100E3B265 /* Gui.cpp in Sources */,
+				230B7F4318584C0D009722D9 /* blend.cpp in Sources */,
+				230B7F5918584C0D009722D9 /* terrace.cpp in Sources */,
 				230BC3EF1856846A00CC65F2 /* TraitParser.cpp in Sources */,
 				23419DEF184888C9000B9EFD /* Entity.cpp in Sources */,
+				230B7F5818584C0D009722D9 /* spheres.cpp in Sources */,
 				230BC2F4185556D500CC65F2 /* Visibility.cpp in Sources */,
+				230B7F4218584C0D009722D9 /* billow.cpp in Sources */,
+				230B7F4718584C0D009722D9 /* const.cpp in Sources */,
+				230B7F5418584C0D009722D9 /* rotatepoint.cpp in Sources */,
 				230BC3C51855DE9E00CC65F2 /* ArmorParser.cpp in Sources */,
 				23419DF818489A76000B9EFD /* Utils.cpp in Sources */,
 				23419DDA18486CEB000B9EFD /* Dungeon.cpp in Sources */,
 				23DD7CFA184A58E200E3B265 /* RightMenuWindow.cpp in Sources */,
 				23B0EE0F184BD9C1001C17A2 /* InventoryWindow.cpp in Sources */,
 				23419DE918488501000B9EFD /* Ammo.cpp in Sources */,
+				230B7F4518584C0D009722D9 /* checkerboard.cpp in Sources */,
 				23419DD718486CDF000B9EFD /* World.cpp in Sources */,
+				230B7F5518584C0D009722D9 /* scalebias.cpp in Sources */,
 				23419DC0184867C7000B9EFD /* Character.cpp in Sources */,
 				23419DE0184873C4000B9EFD /* Weapon.cpp in Sources */,
+				230B7F4118584C0D009722D9 /* add.cpp in Sources */,
 				23419DF218488E1F000B9EFD /* Tile.cpp in Sources */,
 				230BC3EC1856845E00CC65F2 /* PerkParser.cpp in Sources */,
 				23322BED18491544004CC64F /* Window.cpp in Sources */,
@@ -451,21 +671,37 @@
 				23419DF518489901000B9EFD /* DungeonSpec.cpp in Sources */,
 				23DD7CFD184A58FE00E3B265 /* BottomWindow.cpp in Sources */,
 				230B7EE318582857009722D9 /* Ai.cpp in Sources */,
+				230B7F5618584C0D009722D9 /* scalepoint.cpp in Sources */,
 				23419DE618487C26000B9EFD /* Skills.cpp in Sources */,
+				230B7F4F18584C0D009722D9 /* modulebase.cpp in Sources */,
 				230BC3041855B4EF00CC65F2 /* WeaponParser.cpp in Sources */,
 				23419DC918486A58000B9EFD /* Perk.cpp in Sources */,
+				230B7F5218584C0D009722D9 /* power.cpp in Sources */,
 				230B7ED11857E485009722D9 /* main.cpp in Sources */,
+				230B7F5018584C0D009722D9 /* multiply.cpp in Sources */,
+				230B7F5118584C0D009722D9 /* perlin.cpp in Sources */,
+				230B7F4B18584C0D009722D9 /* exponent.cpp in Sources */,
 				230BC3E91856845400CC65F2 /* RaceParser.cpp in Sources */,
 				230B7EE6185834D0009722D9 /* WorldSpec.cpp in Sources */,
 				230BC3CB1855DEB700CC65F2 /* ConsumableParser.cpp in Sources */,
+				230B7F4418584C0D009722D9 /* cache.cpp in Sources */,
 				23DD7CF7184A58D100E3B265 /* TopBarWindow.cpp in Sources */,
+				230B7F5A18584C0D009722D9 /* translatepoint.cpp in Sources */,
 				23B0EE0C184BD9B8001C17A2 /* StatsWindow.cpp in Sources */,
+				230B7F0218584B9E009722D9 /* line.cpp in Sources */,
+				230B7F4C18584C0D009722D9 /* invert.cpp in Sources */,
+				230B7F4918584C0D009722D9 /* cylinders.cpp in Sources */,
+				230B7F4A18584C0D009722D9 /* displace.cpp in Sources */,
 				23419DD218486B8E000B9EFD /* Container.cpp in Sources */,
+				230B7F0418584B9E009722D9 /* sphere.cpp in Sources */,
+				230B7F5B18584C0D009722D9 /* turbulence.cpp in Sources */,
 				23419DEC184888A3000B9EFD /* Creature.cpp in Sources */,
 				230B7EE018580E73009722D9 /* Action.cpp in Sources */,
+				230B7F4E18584C0D009722D9 /* min.cpp in Sources */,
 				23419DFB1848A219000B9EFD /* DungeonArea.cpp in Sources */,
 				230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */,
 				230BC3CE1855DEC200CC65F2 /* ItemParser.cpp in Sources */,
+				230B7F4818584C0D009722D9 /* curve.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

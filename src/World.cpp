@@ -8,6 +8,9 @@
 
 #include "World.h"
 
+#include "noise.h"
+using namespace noise;
+
 World::World(WorldSpec spec)
 {
     name = "Wasteland";
@@ -86,6 +89,8 @@ string* World::drawRect(veci upperleft, veci window, bool fow)
 
 void World::Generate(WorldSpec spec)
 {
+    // Perlin noise module
+    module::Perlin perlinModule;
 }
 
 void World::Dump(string path)

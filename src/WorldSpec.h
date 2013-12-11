@@ -21,7 +21,11 @@ struct WorldSpec
 public:
     WorldSpec();
     
+    // Size in number of tiles
     int minsize,maxsize;
+    
+    // Density of sites - x per unit area ≈ prob. of it being an interesting tile
+    double siteDensity;
 };
 
 #endif /* defined(__forogue__WorldSpec__) */

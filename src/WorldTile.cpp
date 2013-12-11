@@ -14,6 +14,7 @@ WorldTile::WorldTile()
     visible = false;
     canEnter = false;
     known = true;
+    elevation = 0.0;
 }
 
 string WorldTile::DrawSymbol()

@@ -13,4 +13,6 @@ WorldSpec::WorldSpec()
     // Default values
     minsize = 200;
     maxsize = 500;
+    
+    siteDensity = 0.1;
 }
