@@ -16,11 +16,44 @@ Gui::Gui()
     rightMenu = NULL;
     bottomWindow = NULL;
     
-    mode = GuiMode::Main;
+    mode = GuiMode::MainView;
     
     currSlot = 1;
     slot1 = NULL;
     slot2 = NULL;
+    
+    // Fill out keyboard key settings
+    keyToActionMap[27] = UiAction::DoQuit;  // Can NEVER change, we need extra check for ESC
+    
+    // Movement, both menus and world
+    keyToActionMap[KEY_LEFT] = UiAction::MoveLeft;
+    keyToActionMap[KEY_RIGHT] = UiAction::MoveRight;
+    keyToActionMap[KEY_UP] = UiAction::MoveUp;
+    keyToActionMap[KEY_DOWN] = UiAction::MoveDown;
+    
+    // Open other screens
+    // We need both upper and lower case as input is a text char
+    keyToActionMap['c'] = UiAction::EnterExitCombat;
+    keyToActionMap['C'] = UiAction::EnterExitCombat;
+    keyToActionMap['i'] = UiAction::OpenInventory;
+    keyToActionMap['I'] = UiAction::OpenInventory;
+    
+    keyToActionMap['l'] = UiAction::Inspect;
+    keyToActionMap['L'] = UiAction::Inspect;
+    
+    keyToActionMap['m'] = UiAction::MoveCam;
+    keyToActionMap['M'] = UiAction::MoveCam;
+    
+    keyToActionMap['o'] = UiAction::OpenContainer;
+    keyToActionMap['O'] = UiAction::OpenContainer;
+    
+    keyToActionMap['t'] = UiAction::TalkTo;
+    keyToActionMap['T'] = UiAction::TalkTo;
+    
+    keyToActionMap['b'] = UiAction::TalkTo;
+    keyToActionMap['B'] = UiAction::TalkTo;
+    
+    
 }
 
 Gui::~Gui()
@@ -175,8 +208,7 @@ void Gui::SetCharData(Character *chara, Location *loc)
 // Otherwise pass back to Game instance (movement etc.)
 UiAction Gui::GetInput()
 {
-    // Block waiting for input
-    
+    // Block waiting for input (timeout specified earlier)
     int key = getch();
     
     // Nothing while we waited?
@@ -185,25 +217,23 @@ UiAction Gui::GetInput()
     
     UiAction action = UiAction::None;
     
-    int otherkey;
-    switch ( key )
+    // We need explicit check for ESC/ALT
+    if ( key == 27 )
     {
-        case 27:    // ESC or ALT
-            // Try to get another key
-            // Then we know it was modifier+other key (and we can it ignore it)
-            // If ERR, it really was ESC
-            // In reality the user can press keys really fast and this will screw up, but fuck dealing with that. ESC presses are usually pretty final
-            otherkey = getch();
-            if ( otherkey == ERR )
-                action = UiAction::DoQuit;
-            break;
-            
-        case KEY_LEFT: action = UiAction::MoveLeft; break;
-        case KEY_RIGHT: action = UiAction::MoveRight; break;
-        case KEY_UP: action = UiAction::MoveUp; break;
-        case KEY_DOWN: action = UiAction::MoveDown; break;
-            
-        default: action = UiAction::None; break;
+        int otherkey = getch();
+        if ( otherkey == ERR )
+            action = UiAction::DoQuit;
+    }
+    else
+    {
+        // Look up corresponding action
+        auto it = keyToActionMap.find(key);
+        
+        // No pair found? (unbound key)
+        if ( it == keyToActionMap.end() )
+            action = UiAction::None;
+        else
+            action = (*it).second;
     }
     
     return action;

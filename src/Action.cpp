@@ -8,9 +8,9 @@
 
 #include "Action.h"
 
-Action::Action(unsigned int _key, string _keyString, string _description, int _ap)
+Action::Action(UiAction _uiact, string _keyString, string _description, int _ap)
 {
-    key = _key;
+    uiAction = _uiact;
     keyString = _keyString;
     description = _description;
     ap = _ap;

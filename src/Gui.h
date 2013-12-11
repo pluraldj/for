@@ -11,12 +11,14 @@
 
 
 #include <iostream>
+#include <map>
 
 #define _XOPEN_SOURCE_EXTENDED
 #include <locale.h>
 #include <ncurses.h>
 #include <menu.h>
 
+#include "Action.h"
 #include "Window.h"
 #include "TopBarWindow.h"
 #include "WorldWindow.h"
@@ -26,11 +28,7 @@
 using namespace std;
 
 // Overarching UI mode - popups obscure the normal display
-enum GuiMode { Quit, CharCreation, Main, Stats, Inventory, OpenContainer, Trade, Barter };
-
-// Actions taken by players by pressing keys
-// UI handles everything it can, these are passed back to Game object
-enum UiAction { None, DoQuit, MoveLeft, MoveRight, MoveUp, MoveDown, OpenStats, OpenInventory, Inspect, MoveCam, EnterCombat, ExitCombat };
+enum GuiMode { Quit, CharCreation, MainView, StatsView, InventoryView, ContainerView, TradeView, BarterView, InspectView, CameraView };
 
 class Gui
 {
@@ -88,6 +86,9 @@ private:
     int currSlot;
     Item *slot1;
     Item *slot2;
+    
+    // Mapping of key presses to actions
+    map<int, UiAction> keyToActionMap;
 };
 
 #endif /* defined(__forogue__Gui__) */

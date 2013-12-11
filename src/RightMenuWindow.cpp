@@ -13,15 +13,15 @@ RightMenuWindow::RightMenuWindow(veci _topleft, veci _size) : Window(_topleft,_s
     availableActions.clear();
     
     // Set data for all actions
-    quit = new Action(27, "Esc", "Quit",0);
-    enterCombat = new Action('e', "E", "Enter combat",0);
-    exitCombat = new Action('e', "E", "Exit combat",0);
-    move = new Action(0,"Arrows", "Move", 0);
-    moveCombat = new Action(0,"Arrows", "Move",1);
-    stats = new Action('s', "S", "Player stats",0);
-    inventory = new Action('i', "I", "Inventory",0);
-    inventoryCombat = new Action('i',"I", "Inventory", 4);
-    lookat = new Action('l', "L", "Look at",0);
+    quit = new Action(DoQuit,"Esc", "Quit",0);
+    enterCombat = new Action(EnterExitCombat, "E", "Enter combat",0);
+    exitCombat = new Action(EnterExitCombat, "E", "Exit combat",0);
+    move = new Action(None, "Arrows", "Move", 0);
+    moveCombat = new Action(None, "Arrows", "Move",1);
+    stats = new Action(OpenStats, "S", "Player stats",0);
+    inventory = new Action(OpenInventory, "I", "Inventory",0);
+    inventoryCombat = new Action(OpenInventory,"I", "Inventory", 4);
+    lookat = new Action(Inspect, "L", "Look at",0);
     
     EnterMode(RightMode::RightNormal);
     EnterMode(RightMode::RightCombat);

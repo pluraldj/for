@@ -16,17 +16,22 @@
 
 using namespace std;
 
+// Actions taken by players by pressing keys
+// UI handles everything it can, these are passed back to Game object
+enum UiAction { None, DoQuit, MoveLeft, MoveRight, MoveUp, MoveDown, OpenStats, OpenInventory, OpenContainer, Inspect, MoveCam, EnterExitCombat, TalkTo, BarterWith };
+
+// Container for action metadata displayed in the right-hand bar
 class Action
 {
 public:
-    Action(unsigned int _key, string _keyString, string _description, int _ap);
+    Action(UiAction _uiact, string _keyString, string _description, int _ap);
     string Print();
     
 private:
-    unsigned int key;
-    string keyString;
-    string description;
-    int ap;
+    UiAction uiAction;  // action to trigger when pressed
+    string keyString;   // Key tp press
+    string description; // Description of what action does
+    int ap;             // AP cost, 0 for no cost (it is not printed)
 };
 
 #endif /* defined(__forogue__Action__) */
