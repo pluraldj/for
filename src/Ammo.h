@@ -13,7 +13,7 @@
 
 #include "Item.h"
 
-enum AmmoType { AmmoNone,
+enum class AmmoType { AmmoNone,
     
     // Cartridges
     Cal_10mm,

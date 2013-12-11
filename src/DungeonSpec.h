@@ -15,7 +15,7 @@
 
 using namespace std;
 
-enum DungeonType { Cave, Random };
+enum class DungeonType { Cave, Random };
 
 // Specification of parameters for dungeon creation
 struct DungeonSpec

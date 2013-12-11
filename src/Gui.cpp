@@ -23,7 +23,7 @@ Gui::Gui()
     slot2 = NULL;
     
     // Fill out keyboard key settings
-    keyToActionMap[27] = UiAction::DoQuit;  // Can NEVER change, we need extra check for ESC
+    keyToActionMap[27] = UiAction::Quit;  // Can NEVER change, we need extra check for ESC
     
     // Movement, both menus and world
     keyToActionMap[KEY_LEFT] = UiAction::MoveLeft;
@@ -229,7 +229,7 @@ UiAction Gui::GetInput()
     {
         int otherkey = getch();
         if ( otherkey == ERR )
-            action = UiAction::DoQuit;
+            action = UiAction::Quit;
     }
     else
     {

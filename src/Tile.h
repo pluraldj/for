@@ -16,7 +16,7 @@
 
 using namespace std;
 
-enum TileType { Floor, Wall, Outside, Sand, Grass, Water };
+enum class TileType { Floor, Wall, Outside, Sand, Grass, Water };
 
 
 class Tile

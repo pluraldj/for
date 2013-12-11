@@ -18,10 +18,10 @@ using namespace std;
 
 // Actions taken by players by pressing keys
 // UI handles everything it can, these are passed back to Game object
-enum UiAction {
+enum class UiAction {
     None,
     
-    DoQuit,
+    Quit,
     
     MoveLeft,
     MoveRight,

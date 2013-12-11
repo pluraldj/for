@@ -13,18 +13,18 @@ RightMenuWindow::RightMenuWindow(veci _topleft, veci _size) : Window(_topleft,_s
     availableActions.clear();
     
     // Set data for all actions
-    quit = new Action(DoQuit,"Esc", "Quit",0);
-    enterCombat = new Action(EnterExitCombat, "E", "Enter combat",0);
-    exitCombat = new Action(EnterExitCombat, "E", "Exit combat",0);
-    move = new Action(None, "Arrows", "Move", 0);
-    moveCombat = new Action(None, "Arrows", "Move",1);
-    stats = new Action(OpenStats, "S", "Player stats",0);
-    inventory = new Action(OpenInventory, "I", "Inventory",0);
-    inventoryCombat = new Action(OpenInventory,"I", "Inventory", 4);
-    lookat = new Action(Inspect, "L", "Look at",0);
+    quit = new Action(UiAction::Quit,"Esc", "Quit",0);
+    enterCombat = new Action(UiAction::EnterExitCombat, "E", "Enter combat",0);
+    exitCombat = new Action(UiAction::EnterExitCombat, "E", "Exit combat",0);
+    move = new Action(UiAction::None, "Arrows", "Move", 0);
+    moveCombat = new Action(UiAction::None, "Arrows", "Move",1);
+    stats = new Action(UiAction::OpenStats, "S", "Player stats",0);
+    inventory = new Action(UiAction::OpenInventory, "I", "Inventory",0);
+    inventoryCombat = new Action(UiAction::OpenInventory,"I", "Inventory", 4);
+    lookat = new Action(UiAction::Inspect, "L", "Look at",0);
     
-    EnterMode(RightMode::RightNormal);
-    EnterMode(RightMode::RightCombat);
+    EnterMode(RightMode::Normal);
+    EnterMode(RightMode::Combat);
 }
 
 RightMenuWindow::~RightMenuWindow()
@@ -62,16 +62,16 @@ void RightMenuWindow::EnterMode(RightMode mode)
 {
     switch ( mode )
     {
-        case RightNone:
+        case RightMode::None:
             availableActions.clear();
             break;
             
-        case RightNormal:
+        case RightMode::Normal:
             availableActions.clear();
             AddAction(quit);
             break;
             
-        case RightCombat:
+        case RightMode::Combat:
             RemoveAction(enterCombat);
             RemoveAction(inventory);
             RemoveAction(move);
@@ -81,10 +81,10 @@ void RightMenuWindow::EnterMode(RightMode mode)
             AddAction(moveCombat);
             break;
             
-        case RightStats:
+        case RightMode::Stats:
             break;
             
-        case RightInventory:
+        case RightMode::Inventory:
             break;
     }
 }

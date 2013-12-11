@@ -15,7 +15,7 @@
 
 class Dungeon;
 
-enum AreaType { Default, Entry, Exit, Creatures, Loot, RareCreatures, RareLoot };
+enum class AreaType { Default, Entry, Exit, Creatures, Loot, RareCreatures, RareLoot };
 
 class DungeonArea
 {

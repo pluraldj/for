@@ -14,7 +14,7 @@
 using namespace std;
 
 // What an NPC is currently doing or wants to do
-enum AiMode
+enum class AiMode
 {
     AiModeNone,   // nothing in particular
     Wander,
@@ -23,7 +23,7 @@ enum AiMode
 };
 
 // General disposition towards player/other NPCS
-enum AiAttitude {
+enum class AiAttitude {
     AttitudeNone,   // no disposition in particular
     Loving,
     Friendly,

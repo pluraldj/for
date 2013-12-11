@@ -16,38 +16,38 @@
 
 using namespace std;
 
-enum EntityType {
-    EntNone,            // Should never be used
+enum class EntityType {
+    None,            // Should never be used
     
-    EntRock,
+    Rock,
     
-    EntCritter,         // Should not be used, use subtype
-    EntPlayer,          // ONLY one allowed
-    EntHuman,
-    EntGhoul,
-    EntMutant,
+    Critter,         // Should not be used, use subtype
+    Player,          // ONLY one allowed
+    Human,
+    Ghoul,
+    Mutant,
     
-    EntAnimal,
-    EntMutatedAnimal,
+    Animal,
+    MutatedAnimal,
     
-    EntContainer,       // Chests etc.
-    EntCorpse,
+    Container,       // Chests etc.
+    Corpse,
     
-    EntStairsDown,
-    EntStairsUp,
-    EntTrap,            // AFTER it is discovered, invisible until
-    EntOpenDoor,
-    EntClosedDoor,
-    EntMisc,            // Consoles, stations etc.
+    StairsDown,
+    StairsUp,
+    Trap,            // AFTER it is discovered, invisible until
+    OpenDoor,
+    ClosedDoor,
+    Misc,            // Consoles, stations etc.
     
-    EntCaps,
-    EntMelee,
-    EntGun,
-    EntTool,
-    EntArmor,           // Wearable
-    EntAmmo,
-    EntEdible,          // Stimpaks, HP stuff, food
-    EntReadable         // Notes, skill books
+    Caps,
+    Melee,
+    Gun,
+    Tool,
+    Armor,           // Wearable
+    Ammo,
+    Edible,          // Stimpaks, HP stuff, food
+    Readable         // Notes, skill books
 };
 
 class Entity

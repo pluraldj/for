@@ -14,9 +14,9 @@
 #include "Item.h"
 #include "Ammo.h"
 
-enum WeaponType { WeaponNone, Melee, SmallGun, BigGun, Explosive, Energy, Thrown, Unarmed };
-enum AttackType { AttackNone, Single, Aimed, Burst, Punch, Swing, Thrust, Throw };
-enum DamageType { Normal, Laser, Fire, Plasma, Electrical, Explosion, EMP };
+enum class WeaponType { None, Melee, SmallGun, BigGun, Explosive, Energy, Thrown, Unarmed };
+enum class AttackType { None, Single, Aimed, Burst, Punch, Swing, Thrust, Throw };
+enum class DamageType { Normal, Laser, Fire, Plasma, Electrical, Explosion, EMP };
 
 struct AttackMode
 {
@@ -24,7 +24,7 @@ public:
     AttackMode()
     {
         name = "Single";
-        attackType = AttackType::AttackNone;
+        attackType = AttackType::None;
         range = 0.0;
         rounds = 1;
         apCost = 1;

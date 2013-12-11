@@ -11,6 +11,8 @@
 		230B7ED21857E537009722D9 /* forogue in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23419DB118486661000B9EFD /* forogue */; };
 		230B7EE018580E73009722D9 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EDE18580E73009722D9 /* Action.cpp */; };
 		230B7EE318582857009722D9 /* Ai.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EE118582857009722D9 /* Ai.cpp */; };
+		230B7EE6185834D0009722D9 /* WorldSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EE4185834D0009722D9 /* WorldSpec.cpp */; };
+		230B7EE91858352B009722D9 /* WorldTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EE71858352B009722D9 /* WorldTile.cpp */; };
 		230BC2F4185556D500CC65F2 /* Visibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2F2185556D500CC65F2 /* Visibility.cpp */; };
 		230BC2FE1855B30600CC65F2 /* libxerces-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230BC2FD1855B30600CC65F2 /* libxerces-c.a */; };
 		230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2FF1855B36300CC65F2 /* XmlParser.cpp */; };
@@ -84,6 +86,10 @@
 		230B7EDF18580E73009722D9 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
 		230B7EE118582857009722D9 /* Ai.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ai.cpp; sourceTree = "<group>"; };
 		230B7EE218582857009722D9 /* Ai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ai.h; sourceTree = "<group>"; };
+		230B7EE4185834D0009722D9 /* WorldSpec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldSpec.cpp; sourceTree = "<group>"; };
+		230B7EE5185834D0009722D9 /* WorldSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldSpec.h; sourceTree = "<group>"; };
+		230B7EE71858352B009722D9 /* WorldTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldTile.cpp; sourceTree = "<group>"; };
+		230B7EE81858352B009722D9 /* WorldTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldTile.h; sourceTree = "<group>"; };
 		230BC2F2185556D500CC65F2 /* Visibility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visibility.cpp; sourceTree = "<group>"; };
 		230BC2F3185556D500CC65F2 /* Visibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visibility.h; sourceTree = "<group>"; };
 		230BC2FD1855B30600CC65F2 /* libxerces-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libxerces-c.a"; path = "xerces-c-3.1.1/libs/libxerces-c.a"; sourceTree = "<group>"; };
@@ -296,6 +302,8 @@
 				23419DF018488E1F000B9EFD /* Tile.cpp */,
 				230BC2F2185556D500CC65F2 /* Visibility.cpp */,
 				23419DD518486CDF000B9EFD /* World.cpp */,
+				230B7EE4185834D0009722D9 /* WorldSpec.cpp */,
+				230B7EE71858352B009722D9 /* WorldTile.cpp */,
 				23419DD918486CEB000B9EFD /* Dungeon.h */,
 				23419DFA1848A219000B9EFD /* DungeonArea.h */,
 				23419DF418489901000B9EFD /* DungeonSpec.h */,
@@ -303,6 +311,8 @@
 				23419DF118488E1F000B9EFD /* Tile.h */,
 				230BC2F3185556D500CC65F2 /* Visibility.h */,
 				23419DD618486CDF000B9EFD /* World.h */,
+				230B7EE5185834D0009722D9 /* WorldSpec.h */,
+				230B7EE81858352B009722D9 /* WorldTile.h */,
 			);
 			name = World;
 			sourceTree = "<group>";
@@ -416,6 +426,7 @@
 				230BC3E31856843D00CC65F2 /* CreatureParser.cpp in Sources */,
 				230BC3D218566B4900CC65F2 /* Armor.cpp in Sources */,
 				23DD7D00184A5A4800E3B265 /* WorldWindow.cpp in Sources */,
+				230B7EE91858352B009722D9 /* WorldTile.cpp in Sources */,
 				230BC3E61856844800CC65F2 /* FactionParser.cpp in Sources */,
 				23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */,
 				23DD7CF4184A57E100E3B265 /* Gui.cpp in Sources */,
@@ -445,6 +456,7 @@
 				23419DC918486A58000B9EFD /* Perk.cpp in Sources */,
 				230B7ED11857E485009722D9 /* main.cpp in Sources */,
 				230BC3E91856845400CC65F2 /* RaceParser.cpp in Sources */,
+				230B7EE6185834D0009722D9 /* WorldSpec.cpp in Sources */,
 				230BC3CB1855DEB700CC65F2 /* ConsumableParser.cpp in Sources */,
 				23DD7CF7184A58D100E3B265 /* TopBarWindow.cpp in Sources */,
 				23B0EE0C184BD9B8001C17A2 /* StatsWindow.cpp in Sources */,

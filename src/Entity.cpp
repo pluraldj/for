@@ -12,7 +12,7 @@ Entity::Entity()
 {
     name = "Entity";
     location = veci(0,0);
-    type = EntityType::EntNone;
+    type = EntityType::None;
 }
 
 Entity::~Entity()
@@ -26,45 +26,45 @@ string Entity::DrawSymbol()
     
     switch ( type )
     {
-        case EntNone: return "e";
+        case EntityType::None: return "e";
         
         // Useless background stuff
-        case EntRock: return "*";
+        case EntityType::Rock: return "*";
             
         // Creature supertypes
-        case EntCritter: return "C";
-        case EntPlayer: return "@";
+        case EntityType::Critter: return "C";
+        case EntityType::Player: return "@";
             
         // Intelligent beings
-        case EntHuman: return "@";
-        case EntGhoul: return "g";
-        case EntMutant: return "M";
+        case EntityType::Human: return "@";
+        case EntityType::Ghoul: return "g";
+        case EntityType::Mutant: return "M";
             
         // Animals
-        case EntAnimal: return "a";
-        case EntMutatedAnimal: return "A";
+        case EntityType::Animal: return "a";
+        case EntityType::MutatedAnimal: return "A";
             
         // Stuff with stuff in it
-        case EntContainer: return "§";
-        case EntCorpse: return "§";
+        case EntityType::Container: return "§";
+        case EntityType::Corpse: return "§";
             
         // Miscellaneous objects
-        case EntStairsDown: return ">";
-        case EntStairsUp: return "<";
-        case EntTrap: return "^";
-        case EntOpenDoor: return "/";
-        case EntClosedDoor: return "+";
-        case EntMisc: return "&";
+        case EntityType::StairsDown: return ">";
+        case EntityType::StairsUp: return "<";
+        case EntityType::Trap: return "^";
+        case EntityType::OpenDoor: return "/";
+        case EntityType::ClosedDoor: return "+";
+        case EntityType::Misc: return "&";
             
         // Items, can be picked up
-        case EntCaps: return "$";
-        case EntMelee: return "(";
-        case EntGun: return "}";
-        case EntTool: return "]";
-        case EntArmor: return "[";
-        case EntAmmo: return ";";
-        case EntEdible: return "%";
-        case EntReadable: return "?";
+        case EntityType::Caps: return "$";
+        case EntityType::Melee: return "(";
+        case EntityType::Gun: return "}";
+        case EntityType::Tool: return "]";
+        case EntityType::Armor: return "[";
+        case EntityType::Ammo: return ";";
+        case EntityType::Edible: return "%";
+        case EntityType::Readable: return "?";
             
     }
     

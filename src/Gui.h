@@ -28,7 +28,7 @@
 using namespace std;
 
 // Overarching UI mode - popups obscure the normal display
-enum GuiMode { Quit, CharCreation, MainView, StatsView, InventoryView, ContainerView, TradeView, BarterView, InspectView, CameraView };
+enum class GuiMode { Quit, CharCreation, MainView, StatsView, InventoryView, ContainerView, TradeView, BarterView, InspectView, CameraView };
 
 class Gui
 {

@@ -16,7 +16,7 @@
 #include "Action.h"
 #include "Item.h"
 
-enum RightMode { RightNone, RightNormal, RightCombat, RightStats, RightInventory };
+enum class RightMode { None, Normal, Combat, Stats, Inventory };
 
 class RightMenuWindow : public Window
 {

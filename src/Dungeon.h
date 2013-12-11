@@ -82,8 +82,6 @@ private:
     
     // Populate with loot, both on ground and in containers
     void SeedWithItems();
-    
-    
 };
 
 #endif /* defined(__forogue__Dungeon__) */

@@ -10,7 +10,7 @@
 
 Character::Character()
 {
-    type = EntityType::EntPlayer;
+    type = EntityType::Player;
     
     modSpecial = baseSpecial;
     

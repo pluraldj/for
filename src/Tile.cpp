@@ -10,7 +10,7 @@
 
 Tile::Tile()
 {
-    type = Outside;
+    type = TileType::Outside;
     clipMask = false;
     edgeMask = false;
 }

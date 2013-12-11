@@ -12,7 +12,7 @@ Weapon::Weapon()
 {
     // Default values that should all be overwritten when the item is constructed
     name = "Weapon";
-    weaponType = WeaponType::WeaponNone;
+    weaponType = WeaponType::None;
     
     weight = 0;
     baseValue = 0;

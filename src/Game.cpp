@@ -84,7 +84,7 @@ bool Game::MainLoop()
     UiAction action = gui->GetInput();
     
     // Quitting?
-    if ( action == UiAction::DoQuit )
+    if ( action == UiAction::Quit )
         return false;
     
     // DOING OTHER THANG??

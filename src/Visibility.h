@@ -19,7 +19,7 @@ class Character;
 
 using namespace std;
 
-enum VisibilityType { Light, Fow, Dark };
+enum class VisibilityType { Light, Fow, Dark };
 
 class Visibility
 {
