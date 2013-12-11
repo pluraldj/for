@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<perks>
+    <perk id="criticals" name="More Criticals" playerselect="true">
+        <requirements>
+            <requirement stat="level" type="min" value="6"/>
+            <requirement stat="lk" type="min" value="6"/>
+        </requirements>
+        <effects>
+            <effect stat="critchance" type="add" value="5"/>
+        </effects>
+    </perk>
+    
+</perks>

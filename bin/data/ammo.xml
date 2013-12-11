@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ammos>
+    <ammo name="10mm AP" type="10mm" capacity="24" weight="1" value="100">
+        <modifiers ac="0" dmg="0.5" dr="-0.25"/>
+    </ammo>
+    <ammo name="10mm JHP" type="10mm" capacity="24" weight="1" value="75">
+        <modifiers ac="0" dmg="2" dr="0.25"/>
+    </ammo>
+    
+    <ammo name="5mm AP" type="5mm" capacity="50" weight="1" value="120">
+        <modifiers ac="0" dmg="0.5" dr="-0.35"/>
+    </ammo>
+    <ammo name="5mm JHP" type="5mm" capacity="50" weight="1" value="100">
+        <modifiers ac="0" dmg="2" dr="0.35"/>
+    </ammo>
+    
+    <ammo name="Small energy cell" type="sec" capacity="40" weight="3" value="400">
+        <modifiers ac="0" dmg="1" dr="1"/>
+    </ammo>
+</ammos>

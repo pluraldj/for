@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<consumables>
+    <consumable name="Stimpak" type="health" weight="0" value="100">
+        <effects>
+            <effectgroup after="0">
+                <effect stat="hp" type="add" min="5" max="20"/>
+            </effectgroup>
+        </effects>
+    </consumable>
+    
+    <consumable name="Mentats" type="drug" weight="0" value="280">
+        <addiction rate="0.15" after="300" duration="2000">
+            <effect stat="in" type="add" value="-3"/>
+            <effect stat="ag" type="add" value="-2"/>
+        </addiction>
+        <effects>
+            <effectgroup after="0">
+                <effect stat="in" type="add" value="2"/>
+                <effect stat="pe" type="add" value="2"/>
+                <effect stat="ch" type="add" value="1"/>
+            </effectgroup>
+            <effectgroup after="100">
+                <effect stat="in" type="add" value="-4"/>
+                <effect stat="pe" type="add" value="-4"/>
+                <effect stat="ch" type="add" value="-3"/>
+            </effectgroup>
+            <effectgroup after="200">
+                <effect stat="in" type="add" value="2"/>
+                <effect stat="pe" type="add" value="2"/>
+                <effect stat="ch" type="add" value="2"/>
+            </effectgroup>
+        </effects>
+    </consumable>
+    
+    <consumable name="Rad-Away" type="drug" weight="0" value="500">
+        <addiction rate="0.1" after="500" duration="1000">
+            <effect stat="radres" type="add" value="-20"/>
+        </addiction>
+        <effects>
+            <effectgroup after="0">
+                <effect stat="rad" type="add" value="-25"/>
+            </effectgroup>
+            <effectgroup after="100">
+                <effect stat="rad" type="add" value="-50"/>
+            </effectgroup>
+            <effectgroup after="200">
+                <effect stat="rad" type="add" value="-75"/>
+            </effectgroup>
+        </effects>
+    </consumable>
+    
+    <consumable name="Jet" type="drug" weight="0" value="25">
+        <addiction rate="0.5" after="500" duration="-1">
+            <effect stat="st" type="add" value="-1"/>
+            <effect stat="pe" type="add" value="-1"/>
+            <effect stat="ap" type="add" value="-1"/>
+        </addiction>
+        <effects>
+            <effectgroup after="0">
+                <effect stat="ap" type="add" value="2"/>
+                <effect stat="st" type="add" value="1"/>
+                <effect stat="pe" type="add" value="1"/>
+            </effectgroup>
+            <effectgroup after="50">
+                <effect stat="ap" type="add" value="-4"/>
+                <effect stat="st" type="add" value="-4"/>
+                <effect stat="pe" type="add" value="-4"/>
+            </effectgroup>
+            <effectgroup after="500">
+                <effect stat="ap" type="add" value="2"/>
+                <effect stat="st" type="add" value="3"/>
+                <effect stat="pe" type="add" value="3"/>
+            </effectgroup>
+        </effects>
+    </consumable>
+    
+    <consumable name="Big Book of Science" type="book" weight="5" value="400">
+        <effects>
+            <effect stat="science" type="add" value="3"/>
+        </effects>
+    </consumable>
+    
+    <consumable name="Tæles of Chivalrie" type="magazine" weight="0" value="20">
+        <effects>
+            <effectgroup after="0">
+            <effect stat="melee" type="add" value="10"/>
+        </effects>
+    </consumable>
+    
+    
+</consumables>

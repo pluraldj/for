@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<races>
+    <race id="human" name="Human" player="true">
+        <likes "human"/>
+        <dislikes "ghoul"/>
+        <hates "mutant"/>
+    </race>
+    
+    <race id="ghoul" name="Ghoul">
+        <likes "ghoul"/>
+        <dislikes "human"/>
+        <hates "mutant"/>
+    </race>
+    
+    <race id="mutant" name="Super Mutant">
+        <likes "mutant"/>
+        <hates "human" "ghoul"/>
+        
+        <requirements>
+            <requirement stat="st" type="min" value="6"/>
+            <requirement stat="in" type="max" value="7"/>
+        </requirements>
+    </race>
+</races>

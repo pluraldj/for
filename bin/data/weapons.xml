@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weapons>
+    <weapon name="10mm pistol" type="smallgun" weight="3" value="250">
+        <ammo type="10mm" capacity="12"/>
+        <damage type="normal" min="5" max="12"/>
+        <attackmodes>
+            <attackmode name="Single" type="single" rounds="1" ap="5" range="25"/>
+            <attackmode name="Aimed" type="aimed" rounds="1" ap="6" range="25"/>
+        </attackmodes>
+        <requirements strength="2"/>
+    </weapon>
+    
+    <weapon name="Minigun" type="biggun" weight="28" value="3800">
+        <ammo type="5mm" capacity="120"/>
+        <damage type="normal" min="7" max="11"/>
+        <attackmodes>
+            <attackmode name="Burst" type="burst" rounds="40" ap="6" range="35"/>
+        </attackmodes>
+        <requirements strength="7"/>
+    </weapon>
+    
+    <weapon name="Alien blaster" type="energy" weight="2" value="10000">
+        <ammo type="sec" capacity="30"/>
+        <damage type="electrical" min="30" max="90"/>
+        <attackmodes>
+            <attackmode name="Single" type="single" rounds="40" ap="4" range="10"/>
+        </attackmodes>
+        <requirements strength="2"/>
+    </weapon>
+    
+    <weapon name="Brass knuckles" type="unarmed" weight="1" value="40">
+        <damage type="normal" min="2" max="5"/>
+        <attackmodes>
+            <attackmode name="Punch" type="punch" rounds="1" ap="3" range="1"/>
+        </attackmodes>
+        <requirements strength="1"/>
+    </weapon>
+    
+    <weapon name="Knife" type="melee" weight="1" value="40">
+        <damage type="normal" min="1" max="6"/>
+        <attackmodes>
+            <attackmode name="Swing" type="swing" rounds="1" ap="3" range="1"/>
+            <attackmode name="Thrust" type="thrust" rounds="1" ap="3" range="1"/>
+        </attackmodes>
+        <requirements strength="2"/>
+    </weapon>
+    
+    <weapon name="Frag grenade" type="thrown" weight="1" value="150">
+        <damage type="explosion" min="20" max="35"/>
+        <attackmodes>
+            <attackmode name="Throw" type="throw" rounds="1" ap="4" range="15"/>
+        </attackmodes>
+        <requirements strength="3"/>
+    </weapon>
+    
+    <!-- Only for debugging !-->
+    <weapon name="The Fucker-Upper" type="energy" weight="1" value="999999">
+        <damage type="fire" min="99" max="999"/>
+        <attackmodes>
+            <attackmode name="Burst" type="burst" rounds="99" ap="1" range="999"/>
+        </attackmodes>
+        <requirements strength="1"/>
+    </weapon>
+    
+</weapons>

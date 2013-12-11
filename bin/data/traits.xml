@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traits>
+    <trait id="bruiser" name="Bruiser" playerselect="true">
+        <effects>
+            <effect stat="st" type="add" value="2"/>
+            <effect stat="ap" type="add" value="-2"/>
+        </effects>
+    </trait>
+    
+    <trait id="gifted" name="Gifted" playerselect="true">
+        <effects>
+            <effect stat="st" type="add" value="1"/>
+            <effect stat="pe" type="add" value="1"/>
+            <effect stat="en" type="add" value="1"/>
+            <effect stat="ch" type="add" value="1"/>
+            <effect stat="in" type="add" value="1"/>
+            <effect stat="ag" type="add" value="1"/>
+            <effect stat="lk" type="add" value="1"/>
+            
+            <!-- TODO add all other skills -->
+            <effect stat="guns" type="add" value="-10"/>
+        </effects>
+    </trait>
+    
+    <!-- all ghouls get complete immunity to radiation effects -->
+    <trait id="ghoulradres" name "Radiation Immunity" playerselect="false" automatic="true">
+        <requirements>
+            <requirement requiredrace="ghoul"/>
+        </requirements>
+        <effects>
+            <effect stat="radres" type="add" value="9999"/>
+        </effects>
+    </trait>
+</traits>

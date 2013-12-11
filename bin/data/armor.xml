@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<armors>
+    
+    <!-- Default armor, no values means it defaults to 0 DT/DR -->
+    <armor name="Vault jumpsuit" weight="2" value="30">
+    </armor>
+    
+    <armor name="Leather armor" weight="8" value="700">
+        <bonus ac="15"/>
+        <resistances>
+            <resistance type="normal" dr="25" dt="2"/>
+            <resistance type="laser" dr="20" dt="0"/>
+            <resistance type="fire" dr="20" dt="0"/>
+            <resistance type="plasma" dr="10" dt="0"/>
+            <resistance type="electrical" dr="30" dt="0"/>
+            <resistance type="explosive" dr="20" dt="0"/>
+            <resistance type="emp" dr="500" dt="0"/>
+        </resistances>
+    </armor>
+
+</armors>

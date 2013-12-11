@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creatures>
+    <creature name="Rat" type="animal" hp="6" xp="25" ap="5" ac="4" sequence="12">
+        <attack name="Bite" type="melee" dmg="2" ap="3" critchance="1"/>
+    </creature>
+    
+    <
+</creatures>
