@@ -19,8 +19,9 @@
         <hates "raider"/>
     </faction>
     
-    <faction id="brotherhood" name = "Brotherhood of Steel">
+    <faction id="bos" name = "Brotherhood of Steel">
         <defaulttitles "Knight" "Scribe"/>
+        <requirements race="human"/>
     </faction>
     
 </faction>

@@ -4,5 +4,5 @@
         <attack name="Bite" type="melee" dmg="2" ap="3" critchance="1"/>
     </creature>
     
-    <
+    
 </creatures>

@@ -14,7 +14,8 @@
     
     <race id="mutant" name="Super Mutant">
         <likes "mutant"/>
-        <hates "human" "ghoul"/>
+        <hates "human"/>
+        <hates "ghoul"/>
         
         <requirements>
             <requirement stat="st" type="min" value="6"/>

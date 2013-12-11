@@ -42,8 +42,8 @@ void Gui::Init()
 {
     // Init locale for wide char printing
     // BEFORE initscr()
-    //setlocale(LC_CTYPE, "en_US.UTF-8");
-    setlocale(LC_CTYPE, "");
+    setlocale(LC_CTYPE, "en_US.UTF-8");
+    //setlocale(LC_CTYPE, "");
     
     // init ncurses
     initscr();

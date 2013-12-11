@@ -11,4 +11,15 @@
 
 #include <iostream>
 
+#include "Window.h"
+
+class StatsWindow : public Window
+{
+public:
+    StatsWindow(veci _topleft, veci _size);
+    
+private:
+    // Data contained in window
+};
+
 #endif /* defined(__forogue__StatsWindow__) */

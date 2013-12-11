@@ -7,3 +7,8 @@
 //
 
 #include "StatsWindow.h"
+
+StatsWindow::StatsWindow(veci _topleft, veci _size) : Window(_topleft,_size,true)
+{
+    
+}
