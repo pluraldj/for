@@ -12,10 +12,19 @@
 *.la
 *.a
 
-# temporary build directories
+# temporary build directories and files
 src/build/*
+*~.nib
+
+# OSX folder metadata
+*.DS_Store
+
+# vim swapfiles for open files
+*.swp
 
 # Copied binary in bin/
 bin/forogue
 
 # XCode project settings and other crap
+*.pbxuser
+xcuserdata
