@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+# temporary build directories
+src/build/*
+
+# Copied binary in bin/
+bin/forogue
+
+# XCode project settings and other crap

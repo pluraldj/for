@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230B7ED11857E485009722D9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7ED01857E485009722D9 /* main.cpp */; };
+		230B7ED21857E537009722D9 /* forogue in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23419DB118486661000B9EFD /* forogue */; };
 		230BC2F4185556D500CC65F2 /* Visibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2F2185556D500CC65F2 /* Visibility.cpp */; };
 		230BC2FE1855B30600CC65F2 /* libxerces-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230BC2FD1855B30600CC65F2 /* libxerces-c.a */; };
 		230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2FF1855B36300CC65F2 /* XmlParser.cpp */; };
@@ -24,8 +26,6 @@
 		23322BEA1849107B004CC64F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BE81849107B004CC64F /* Game.cpp */; };
 		23322BED18491544004CC64F /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BEB18491544004CC64F /* Window.cpp */; };
 		23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BEF184915D6004CC64F /* SpecialWindow.cpp */; };
-		23419DB518486661000B9EFD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DB418486661000B9EFD /* main.cpp */; };
-		23419DB718486661000B9EFD /* forogue.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23419DB618486661000B9EFD /* forogue.1 */; };
 		23419DC0184867C7000B9EFD /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DBE184867C7000B9EFD /* Character.cpp */; };
 		23419DC318486807000B9EFD /* Special.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DC118486807000B9EFD /* Special.cpp */; };
 		23419DC918486A58000B9EFD /* Perk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DC718486A58000B9EFD /* Perk.cpp */; };
@@ -56,20 +56,20 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		23419DAF18486661000B9EFD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = ../../../bin;
+			dstSubfolderSpec = 16;
 			files = (
-				23419DB718486661000B9EFD /* forogue.1 in CopyFiles */,
+				230B7ED21857E537009722D9 /* forogue in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		230B7ED01857E485009722D9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		230BC2F2185556D500CC65F2 /* Visibility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visibility.cpp; sourceTree = "<group>"; };
 		230BC2F3185556D500CC65F2 /* Visibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visibility.h; sourceTree = "<group>"; };
-		230BC2F518556AEA00CC65F2 /* keys.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = keys.txt; sourceTree = "<group>"; };
 		230BC2FD1855B30600CC65F2 /* libxerces-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libxerces-c.a"; path = "xerces-c-3.1.1/libs/libxerces-c.a"; sourceTree = "<group>"; };
 		230BC2FF1855B36300CC65F2 /* XmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XmlParser.cpp; sourceTree = "<group>"; };
 		230BC3001855B36300CC65F2 /* XmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParser.h; sourceTree = "<group>"; };
@@ -85,16 +85,6 @@
 		230BC3CD1855DEC200CC65F2 /* ItemParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemParser.h; sourceTree = "<group>"; };
 		230BC3D018566B4900CC65F2 /* Armor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Armor.cpp; sourceTree = "<group>"; };
 		230BC3D118566B4900CC65F2 /* Armor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armor.h; sourceTree = "<group>"; };
-		230BC3D718567D5B00CC65F2 /* ammo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ammo.xml; path = build/Debug/ammo.xml; sourceTree = "<group>"; };
-		230BC3D818567D5B00CC65F2 /* armor.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = armor.xml; path = build/Debug/armor.xml; sourceTree = "<group>"; };
-		230BC3D918567D5B00CC65F2 /* consumables.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = consumables.xml; path = build/Debug/consumables.xml; sourceTree = "<group>"; };
-		230BC3DA18567D5B00CC65F2 /* creatures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = creatures.xml; path = build/Debug/creatures.xml; sourceTree = "<group>"; };
-		230BC3DB18567D5B00CC65F2 /* factions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = factions.xml; path = build/Debug/factions.xml; sourceTree = "<group>"; };
-		230BC3DC18567D5B00CC65F2 /* items.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = items.xml; path = build/Debug/items.xml; sourceTree = "<group>"; };
-		230BC3DD18567D5B00CC65F2 /* races.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = races.xml; path = build/Debug/races.xml; sourceTree = "<group>"; };
-		230BC3DE18567D5B00CC65F2 /* weapons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = weapons.xml; path = build/Debug/weapons.xml; sourceTree = "<group>"; };
-		230BC3DF18567D9E00CC65F2 /* perks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = perks.xml; path = build/Debug/perks.xml; sourceTree = "<group>"; };
-		230BC3E018567DAD00CC65F2 /* traits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = traits.xml; path = build/Debug/traits.xml; sourceTree = "<group>"; };
 		230BC3E11856843D00CC65F2 /* CreatureParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreatureParser.cpp; sourceTree = "<group>"; };
 		230BC3E21856843D00CC65F2 /* CreatureParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureParser.h; sourceTree = "<group>"; };
 		230BC3E41856844800CC65F2 /* FactionParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FactionParser.cpp; sourceTree = "<group>"; };
@@ -112,8 +102,6 @@
 		23322BEF184915D6004CC64F /* SpecialWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpecialWindow.cpp; sourceTree = "<group>"; };
 		23322BF0184915D6004CC64F /* SpecialWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialWindow.h; sourceTree = "<group>"; };
 		23419DB118486661000B9EFD /* forogue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = forogue; sourceTree = BUILT_PRODUCTS_DIR; };
-		23419DB418486661000B9EFD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		23419DB618486661000B9EFD /* forogue.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = forogue.1; sourceTree = "<group>"; };
 		23419DBE184867C7000B9EFD /* Character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
 		23419DBF184867C7000B9EFD /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		23419DC118486807000B9EFD /* Special.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Special.cpp; sourceTree = "<group>"; };
@@ -128,7 +116,6 @@
 		23419DD618486CDF000B9EFD /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		23419DD818486CEB000B9EFD /* Dungeon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dungeon.cpp; sourceTree = "<group>"; };
 		23419DD918486CEB000B9EFD /* Dungeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dungeon.h; sourceTree = "<group>"; };
-		23419DDC18486D46000B9EFD /* symbols.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = symbols.txt; sourceTree = "<group>"; };
 		23419DDE184873C4000B9EFD /* Weapon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Weapon.cpp; sourceTree = "<group>"; };
 		23419DDF184873C4000B9EFD /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
 		23419DE1184879AA000B9EFD /* Trait.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trait.cpp; sourceTree = "<group>"; };
@@ -179,23 +166,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		230BC2F618557C2500CC65F2 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				230BC3D718567D5B00CC65F2 /* ammo.xml */,
-				230BC3D818567D5B00CC65F2 /* armor.xml */,
-				230BC3D918567D5B00CC65F2 /* consumables.xml */,
-				230BC3DA18567D5B00CC65F2 /* creatures.xml */,
-				230BC3DB18567D5B00CC65F2 /* factions.xml */,
-				230BC3DC18567D5B00CC65F2 /* items.xml */,
-				230BC3DD18567D5B00CC65F2 /* races.xml */,
-				230BC3DE18567D5B00CC65F2 /* weapons.xml */,
-				230BC3DF18567D9E00CC65F2 /* perks.xml */,
-				230BC3E018567DAD00CC65F2 /* traits.xml */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
 		23322BEE18491557004CC64F /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,11 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				230BC2FD1855B30600CC65F2 /* libxerces-c.a */,
-				230BC2F618557C2500CC65F2 /* Data */,
 				23B0EE03184BD5B0001C17A2 /* Files */,
-				23419DB318486661000B9EFD /* forogue */,
 				23B0EDFF184B8F81001C17A2 /* Gameplay */,
-				23419DDD18486D4F000B9EFD /* Meta */,
 				23419DB218486661000B9EFD /* Products */,
 				23419DD418486C28000B9EFD /* RPG */,
 				23419DD318486C07000B9EFD /* Stuff */,
@@ -245,15 +212,6 @@
 				23419DB118486661000B9EFD /* forogue */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		23419DB318486661000B9EFD /* forogue */ = {
-			isa = PBXGroup;
-			children = (
-				23419DB618486661000B9EFD /* forogue.1 */,
-				23419DB418486661000B9EFD /* main.cpp */,
-			);
-			path = forogue;
 			sourceTree = "<group>";
 		};
 		23419DD318486C07000B9EFD /* Stuff */ = {
@@ -313,15 +271,6 @@
 			name = World;
 			sourceTree = "<group>";
 		};
-		23419DDD18486D4F000B9EFD /* Meta */ = {
-			isa = PBXGroup;
-			children = (
-				230BC2F518556AEA00CC65F2 /* keys.txt */,
-				23419DDC18486D46000B9EFD /* symbols.txt */,
-			);
-			name = Meta;
-			sourceTree = "<group>";
-		};
 		23B0EDFE184B8F74001C17A2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +283,7 @@
 		23B0EDFF184B8F81001C17A2 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				230B7ED01857E485009722D9 /* main.cpp */,
 				23419DBE184867C7000B9EFD /* Character.cpp */,
 				23322BE81849107B004CC64F /* Game.cpp */,
 				23419DBF184867C7000B9EFD /* Character.h */,
@@ -441,7 +391,6 @@
 				23B0EE0F184BD9C1001C17A2 /* InventoryWindow.cpp in Sources */,
 				23419DE918488501000B9EFD /* Ammo.cpp in Sources */,
 				23419DD718486CDF000B9EFD /* World.cpp in Sources */,
-				23419DB518486661000B9EFD /* main.cpp in Sources */,
 				23419DC0184867C7000B9EFD /* Character.cpp in Sources */,
 				23419DE0184873C4000B9EFD /* Weapon.cpp in Sources */,
 				23419DF218488E1F000B9EFD /* Tile.cpp in Sources */,
@@ -455,6 +404,7 @@
 				23419DE618487C26000B9EFD /* Skills.cpp in Sources */,
 				230BC3041855B4EF00CC65F2 /* WeaponParser.cpp in Sources */,
 				23419DC918486A58000B9EFD /* Perk.cpp in Sources */,
+				230B7ED11857E485009722D9 /* main.cpp in Sources */,
 				230BC3E91856845400CC65F2 /* RaceParser.cpp in Sources */,
 				230BC3CB1855DEB700CC65F2 /* ConsumableParser.cpp in Sources */,
 				23DD7CF7184A58D100E3B265 /* TopBarWindow.cpp in Sources */,
