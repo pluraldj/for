@@ -105,7 +105,7 @@ vector<Weapon*> *WeaponParser::Load()
     weapons = new vector<Weapon*>;
     
     // Load (or fail spectacularly if not exist/syntax errors)
-    ReadFile("weapons.xml");
+    ReadFile("data/weapons.xml");
     
     // Get the top-level element
     DOMElement* elementRoot = xmlDoc->getDocumentElement();

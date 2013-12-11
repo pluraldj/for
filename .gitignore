@@ -25,6 +25,11 @@ src/build/*
 # Copied binary in bin/
 bin/forogue
 
+# dumped debug data
+bin/edgedump.txt
+bin/leveldump.txt
+bin/visdump.txt
+
 # XCode project settings and other crap
 *.pbxuser
 xcuserdata
