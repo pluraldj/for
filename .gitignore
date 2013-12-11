@@ -29,7 +29,4 @@ bin/forogue
 bin/edgedump.txt
 bin/leveldump.txt
 bin/visdump.txt
-
-# XCode project settings and other crap
-*.pbxuser
-xcuserdata
+bin/worlddump.txt
