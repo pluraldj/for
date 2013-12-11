@@ -18,7 +18,33 @@ using namespace std;
 
 // Actions taken by players by pressing keys
 // UI handles everything it can, these are passed back to Game object
-enum UiAction { None, DoQuit, MoveLeft, MoveRight, MoveUp, MoveDown, OpenStats, OpenInventory, OpenContainer, Inspect, MoveCam, EnterExitCombat, TalkTo, BarterWith };
+enum UiAction {
+    None,
+    
+    DoQuit,
+    
+    MoveLeft,
+    MoveRight,
+    MoveUp,
+    MoveDown,
+    
+    UseItem,
+    DropItem,
+    
+    SwitchActiveSlot,
+    FireWeapon,
+    ReloadWeapon,
+    
+    OpenStats,
+    OpenInventory,
+    Inspect,
+    MoveCam,
+    
+    EnterExitCombat,
+    
+    OpenContainer,
+    TalkTo,
+    BarterWith };
 
 // Container for action metadata displayed in the right-hand bar
 class Action

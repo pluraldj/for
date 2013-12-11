@@ -31,29 +31,36 @@ Gui::Gui()
     keyToActionMap[KEY_UP] = UiAction::MoveUp;
     keyToActionMap[KEY_DOWN] = UiAction::MoveDown;
     
+    // Items
+    keyToActionMap['u'] = UiAction::UseItem;
+    keyToActionMap['U'] = UiAction::UseItem;
+    keyToActionMap['d'] = UiAction::DropItem;
+    keyToActionMap['D'] = UiAction::DropItem;
+    
+    // TODO: Should change weapon firing to depend on attack modes
+    keyToActionMap['f'] = UiAction::FireWeapon;
+    keyToActionMap['F'] = UiAction::FireWeapon;
+    keyToActionMap['r'] = UiAction::ReloadWeapon;   // May not be possible (wep uses no ammo)
+    keyToActionMap['R'] = UiAction::ReloadWeapon;
+    
     // Open other screens
     // We need both upper and lower case as input is a text char
     keyToActionMap['c'] = UiAction::EnterExitCombat;
     keyToActionMap['C'] = UiAction::EnterExitCombat;
     keyToActionMap['i'] = UiAction::OpenInventory;
     keyToActionMap['I'] = UiAction::OpenInventory;
-    
     keyToActionMap['l'] = UiAction::Inspect;
     keyToActionMap['L'] = UiAction::Inspect;
-    
     keyToActionMap['m'] = UiAction::MoveCam;
     keyToActionMap['M'] = UiAction::MoveCam;
     
+    // Interact with environment (context sensitive)
     keyToActionMap['o'] = UiAction::OpenContainer;
     keyToActionMap['O'] = UiAction::OpenContainer;
-    
     keyToActionMap['t'] = UiAction::TalkTo;
     keyToActionMap['T'] = UiAction::TalkTo;
-    
-    keyToActionMap['b'] = UiAction::TalkTo;
-    keyToActionMap['B'] = UiAction::TalkTo;
-    
-    
+    keyToActionMap['b'] = UiAction::BarterWith;
+    keyToActionMap['B'] = UiAction::BarterWith;
 }
 
 Gui::~Gui()
