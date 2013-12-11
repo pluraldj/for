@@ -10,6 +10,7 @@
 #define __forogue__World__
 
 #include <iostream>
+#include <fstream>
 
 #include "Location.h"
 #include "WorldSpec.h"

@@ -561,7 +561,7 @@ void Dungeon::Dump(string path)
     
     for ( int i=0; i<size.y; i++ )
     {
-        outfile << wholeMap[i] << L"\n";
+        outfile << wholeMap[i] << "\n";
     }
     
     outfile.close();

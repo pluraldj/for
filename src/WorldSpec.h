@@ -20,6 +20,8 @@ struct WorldSpec
 {
 public:
     WorldSpec();
+    
+    int minsize,maxsize;
 };
 
 #endif /* defined(__forogue__WorldSpec__) */

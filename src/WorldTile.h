@@ -13,12 +13,23 @@
 
 using namespace std;
 
-enum class WorldTileType { Desert, Grass, River, Lake, Ruins, Hilly, Mountains, Camp, Traders, Vault, Town };
+enum class WorldTileType { Ground, Desert, Grass, River, Lake, Ruins, Hilly, Mountains, Cave, Camp, Traders, Vault, Town };
 
 class WorldTile
 {
 public:
+    WorldTile();
     
+    string DrawSymbol();
+    
+    WorldTileType type;
+    bool visible;
+    bool canEnter;  // Just random wilderness or a place we can go to (enter dungeon)
+    
+    // Do we know what this place is?
+    // When first discovered we must visit it to find out
+    // Empty tiles are always known
+    bool known;
 };
 
 #endif /* defined(__forogue__WorldTile__) */

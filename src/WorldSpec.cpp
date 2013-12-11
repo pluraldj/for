@@ -7,3 +7,10 @@
 //
 
 #include "WorldSpec.h"
+
+WorldSpec::WorldSpec()
+{
+    // Default values
+    minsize = 200;
+    maxsize = 500;
+}

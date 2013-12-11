@@ -49,7 +49,8 @@ private:
     Game(){}
     
     Gui *gui;
-    Dungeon *dungeon;
+    Dungeon *dungeon;       // current dungeon
+    World *world;           // Wasrteland overworld
     Character *player;
     
     // Every entity in current environment excluding player and "dumb" items on the ground (stuff that can only be picked up)

@@ -21,6 +21,11 @@ void Game::Init()
 {
     activeEnts = new vector<Entity*>;
     
+    gui = NULL;
+    dungeon = NULL;
+    world = NULL;
+    player = NULL;
+    
     // TMP DBG
     // Standard player
     player = new Character();
@@ -58,6 +63,10 @@ void Game::Init()
     player->visInfo = new Visibility(dungeon,player);
     player->visInfo->ClearVis();
     player->visInfo->UpdateVis();
+    
+    // Create wasteland
+    world = new World( WorldSpec() );
+    world->Dump("worlddump.txt");
     
     // END TMP
     
