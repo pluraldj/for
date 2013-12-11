@@ -1,0 +1,54 @@
+Symbols on the map
+
+Chars are color coded as:
+blue    player
+green   friendly
+gray    neutral
+red     hostile
+
+
+Environment tiles
+.   floor
+~   sand/dirt
+≈   water (blue?)
+
+⬜  random wall
+
+║   vert wall
+═   horiz wall
+
+╔   TL corner
+╗   TR corner
+╚   BL corner
+╝   BR corner
+
+╬   wall junction
+╩   wall T joint
+╦   wall T joint
+╣   wall T joint
+╠   wall T joint
+
+░   darkness (out of LOS)
+▒   darkness (deep)
+" " nothing (outside explored)
+
+Creatures
+@   player char (blue)
+r   Rat
+M   Mutant?
+
+Items
+$   caps
+=   gun
+-   melee weap
+:   ammo
+?   written note/data terminal
+
+*   misc. stuff
+⌨   terminal
+⬁⬆  stairs up
+⬂⬇  stairs down
+⨅   door?
+
+random for later use maybe?
+␣±¤¦÷⎕⌶⎈⍾†!!⬡⬭⬎⬏
