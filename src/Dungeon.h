@@ -74,6 +74,15 @@ private:
     // Generate dungeon based on parameters
     void Generate(DungeonSpec spec);
     
+    // Populate with objects that can be interacted with
+    void SeedWithObjects();
+    
+    // Populate with enemies/NPCs
+    void SeedWithCreatures();
+    
+    // Populate with loot, both on ground and in containers
+    void SeedWithItems();
+    
     
 };
 
