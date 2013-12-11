@@ -213,6 +213,8 @@ vector<Weapon*> *WeaponParser::Load()
             string typeStr = TRANS(attr->getNamedItem(TRANS("type"))->getNodeValue());
             mode.attackType = StringToAttackType(typeStr);
             
+            // hmm
+            
             mode.rounds = stringToInt(TRANS(attr->getNamedItem(TRANS("rounds"))->getNodeValue()));
             mode.apCost = stringToInt(TRANS(attr->getNamedItem(TRANS("ap"))->getNodeValue()));
             mode.range = stringToDouble(TRANS(attr->getNamedItem(TRANS("range"))->getNodeValue()));
