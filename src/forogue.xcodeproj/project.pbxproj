@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		230B7ED11857E485009722D9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7ED01857E485009722D9 /* main.cpp */; };
 		230B7ED21857E537009722D9 /* forogue in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23419DB118486661000B9EFD /* forogue */; };
+		230B7EE018580E73009722D9 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7EDE18580E73009722D9 /* Action.cpp */; };
 		230BC2F4185556D500CC65F2 /* Visibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2F2185556D500CC65F2 /* Visibility.cpp */; };
 		230BC2FE1855B30600CC65F2 /* libxerces-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230BC2FD1855B30600CC65F2 /* libxerces-c.a */; };
 		230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2FF1855B36300CC65F2 /* XmlParser.cpp */; };
@@ -78,6 +79,8 @@
 		230B7EDB18580AC6009722D9 /* races.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = races.xml; path = ../bin/data/races.xml; sourceTree = "<group>"; };
 		230B7EDC18580AC6009722D9 /* traits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = traits.xml; path = ../bin/data/traits.xml; sourceTree = "<group>"; };
 		230B7EDD18580AC6009722D9 /* weapons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = weapons.xml; path = ../bin/data/weapons.xml; sourceTree = "<group>"; };
+		230B7EDE18580E73009722D9 /* Action.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Action.cpp; sourceTree = "<group>"; };
+		230B7EDF18580E73009722D9 /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
 		230BC2F2185556D500CC65F2 /* Visibility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visibility.cpp; sourceTree = "<group>"; };
 		230BC2F3185556D500CC65F2 /* Visibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visibility.h; sourceTree = "<group>"; };
 		230BC2FD1855B30600CC65F2 /* libxerces-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libxerces-c.a"; path = "xerces-c-3.1.1/libs/libxerces-c.a"; sourceTree = "<group>"; };
@@ -196,6 +199,7 @@
 		23322BEE18491557004CC64F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				230B7EDE18580E73009722D9 /* Action.cpp */,
 				23DD7CFB184A58FE00E3B265 /* BottomWindow.cpp */,
 				23DD7CF2184A57E100E3B265 /* Gui.cpp */,
 				23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */,
@@ -205,6 +209,7 @@
 				23DD7CF5184A58D100E3B265 /* TopBarWindow.cpp */,
 				23322BEB18491544004CC64F /* Window.cpp */,
 				23DD7CFE184A5A4800E3B265 /* WorldWindow.cpp */,
+				230B7EDF18580E73009722D9 /* Action.h */,
 				23DD7CFC184A58FE00E3B265 /* BottomWindow.h */,
 				23DD7CF3184A57E100E3B265 /* Gui.h */,
 				23B0EE0E184BD9C1001C17A2 /* InventoryWindow.h */,
@@ -439,6 +444,7 @@
 				23B0EE0C184BD9B8001C17A2 /* StatsWindow.cpp in Sources */,
 				23419DD218486B8E000B9EFD /* Container.cpp in Sources */,
 				23419DEC184888A3000B9EFD /* Creature.cpp in Sources */,
+				230B7EE018580E73009722D9 /* Action.cpp in Sources */,
 				23419DFB1848A219000B9EFD /* DungeonArea.cpp in Sources */,
 				230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */,
 				230BC3CE1855DEC200CC65F2 /* ItemParser.cpp in Sources */,

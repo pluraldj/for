@@ -17,6 +17,10 @@ Gui::Gui()
     bottomWindow = NULL;
     
     mode = GuiMode::Main;
+    
+    currSlot = 1;
+    slot1 = NULL;
+    slot2 = NULL;
 }
 
 Gui::~Gui()
@@ -153,7 +157,7 @@ void Gui::Redraw()
     // repaint children
     topBar->Redraw();
     worldWindow->Redraw();
-    rightMenu->Redraw();
+    rightMenu->Redraw(currSlot, slot1, slot2);
     bottomWindow->Redraw();
 }
 
@@ -191,7 +195,7 @@ UiAction Gui::GetInput()
             // In reality the user can press keys really fast and this will screw up, but fuck dealing with that. ESC presses are usually pretty final
             otherkey = getch();
             if ( otherkey == ERR )
-                action = UiAction::Quit;
+                action = UiAction::DoQuit;
             break;
             
         case KEY_LEFT: action = UiAction::MoveLeft; break;

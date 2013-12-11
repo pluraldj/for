@@ -26,11 +26,11 @@
 using namespace std;
 
 // Overarching UI mode - popups obscure the normal display
-enum GuiMode { CharCreation, Main, Stats, Inventory };
+enum GuiMode { Quit, CharCreation, Main, Stats, Inventory, OpenContainer, Trade, Barter };
 
 // Actions taken by players by pressing keys
 // UI handles everything it can, these are passed back to Game object
-enum UiAction { None, Quit, MoveLeft, MoveRight, MoveUp, MoveDown, OpenStats, OpenInventory, Inspect, MoveCam, EnterCombat, ExitCombat };
+enum UiAction { None, DoQuit, MoveLeft, MoveRight, MoveUp, MoveDown, OpenStats, OpenInventory, Inspect, MoveCam, EnterCombat, ExitCombat };
 
 class Gui
 {
@@ -54,6 +54,9 @@ public:
     
     void Redraw();
     
+    // Enter/exit modes and modify available actions accordingly
+    void EnterMode(GuiMode _mode);
+    void ExitMode(GuiMode _mode);
     
     // Write message in log
     void PostMessage(string msg);
@@ -75,10 +78,16 @@ private:
     RightMenuWindow *rightMenu;
     BottomWindow *bottomWindow;
     
+    // Overarching GUI mode determines what info is presented and what actions are possible
     GuiMode mode;
     
     // Actions available in current mode
     vector<UiAction> possibleActions;
+    
+    // Items in quick-use slots
+    int currSlot;
+    Item *slot1;
+    Item *slot2;
 };
 
 #endif /* defined(__forogue__Gui__) */
