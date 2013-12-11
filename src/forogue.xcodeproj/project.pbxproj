@@ -48,6 +48,7 @@
 		230B7F5A18584C0D009722D9 /* translatepoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3A18584C0D009722D9 /* translatepoint.cpp */; };
 		230B7F5B18584C0D009722D9 /* turbulence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3C18584C0D009722D9 /* turbulence.cpp */; };
 		230B7F5C18584C0D009722D9 /* voronoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F3E18584C0D009722D9 /* voronoi.cpp */; };
+		230B7F6118584F25009722D9 /* noiseutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230B7F5F18584F25009722D9 /* noiseutils.cpp */; };
 		230BC2F4185556D500CC65F2 /* Visibility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2F2185556D500CC65F2 /* Visibility.cpp */; };
 		230BC2FE1855B30600CC65F2 /* libxerces-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 230BC2FD1855B30600CC65F2 /* libxerces-c.a */; };
 		230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC2FF1855B36300CC65F2 /* XmlParser.cpp */; };
@@ -204,6 +205,8 @@
 		230B7F3D18584C0D009722D9 /* turbulence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = turbulence.h; path = "libnoisesrc-1.0.0/noise/src/module/turbulence.h"; sourceTree = "<group>"; };
 		230B7F3E18584C0D009722D9 /* voronoi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = voronoi.cpp; path = "libnoisesrc-1.0.0/noise/src/module/voronoi.cpp"; sourceTree = "<group>"; };
 		230B7F3F18584C0D009722D9 /* voronoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = voronoi.h; path = "libnoisesrc-1.0.0/noise/src/module/voronoi.h"; sourceTree = "<group>"; };
+		230B7F5F18584F25009722D9 /* noiseutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = noiseutils.cpp; path = noiseutils/noiseutils.cpp; sourceTree = "<group>"; };
+		230B7F6018584F25009722D9 /* noiseutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = noiseutils.h; path = noiseutils/noiseutils.h; sourceTree = "<group>"; };
 		230BC2F2185556D500CC65F2 /* Visibility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visibility.cpp; sourceTree = "<group>"; };
 		230BC2F3185556D500CC65F2 /* Visibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visibility.h; sourceTree = "<group>"; };
 		230BC2FD1855B30600CC65F2 /* libxerces-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libxerces-c.a"; path = "xerces-c-3.1.1/libs/libxerces-c.a"; sourceTree = "<group>"; };
@@ -405,6 +408,23 @@
 			name = libnoise;
 			sourceTree = "<group>";
 		};
+		230B7F5D18584E5A009722D9 /* xerces */ = {
+			isa = PBXGroup;
+			children = (
+				230BC2FD1855B30600CC65F2 /* libxerces-c.a */,
+			);
+			name = xerces;
+			sourceTree = "<group>";
+		};
+		230B7F5E18584EFC009722D9 /* noiseutils */ = {
+			isa = PBXGroup;
+			children = (
+				230B7F5F18584F25009722D9 /* noiseutils.cpp */,
+				230B7F6018584F25009722D9 /* noiseutils.h */,
+			);
+			name = noiseutils;
+			sourceTree = "<group>";
+		};
 		23322BEE18491557004CC64F /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,9 +455,10 @@
 		23419DA818486661000B9EFD = {
 			isa = PBXGroup;
 			children = (
+				230B7F5E18584EFC009722D9 /* noiseutils */,
+				230B7F5D18584E5A009722D9 /* xerces */,
 				230B7EEA18584A5C009722D9 /* libnoise */,
 				230B7ED318580AB8009722D9 /* Data */,
-				230BC2FD1855B30600CC65F2 /* libxerces-c.a */,
 				23B0EE03184BD5B0001C17A2 /* Files */,
 				23B0EDFF184B8F81001C17A2 /* Gameplay */,
 				23419DB218486661000B9EFD /* Products */,
@@ -637,6 +658,7 @@
 				23DD7D00184A5A4800E3B265 /* WorldWindow.cpp in Sources */,
 				230B7F5C18584C0D009722D9 /* voronoi.cpp in Sources */,
 				230B7EE91858352B009722D9 /* WorldTile.cpp in Sources */,
+				230B7F6118584F25009722D9 /* noiseutils.cpp in Sources */,
 				230BC3E61856844800CC65F2 /* FactionParser.cpp in Sources */,
 				230B7F0318584B9E009722D9 /* plane.cpp in Sources */,
 				23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */,
@@ -739,6 +761,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/libnoiseheaders-1.0.0/include",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -772,6 +799,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/libnoiseheaders-1.0.0/include",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
