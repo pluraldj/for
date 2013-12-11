@@ -9,6 +9,7 @@
 #include "World.h"
 
 #include "noise.h"
+#include "noiseutils.h"
 using namespace noise;
 
 World::World(WorldSpec spec)
@@ -89,10 +90,40 @@ string* World::drawRect(veci upperleft, veci window, bool fow)
 
 void World::Generate(WorldSpec spec)
 {
-    // Perlin noise module
-    module::Perlin perlinModule;
+    module::Perlin myModule;
+    myModule.SetOctaveCount(16);
+    myModule.SetFrequency(16);
     
+    utils::NoiseMap heightMap;
+    utils::NoiseMapBuilderPlane heightMapBuilder;
+    heightMapBuilder.SetSourceModule (myModule);
+    heightMapBuilder.SetDestNoiseMap (heightMap);
+    heightMapBuilder.SetDestSize (1024, 1024);
+    heightMapBuilder.SetBounds (6.0, 10.0, 1.0, 5.0);
+    heightMapBuilder.Build ();
     
+    utils::RendererImage renderer;
+    utils::Image image;
+    renderer.SetSourceNoiseMap (heightMap);
+    renderer.SetDestImage (image);
+    renderer.ClearGradient ();
+    renderer.AddGradientPoint (-1.0000, utils::Color (  0,   0, 128, 255)); // deeps
+    renderer.AddGradientPoint (-0.900, utils::Color (  0,   0, 255, 255)); // shallow
+    renderer.AddGradientPoint ( -0.600, utils::Color (  0, 128, 255, 255)); // shore
+    renderer.AddGradientPoint ( -0.45, utils::Color (240, 240,  64, 255)); // sand
+    renderer.AddGradientPoint ( 0.000, utils::Color ( 32, 160,   0, 255)); // grass
+    renderer.AddGradientPoint ( 0.2750, utils::Color (224, 224,   0, 255)); // dirt
+    renderer.AddGradientPoint ( 0.4500, utils::Color (128, 128, 128, 255)); // rock
+    renderer.AddGradientPoint ( 1.0000, utils::Color (255, 255, 255, 255)); // snow
+    renderer.EnableLight ();
+    renderer.SetLightContrast (2.0); // Triple the contrast
+    renderer.SetLightBrightness (2.0); // Double the brightness
+    renderer.Render ();
+    
+    utils::WriterBMP writer;
+    writer.SetSourceImage (image);
+    writer.SetDestFilename ("tutorial.bmp");
+    writer.WriteDestFile ();
 }
 
 void World::Dump(string path)
