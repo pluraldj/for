@@ -275,6 +275,8 @@
 		23419DF718489A76000B9EFD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		23419DF91848A219000B9EFD /* DungeonArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DungeonArea.cpp; sourceTree = "<group>"; };
 		23419DFA1848A219000B9EFD /* DungeonArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonArea.h; sourceTree = "<group>"; };
+		23528988185A05CD00BC1C3F /* dungeons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = dungeons.xml; sourceTree = "<group>"; };
+		23528989185A05DB00BC1C3F /* worldparams.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = worldparams.xml; sourceTree = "<group>"; };
 		23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatsWindow.cpp; sourceTree = "<group>"; };
 		23B0EE0B184BD9B8001C17A2 /* StatsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsWindow.h; sourceTree = "<group>"; };
 		23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InventoryWindow.cpp; sourceTree = "<group>"; };
@@ -318,6 +320,8 @@
 				230B7EDB18580AC6009722D9 /* races.xml */,
 				230B7EDC18580AC6009722D9 /* traits.xml */,
 				230B7EDD18580AC6009722D9 /* weapons.xml */,
+				23528988185A05CD00BC1C3F /* dungeons.xml */,
+				23528989185A05DB00BC1C3F /* worldparams.xml */,
 			);
 			name = Data;
 			sourceTree = "<group>";

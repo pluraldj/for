@@ -93,8 +93,6 @@ void World::Generate(WorldSpec spec)
     module::Perlin myModule;
     myModule.SetSeed((int)time(0));
     
-
-    
     // Good parameters:
     // Octave 4
     // Freq 2
