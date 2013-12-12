@@ -91,16 +91,25 @@ string* World::drawRect(veci upperleft, veci window, bool fow)
 void World::Generate(WorldSpec spec)
 {
     module::Perlin myModule;
+    myModule.SetSeed((int)time(0));
     
+
+    
+    // Good parameters:
+    // Octave 4
+    // Freq 2
+    
+    // TMP DBG testing of different Perlin parameters
+    /*
     int octaves[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     
     for (int o=0; o<10; o++ )
     {
         for ( double f=1.0; f<16.0; f++ )
         {
-            myModule.SetSeed(time(NULL));
+
             myModule.SetOctaveCount(octaves[o]);
-            myModule.SetFrequency(2);
+            myModule.SetFrequency(f);
             myModule.SetPersistence(0.4);
             
             utils::NoiseMap heightMap;
@@ -131,10 +140,13 @@ void World::Generate(WorldSpec spec)
             
             utils::WriterBMP writer;
             writer.SetSourceImage (image);
-            writer.SetDestFilename ("tutorial.bmp");
+            writer.SetDestFilename ("out/" + numberToString(octaves[o]) + "_" + numberToString(f) + ".bmp");
             writer.WriteDestFile ();
+            
+            cout << octaves[o] << " " << f << "\n";
         }
     }
+    */
 }
 
 void World::Dump(string path)
