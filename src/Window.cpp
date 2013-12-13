@@ -33,15 +33,25 @@ void Window::Init()
 {
 }
 
-void Window::Resize(veci newtopleft, veci newsize)
+// Returns true if resizing took place, false if it wasn't necessary (same dims)
+bool Window::Resize(veci newtopleft, veci newsize)
 {
     // TODO: Sanity checking of values
+    
+    // Nothing to do if size doesn't change
+    if ( newtopleft == topleft && newsize == size )
+        return false;
     
     topleft = newtopleft;
     size = newsize;
     
-    wmove(cursesWin, topleft.y, topleft.x);
+    mvwin(cursesWin, topleft.y, topleft.x);
     wresize(cursesWin, size.y, size.x);
+    
+    // Force clearing to remove artifacts from border
+    wclear(cursesWin);
+    
+    return true;
 }
 
 void Window::Clear()

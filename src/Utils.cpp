@@ -102,6 +102,11 @@ veci operator -(veci a, veci b)
     return veci(a.x-b.x , a.y-b.y);
 }
 
+bool operator ==(veci a, veci b)
+{
+    return a.x==b.x && a.y==b.y;
+}
+
 int dot(veci a, veci b)
 {
     return a.x*b.x + a.y*b.y;

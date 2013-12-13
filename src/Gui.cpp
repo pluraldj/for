@@ -138,8 +138,8 @@ void Gui::DivideWindows()
     // height of middle windows
     h = scry-h-2;
     
-    // right bar takes up some %, minimum 20 width
-    int w = max(scrx/5,20);
+    // right bar takes up some %, with minimum to ensure we can draw text without wrapping
+    int w = max(scrx/4,24);
     
     worldWindow->Resize( veci(0,2), veci(scrx-w,h) );
     rightMenu->Resize( veci(scrx-w,2), veci(w,h) );
@@ -194,7 +194,7 @@ bool Gui::Resize()
     
     // Same as before? Then no resizing
     if ( newx == scrx && newy == scry )
-        return;
+        return false;
     
     // Save new dims
     scrx = newx;
@@ -205,6 +205,8 @@ bool Gui::Resize()
     
     // Redraw
     // Nope, caller should do this after calling Resize()
+    
+    return true;
 }
 
 void Gui::PostMessage(string msg)

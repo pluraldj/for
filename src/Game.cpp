@@ -127,6 +127,10 @@ bool Game::MainLoop()
     
     
     // Redraw screen
+    
+    // First attempt resizing if term has changed
+    gui->Resize();
+    
     gui->FocusOnChar(player);
     gui->Redraw();
     

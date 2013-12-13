@@ -64,6 +64,7 @@ public:
 veci operator *(int s, veci a);
 veci operator +(veci a, veci b);
 veci operator -(veci a, veci b);
+bool operator ==(veci a, veci b);
 int dot(veci a, veci b);
 
 class vecd
