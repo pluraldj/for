@@ -59,7 +59,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "Gui::Init()"
+            landmarkName = "Gui::Gui()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

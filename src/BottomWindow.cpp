@@ -12,15 +12,38 @@ BottomWindow::BottomWindow(veci _topleft, veci _size, int _msgLines) : Window(_t
 {
     msgLines = _msgLines;
     
-    // init scrollback lines
+    // init scrollback lines to empty
     for ( int i=0; i<msgLines; i++ )
         scrollBack.push_back("");
+}
+
+// Set number of lines shown in scrollback
+// Called on resize
+// Make sure to keep content if enlarged
+void BottomWindow::SetScrollbackLines(int _msgLines)
+{
+    // No change in size? do nothing
+    if ( _msgLines == msgLines )
+        return;
+    
+    // Enlarging? add empty lines TO FRONT
+    if ( _msgLines > msgLines )
+    {
+        for ( int i=0; i < _msgLines-msgLines; i++ )
+            scrollBack.push_front("");
+    }
+    // Removing, pop from FRONT
+    else
+    {
+        for ( int i=0; i < _msgLines-msgLines; i++ )
+            scrollBack.pop_front();
+    }
 }
 
 void BottomWindow::AddLine(string msg)
 {
     // Pop top msg from top
-    scrollBack.erase(scrollBack.begin());
+    scrollBack.pop_front();
     
     // Push new on bottom
     scrollBack.push_back(msg);
@@ -28,6 +51,7 @@ void BottomWindow::AddLine(string msg)
     Redraw();
 }
 
+// Clear all, replace with empty
 void BottomWindow::ClearLines()
 {
     scrollBack.clear();

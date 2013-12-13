@@ -115,13 +115,25 @@ void Gui::Init()
     }
     
     // Divide up screen real estate and init children
+    // Initialise with dummy dimensions, then call DivideWindows() to get real dims
+    topBar = new TopBarWindow( veci(0,0), veci(1,1) );
+    bottomWindow = new BottomWindow( veci(0,0), veci(1,1), 0 );
+    worldWindow = new WorldWindow( veci(0,0), veci(1,1) );
+    rightMenu = new RightMenuWindow( veci(0,0), veci(1,1) );
+    DivideWindows();
+}
+
+void Gui::DivideWindows()
+{
+    // TODO: Check if too small for proper display
     
     // Top bar - height 2 across entire width with no border
-    topBar = new TopBarWindow( veci(0,0), veci(scrx,2) );
+    topBar->Resize( veci(0,0), veci(scrx,2));
     
     // Bottom bar takes up some %, minimum 3 height
     int h = max(scry/6,3);
-    bottomWindow = new BottomWindow( veci(0,scry-h), veci(scrx,h), h-2 );
+    bottomWindow->Resize(veci(0,scry-h), veci(scrx,h));
+    bottomWindow->SetScrollbackLines(h-2);
     
     // height of middle windows
     h = scry-h-2;
@@ -129,9 +141,8 @@ void Gui::Init()
     // right bar takes up some %, minimum 20 width
     int w = max(scrx/5,20);
     
-    worldWindow = new WorldWindow( veci(0,2), veci(scrx-w,h) );
-    
-    rightMenu = new RightMenuWindow( veci(scrx-w,2), veci(w,h) );
+    worldWindow->Resize( veci(0,2), veci(scrx-w,h) );
+    rightMenu->Resize( veci(scrx-w,2), veci(w,h) );
 }
 
 void Gui::SetDungeon(Dungeon *_d)
@@ -172,7 +183,9 @@ void Gui::MoveCamera(veci rel)
     worldWindow->SetCamCenter( worldWindow->GetCamCenter() + rel);
 }
 
-void Gui::Resize()
+// Attempt resizing if term dims changed.
+// Returns true if resizing did happen, false otherwise
+bool Gui::Resize()
 {
     // Get new term dims
     int newx,newy;
@@ -183,8 +196,15 @@ void Gui::Resize()
     if ( newx == scrx && newy == scry )
         return;
     
+    // Save new dims
+    scrx = newx;
+    scry = newy;
+    
     // resize children
-    // TODO
+    DivideWindows();
+    
+    // Redraw
+    // Nope, caller should do this after calling Resize()
 }
 
 void Gui::PostMessage(string msg)

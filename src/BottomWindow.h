@@ -12,6 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <deque>
 
 #include "Window.h"
 
@@ -22,6 +23,8 @@ class BottomWindow : public Window
 public:
     BottomWindow(veci _topleft, veci _size, int _msgLines);
     
+    void SetScrollbackLines(int _msgLines);
+    
     void AddLine(string msg);
     void ClearLines();
     
@@ -29,7 +32,7 @@ public:
     
 private:
     int msgLines;
-    vector<string> scrollBack;
+    deque<string> scrollBack;
 };
 
 #endif /* defined(__forogue__BottomWindow__) */

@@ -26,6 +26,7 @@ public:
     
     virtual void Init();
     
+    void Resize(veci newtopleft, veci newsize);
     virtual void Redraw();
     virtual void HandleKey(int keycode);
     void Clear();

@@ -48,7 +48,7 @@ public:
     void MoveCamera(veci rel);
     
     // Resize subwindows on terminal resize
-    void Resize();
+    bool Resize();
     
     void Redraw();
     
@@ -66,6 +66,9 @@ public:
     UiAction GetInput();
     
 private:
+    // Divide screen real estate between the windows
+    void DivideWindows();
+    
     int scrx, scry; // term dimensions
     
     bool floatActive;   // Any floating windows active on top of main view? (inventory etc.)

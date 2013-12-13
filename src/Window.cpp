@@ -28,6 +28,22 @@ Window::~Window()
     delwin(cursesWin);
 }
 
+// Dummy init - derived classes must reimplement
+void Window::Init()
+{
+}
+
+void Window::Resize(veci newtopleft, veci newsize)
+{
+    // TODO: Sanity checking of values
+    
+    topleft = newtopleft;
+    size = newsize;
+    
+    wmove(cursesWin, topleft.y, topleft.x);
+    wresize(cursesWin, size.y, size.x);
+}
+
 void Window::Clear()
 {
     // delete border also
@@ -56,10 +72,7 @@ void Window::Redraw()
     //wrefresh(cursesWin);
 }
 
-// Dummy init - derived classes must reimplement
-void Window::Init()
-{
-}
+
 
 // Dummy IO - derived classes must reimplement
 void Window::HandleKey(int keycode)
