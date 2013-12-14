@@ -40,7 +40,7 @@ public:
     // Draw a rectangular section of the dungeon
     // Done by creating a list of strings each containing one line
     // of symbols to be written to screen
-    string* drawRect(veci upperleft, veci window, bool fow, Visibility *vis);
+    wstring* drawRect(veci upperleft, veci window, bool fow, Visibility *vis);
     
     // Create passage between areas
     void MakePassage(DungeonArea *A, DungeonArea *B);

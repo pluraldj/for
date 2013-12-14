@@ -58,7 +58,7 @@ void WorldWindow::Redraw()
     veci drawSize = size - veci(2,2);
     
     // Draw into string array
-    string *lines = loc->drawRect(ul, drawSize, true, playerVis);
+    wstring *lines = loc->drawRect(ul, drawSize, true, playerVis);
     
     // Draw line by line into window
     // Take box into account

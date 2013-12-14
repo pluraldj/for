@@ -26,7 +26,7 @@ public:
     World(WorldSpec spec);
     ~World();
     
-    string* drawRect(veci upperleft, veci window, bool fow, Visibility *vis);
+    wstring* drawRect(veci upperleft, veci window, bool fow, Visibility *vis);
     
     // Resize world map when player nears an edge of it
     // TODO in a way so the transition is seamless

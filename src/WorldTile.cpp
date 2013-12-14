@@ -19,35 +19,35 @@ WorldTile::WorldTile() : Tile()
     elevation = 0.0;
 }
 
-string WorldTile::DrawSymbol()
+wstring WorldTile::DrawSymbol()
 {
     // Never been here before?
     if ( !known )
-        return "!";
+        return L"!";
     
     switch ( type )
     {
         // TODO: Colors!
-        case WorldTileType::Dirt: return ".";
-        case WorldTileType::Desert: return "-";
-        case WorldTileType::Grass: return "\"";
-        case WorldTileType::Forest: return "&";
+        case WorldTileType::Dirt: return L"å";
+        case WorldTileType::Desert: return L"-";
+        case WorldTileType::Grass: return L"\"";
+        case WorldTileType::Forest: return L"&";
         
         // Don't distinguish between water tiles
-        case WorldTileType::Ocean: return "=";
-        case WorldTileType::River: return "=";
-        case WorldTileType::Lake: return "=";
+        case WorldTileType::Ocean: return L"=";
+        case WorldTileType::River: return L"=";
+        case WorldTileType::Lake: return L"=";
             
-        case WorldTileType::Ruins: return "#";
+        case WorldTileType::Ruins: return L"#";
             
-        case WorldTileType::Hilly: return "~";
-        case WorldTileType::Mountains: return "^";
-        case WorldTileType::SnowyMountains: return "^";
+        case WorldTileType::Hilly: return L"~";
+        case WorldTileType::Mountains: return L"^";
+        case WorldTileType::SnowyMountains: return L"^";
             
-        case WorldTileType::Cave: return "C";
-        case WorldTileType::Traders: return "M";
-        case WorldTileType::Vault: return "V";
-        case WorldTileType::Camp: return "T";   // Treated like towns
-        case WorldTileType::Town: return "T";
+        case WorldTileType::Cave: return L"C";
+        case WorldTileType::Traders: return L"M";
+        case WorldTileType::Vault: return L"V";
+        case WorldTileType::Camp: return L"T";   // Treated like towns
+        case WorldTileType::Town: return L"T";
     }
 }

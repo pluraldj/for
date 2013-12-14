@@ -33,7 +33,7 @@ World::World(WorldSpec spec) : Location()
     Generate(spec);
 }
 
-string* World::drawRect(veci upperleft, veci window, bool fow, Visibility *vis)
+wstring* World::drawRect(veci upperleft, veci window, bool fow, Visibility *vis)
 {
     int posx = upperleft.x;
     int posy = upperleft.y;
@@ -41,13 +41,13 @@ string* World::drawRect(veci upperleft, veci window, bool fow, Visibility *vis)
     int height = window.y;
     
     // Allocate new string array
-    string *result = new string[height];
+    wstring *result = new wstring[height];
     
     // Loop over region
     for(int j=0; j<height; j++)
     {
         // This line
-        string line = "";
+        wstring line = L"";
         
         // Offset to find position in logical coords
         int y = posy+j;
@@ -60,14 +60,14 @@ string* World::drawRect(veci upperleft, veci window, bool fow, Visibility *vis)
             // Outside stored map? Then draw as dark
             if ( x < 0 || x >= size.x || y < 0 || y >= size.y )
             {
-                line.append( " " );
+                line.append( L" " );
                 continue;
             }
             
             // Completely unexplored?
             if ( fow && vis->tiles[x][y] == VisibilityType::Dark )
             {
-                line.append( " " );
+                line.append( L" " );
             }
             // Visible
             else
@@ -210,14 +210,14 @@ void World::Generate(WorldSpec spec)
 
 void World::Dump(string path)
 {
-    string *wholeMap = drawRect(veci(0,0), size, false, NULL);
+    wstring *wholeMap = drawRect(veci(0,0), size, false, NULL);
     
-    ofstream outfile;
+    wofstream outfile;
     outfile.open(path);
     
     for ( int i=0; i<size.y; i++ )
     {
-        outfile << wholeMap[i] << "\n";
+        outfile << wholeMap[i] << L"\n";
     }
     
     outfile.close();

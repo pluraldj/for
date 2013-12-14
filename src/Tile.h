@@ -23,7 +23,7 @@ class Tile
 public:
     Tile();
     
-    virtual string DrawSymbol() = 0;
+    virtual wstring DrawSymbol() = 0;
     
     bool clipMask;          // true = can move here
     

@@ -24,7 +24,7 @@ class DungeonTile : public Tile
 public:
     DungeonTile();
     
-    string DrawSymbol();
+    wstring DrawSymbol();
     
     DungeonTileType type;
     

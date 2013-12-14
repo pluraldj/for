@@ -24,7 +24,7 @@ class WorldTile : public Tile
 public:
     WorldTile();
     
-    string DrawSymbol();
+    wstring DrawSymbol();
     
     WorldTileType type;
     bool canEnter;  // Just random wilderness or a place we can go to (enter dungeon)

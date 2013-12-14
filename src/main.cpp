@@ -13,7 +13,6 @@
 #include <locale.h>
 #include <ncurses.h>
 #include <menu.h>
-
 #include <time.h>
 
 #include "Game.h"
@@ -27,6 +26,12 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    // This goes first just so we're really fucking sure it's done first
+    // Init locale for wide char printing
+    // BEFORE initscr()
+    //setlocale(LC_CTYPE, "en_US.UTF-8");
+    setlocale(LC_ALL, "");
+    
     // Seed RNG
     RNG *rnd = RNG::getInstance();
     rnd->seed((int)time(NULL));

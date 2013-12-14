@@ -56,7 +56,7 @@ Dungeon::~Dungeon()
 // Draw tiles as list of strings (horizontal lines of symbols)
 // Remember to dealloc returned array after use!
 // fow = obscure with fog of war (yes/no)
-string* Dungeon::drawRect(veci upperleft, veci window, bool fow, Visibility *vis)
+wstring* Dungeon::drawRect(veci upperleft, veci window, bool fow, Visibility *vis)
 {
     int posx = upperleft.x;
     int posy = upperleft.y;
@@ -64,13 +64,13 @@ string* Dungeon::drawRect(veci upperleft, veci window, bool fow, Visibility *vis
     int height = window.y;
     
     // Allocate new string array
-    string *result = new string[height];
+    wstring *result = new wstring[height];
     
     // Loop over region
     for(int j=0; j<height; j++)
     {
         // This line
-        string line = "";
+        wstring line = L"";
         
         // Offset to find position in logical coords
         int y = posy+j;
@@ -83,14 +83,14 @@ string* Dungeon::drawRect(veci upperleft, veci window, bool fow, Visibility *vis
             // Outside stored map? Then draw as dark
             if ( x < 0 || x >= size.x || y < 0 || y >= size.y )
             {
-                line.append( " " );
+                line.append( L" " );
                 continue;
             }
             
             // Completely unexplored?
             if ( fow && vis->tiles[x][y] == VisibilityType::Dark )
             {
-                line.append( " " );
+                line.append( L" " );
             }
             // Obscured by fog of war?
             else if ( fow && vis->tiles[x][y] == VisibilityType::Fow )
@@ -106,7 +106,7 @@ string* Dungeon::drawRect(veci upperleft, veci window, bool fow, Visibility *vis
                 // Obscure it
                 else
                 {
-                    line.append( "\"" );
+                    line.append( L"\"" );
                 }
             }
             // Completely visible
@@ -554,9 +554,9 @@ veci Dungeon::GetPlayerSpawnCoords()
 
 void Dungeon::Dump(string path)
 {
-    string *wholeMap = drawRect(veci(0,0), size, false, NULL);
+    wstring *wholeMap = drawRect(veci(0,0), size, false, NULL);
     
-    ofstream outfile;
+    wofstream outfile;
     outfile.open(path);
     
     for ( int i=0; i<size.y; i++ )

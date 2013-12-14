@@ -31,7 +31,7 @@ public:
     }
     
     // Children must override and implement own drawing
-    virtual string* drawRect(veci upperleft, veci window, bool fow, Visibility *vis) = 0;
+    virtual wstring* drawRect(veci upperleft, veci window, bool fow, Visibility *vis) = 0;
     
     // Implemented by children
     // Should return NULL if out of bounds

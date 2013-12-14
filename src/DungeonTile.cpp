@@ -14,17 +14,15 @@ DungeonTile::DungeonTile() : Tile()
     edgeMask = false;
 }
 
-string DungeonTile::DrawSymbol()
+wstring DungeonTile::DrawSymbol()
 {
     switch ( type )
     {
-        case DungeonTileType::Outside: return " ";
-        case DungeonTileType::Floor: return ".";
-        case DungeonTileType::Wall: return "#";
-        case DungeonTileType::Sand: return "~";
-        case DungeonTileType::Grass: return "\"";
-        case DungeonTileType::Water: return "=";
+        case DungeonTileType::Outside: return L" ";
+        case DungeonTileType::Floor: return L".";
+        case DungeonTileType::Wall: return L"#";
+        case DungeonTileType::Sand: return L"~";
+        case DungeonTileType::Grass: return L"\"";
+        case DungeonTileType::Water: return L"=";
     }
-    
-    return " ";
 }
