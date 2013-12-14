@@ -58,10 +58,10 @@ public:
     Entity();
     virtual ~Entity();
     
-    string DrawSymbol();    // Draw generic symbol for type
+    wstring DrawSymbol();    // Draw generic symbol for type
     
     // Overriding specific symbol, for example rats use "r" instead of generic animal "a"
-    string specificSymbol;
+    wstring specificSymbol;
     
     string name;
     EntityType type;

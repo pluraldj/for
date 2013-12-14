@@ -7,6 +7,7 @@
 //
 
 #include "DungeonTile.h"
+#include "TileSet.h"
 
 DungeonTile::DungeonTile() : Tile()
 {
@@ -16,13 +17,5 @@ DungeonTile::DungeonTile() : Tile()
 
 wstring DungeonTile::DrawSymbol()
 {
-    switch ( type )
-    {
-        case DungeonTileType::Outside: return L" ";
-        case DungeonTileType::Floor: return L".";
-        case DungeonTileType::Wall: return L"#";
-        case DungeonTileType::Sand: return L"~";
-        case DungeonTileType::Grass: return L"\"";
-        case DungeonTileType::Water: return L"=";
-    }
+    return TileSet::getInstance()->DungeonTileSymbol(type);
 }

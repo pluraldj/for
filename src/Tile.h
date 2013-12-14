@@ -16,6 +16,8 @@
 
 #include "Visibility.h"
 
+class TileSet;
+
 using namespace std;
 
 class Tile
@@ -23,7 +25,7 @@ class Tile
 public:
     Tile();
     
-    virtual wstring DrawSymbol() = 0;
+    virtual wstring DrawSymbol() = 0;   // Draw text symbol
     
     bool clipMask;          // true = can move here
     

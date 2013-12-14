@@ -69,7 +69,6 @@ void WorldWindow::Redraw()
         
         wstring ws = wstring(lines[i].begin(), lines[i].end());
         const wchar_t *wcstr = ws.c_str();
-        
         waddwstr(cursesWin, wcstr);
         
         // OLD, does not respect wide chars
@@ -92,7 +91,10 @@ void WorldWindow::Redraw()
             continue;
         
         wmove(cursesWin,drawPos.y+1, drawPos.x+1);
-        wprintw(cursesWin, (*it)->DrawSymbol().c_str());
+        
+        wstring ws = (*it)->DrawSymbol();
+        const wchar_t *wcstr = ws.c_str();
+        waddwstr(cursesWin, wcstr);
     }
 
     wrefresh(cursesWin);

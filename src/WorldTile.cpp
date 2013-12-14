@@ -7,6 +7,7 @@
 //
 
 #include "WorldTile.h"
+#include "TileSet.h"
 
 WorldTile::WorldTile() : Tile()
 {
@@ -25,29 +26,5 @@ wstring WorldTile::DrawSymbol()
     if ( !known )
         return L"!";
     
-    switch ( type )
-    {
-        // TODO: Colors!
-        case WorldTileType::Dirt: return L"å";
-        case WorldTileType::Desert: return L"-";
-        case WorldTileType::Grass: return L"\"";
-        case WorldTileType::Forest: return L"&";
-        
-        // Don't distinguish between water tiles
-        case WorldTileType::Ocean: return L"=";
-        case WorldTileType::River: return L"=";
-        case WorldTileType::Lake: return L"=";
-            
-        case WorldTileType::Ruins: return L"#";
-            
-        case WorldTileType::Hilly: return L"~";
-        case WorldTileType::Mountains: return L"^";
-        case WorldTileType::SnowyMountains: return L"^";
-            
-        case WorldTileType::Cave: return L"C";
-        case WorldTileType::Traders: return L"M";
-        case WorldTileType::Vault: return L"V";
-        case WorldTileType::Camp: return L"T";   // Treated like towns
-        case WorldTileType::Town: return L"T";
-    }
+    return TileSet::getInstance()->WorldTileSymbol(type);
 }

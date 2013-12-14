@@ -8,6 +8,8 @@
 
 #include "Entity.h"
 
+#include "TileSet.h"
+
 Entity::Entity()
 {
     name = "Entity";
@@ -19,11 +21,15 @@ Entity::~Entity()
 {
 }
 
-string Entity::DrawSymbol()
+wstring Entity::DrawSymbol()
 {
-    if ( specificSymbol != "" )
+    if ( specificSymbol != L"" )
         return specificSymbol;
     
+    return TileSet::getInstance()->EntitySymbol(type);
+    
+    // OLD
+    /*
     switch ( type )
     {
         case EntityType::None: return "e";
@@ -65,8 +71,8 @@ string Entity::DrawSymbol()
         case EntityType::Ammo: return ";";
         case EntityType::Edible: return "%";
         case EntityType::Readable: return "?";
-            
     }
     
     return "e";
+    */
 }

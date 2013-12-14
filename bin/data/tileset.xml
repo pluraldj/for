@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tileset name="default">
+    <overworld
+    dirt="."
+    desert="-"
+    grass=","
+    forest="φ"
+    ocean="≈"
+    river="≈"
+    lake="≈"
+    ruins="#"
+    hilly="~"
+    mountains="^"
+    snowymountains="^"
+    cave="C"
+    traders="M"
+    vault="V"
+    camp="T"
+    town="T"
+    />
+    
+    <dungeon
+    outside=" "
+    floor="."
+    wall="#"
+    sand="~"
+    grass=","
+    water="≈"
+    />
+    
+    <things
+    player="@"
+    npc="@"
+    rat="r"
+    mutant="M"
+    ghoul="g"
+    />
+    
+</tileset>

@@ -8,6 +8,8 @@
 
 #include "Tile.h"
 
+#include "TileSet.h"
+
 Tile::Tile()
 {
     clipMask = false;

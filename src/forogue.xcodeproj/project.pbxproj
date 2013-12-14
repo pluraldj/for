@@ -84,6 +84,8 @@
 		23419DF818489A76000B9EFD /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DF618489A76000B9EFD /* Utils.cpp */; };
 		23419DFB1848A219000B9EFD /* DungeonArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DF91848A219000B9EFD /* DungeonArea.cpp */; };
 		2352898C185BF28500BC1C3F /* DungeonTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2352898A185BF28500BC1C3F /* DungeonTile.cpp */; };
+		23528990185C2A8300BC1C3F /* TileSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2352898E185C2A8300BC1C3F /* TileSet.cpp */; };
+		23528993185C2A9400BC1C3F /* TileSetParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23528991185C2A9400BC1C3F /* TileSetParser.cpp */; };
 		23B0EE0C184BD9B8001C17A2 /* StatsWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */; };
 		23B0EE0F184BD9C1001C17A2 /* InventoryWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */; };
 		23B0EE12184BDAD9001C17A2 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE10184BDAD9001C17A2 /* Location.cpp */; };
@@ -280,6 +282,11 @@
 		23528989185A05DB00BC1C3F /* worldparams.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = worldparams.xml; sourceTree = "<group>"; };
 		2352898A185BF28500BC1C3F /* DungeonTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DungeonTile.cpp; sourceTree = "<group>"; };
 		2352898B185BF28500BC1C3F /* DungeonTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonTile.h; sourceTree = "<group>"; };
+		2352898D185C26D400BC1C3F /* tileset.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tileset.xml; path = ../bin/data/tileset.xml; sourceTree = "<group>"; };
+		2352898E185C2A8300BC1C3F /* TileSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileSet.cpp; sourceTree = "<group>"; };
+		2352898F185C2A8300BC1C3F /* TileSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileSet.h; sourceTree = "<group>"; };
+		23528991185C2A9400BC1C3F /* TileSetParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileSetParser.cpp; sourceTree = "<group>"; };
+		23528992185C2A9400BC1C3F /* TileSetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileSetParser.h; sourceTree = "<group>"; };
 		23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatsWindow.cpp; sourceTree = "<group>"; };
 		23B0EE0B184BD9B8001C17A2 /* StatsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsWindow.h; sourceTree = "<group>"; };
 		23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InventoryWindow.cpp; sourceTree = "<group>"; };
@@ -325,6 +332,7 @@
 				230B7EDD18580AC6009722D9 /* weapons.xml */,
 				23528988185A05CD00BC1C3F /* dungeons.xml */,
 				23528989185A05DB00BC1C3F /* worldparams.xml */,
+				2352898D185C26D400BC1C3F /* tileset.xml */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -442,6 +450,7 @@
 				23DD7CF8184A58E200E3B265 /* RightMenuWindow.cpp */,
 				23322BEF184915D6004CC64F /* SpecialWindow.cpp */,
 				23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */,
+				2352898E185C2A8300BC1C3F /* TileSet.cpp */,
 				23DD7CF5184A58D100E3B265 /* TopBarWindow.cpp */,
 				23322BEB18491544004CC64F /* Window.cpp */,
 				23DD7CFE184A5A4800E3B265 /* WorldWindow.cpp */,
@@ -452,6 +461,7 @@
 				23DD7CF9184A58E200E3B265 /* RightMenuWindow.h */,
 				23322BF0184915D6004CC64F /* SpecialWindow.h */,
 				23B0EE0B184BD9B8001C17A2 /* StatsWindow.h */,
+				2352898F185C2A8300BC1C3F /* TileSet.h */,
 				23DD7CF6184A58D100E3B265 /* TopBarWindow.h */,
 				23322BEC18491544004CC64F /* Window.h */,
 				23DD7CFF184A5A4800E3B265 /* WorldWindow.h */,
@@ -462,18 +472,18 @@
 		23419DA818486661000B9EFD = {
 			isa = PBXGroup;
 			children = (
-				230B7F5E18584EFC009722D9 /* noiseutils */,
-				230B7F5D18584E5A009722D9 /* xerces */,
-				230B7EEA18584A5C009722D9 /* libnoise */,
 				230B7ED318580AB8009722D9 /* Data */,
 				23B0EE03184BD5B0001C17A2 /* Files */,
 				23B0EDFF184B8F81001C17A2 /* Gameplay */,
+				230B7EEA18584A5C009722D9 /* libnoise */,
+				230B7F5E18584EFC009722D9 /* noiseutils */,
 				23419DB218486661000B9EFD /* Products */,
 				23419DD418486C28000B9EFD /* RPG */,
 				23419DD318486C07000B9EFD /* Stuff */,
 				23322BEE18491557004CC64F /* UI */,
 				23B0EDFE184B8F74001C17A2 /* Utils */,
 				23419DDB18486CF6000B9EFD /* World */,
+				230B7F5D18584E5A009722D9 /* xerces */,
 			);
 			sourceTree = "<group>";
 		};
@@ -582,6 +592,7 @@
 				230BC3CC1855DEC200CC65F2 /* ItemParser.cpp */,
 				230BC3EA1856845E00CC65F2 /* PerkParser.cpp */,
 				230BC3E71856845400CC65F2 /* RaceParser.cpp */,
+				23528991185C2A9400BC1C3F /* TileSetParser.cpp */,
 				230BC3ED1856846A00CC65F2 /* TraitParser.cpp */,
 				230BC3021855B4EF00CC65F2 /* WeaponParser.cpp */,
 				230BC2FF1855B36300CC65F2 /* XmlParser.cpp */,
@@ -593,6 +604,7 @@
 				230BC3CD1855DEC200CC65F2 /* ItemParser.h */,
 				230BC3EB1856845E00CC65F2 /* PerkParser.h */,
 				230BC3E81856845400CC65F2 /* RaceParser.h */,
+				23528992185C2A9400BC1C3F /* TileSetParser.h */,
 				230BC3EE1856846A00CC65F2 /* TraitParser.h */,
 				230BC3031855B4EF00CC65F2 /* WeaponParser.h */,
 				230BC3001855B36300CC65F2 /* XmlParser.h */,
@@ -669,6 +681,7 @@
 				230B7EE91858352B009722D9 /* WorldTile.cpp in Sources */,
 				230B7F6118584F25009722D9 /* noiseutils.cpp in Sources */,
 				230BC3E61856844800CC65F2 /* FactionParser.cpp in Sources */,
+				23528990185C2A8300BC1C3F /* TileSet.cpp in Sources */,
 				230B7F0318584B9E009722D9 /* plane.cpp in Sources */,
 				23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */,
 				23DD7CF4184A57E100E3B265 /* Gui.cpp in Sources */,
@@ -733,6 +746,7 @@
 				23419DFB1848A219000B9EFD /* DungeonArea.cpp in Sources */,
 				230BC3011855B36300CC65F2 /* XmlParser.cpp in Sources */,
 				230BC3CE1855DEC200CC65F2 /* ItemParser.cpp in Sources */,
+				23528993185C2A9400BC1C3F /* TileSetParser.cpp in Sources */,
 				230B7F4818584C0D009722D9 /* curve.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

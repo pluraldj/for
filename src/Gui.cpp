@@ -8,6 +8,8 @@
 
 #include "Gui.h"
 
+#include "TileSet.h"
+
 Gui::Gui()
 {
     // Children aren't allocated until call to Init()
@@ -84,7 +86,9 @@ Gui::~Gui()
 
 void Gui::Init()
 {
-
+    // Load tileset
+    TileSet *tileset = TileSet::getInstance();
+    tileset->LoadFromFile("data/tileset.xml");
     
     // init ncurses
     initscr();
