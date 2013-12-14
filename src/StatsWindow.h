@@ -9,6 +9,8 @@
 #ifndef __forogue__StatsWindow__
 #define __forogue__StatsWindow__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include "Window.h"

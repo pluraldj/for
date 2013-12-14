@@ -9,9 +9,10 @@
 #ifndef __forogue__Window__
 #define __forogue__Window__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
-#define _XOPEN_SOURCE_EXTENDED
 #include <locale.h>
 #include <ncurses.h>
 #include <menu.h>

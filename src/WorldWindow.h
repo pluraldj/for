@@ -9,6 +9,8 @@
 #ifndef __forogue__WorldWindow__
 #define __forogue__WorldWindow__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include "Window.h"

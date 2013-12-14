@@ -9,11 +9,11 @@
 #ifndef __forogue__Gui__
 #define __forogue__Gui__
 
+#define _XOPEN_SOURCE_EXTENDED
 
 #include <iostream>
 #include <map>
 
-#define _XOPEN_SOURCE_EXTENDED
 #include <locale.h>
 #include <ncurses.h>
 #include <menu.h>

@@ -9,6 +9,8 @@
 #ifndef __forogue__BottomWindow__
 #define __forogue__BottomWindow__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <vector>
 #include <string>

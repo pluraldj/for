@@ -9,6 +9,8 @@
 #ifndef __forogue__RightMenuWindow__
 #define __forogue__RightMenuWindow__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <algorithm>
 

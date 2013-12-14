@@ -9,6 +9,8 @@
 #ifndef __forogue__SpecialWindow__
 #define __forogue__SpecialWindow__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include <menu.h>

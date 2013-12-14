@@ -9,6 +9,8 @@
 #ifndef __forogue__InventoryWindow__
 #define __forogue__InventoryWindow__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #endif /* defined(__forogue__InventoryWindow__) */
