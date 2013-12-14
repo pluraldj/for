@@ -70,6 +70,7 @@ Visibility::~Visibility()
     
 }
 
+// Clear to completely dark
 void Visibility::ClearVis()
 {
     for ( int i=0; i<size.x; i++)
@@ -82,7 +83,7 @@ void Visibility::UpdateVis()
 {
     if ( world == NULL && dungeon != NULL )
         UpdateVisInDungeon();
-    else if ( world != NULL & dungeon == NULL )
+    else if ( world != NULL && dungeon == NULL )
         UpdateVisInWorld();
     else
         return;
@@ -144,8 +145,35 @@ void Visibility::UpdateVisInDungeon()
         }
 }
 
+// In the overworld there is no obstruction to LOS
+// Therefore we only use Dark and Light tiles, no FOW restriction
+// TODO: Maybe change this, as Fallout actually has light/dark but explored tiles
 void Visibility::UpdateVisInWorld()
 {
+    // TODO: sight radius depends on PE
+    
+    // Simply reveal a circle around current position
+    double sightRadius = 3.0;
+    veci origin = owner->location;
+    int startx = origin.x;
+    int starty = origin.y;
+    
+    // Tentatively include a square that's big enough to fit the radius
+    for ( int x=startx-(int)ceil(sightRadius); x<=startx+(int)ceil(sightRadius); x++)
+    {
+        for ( int y=starty-(int)ceil(sightRadius); y<=starty+(int)ceil(sightRadius); y++)
+        {
+            // Don't go out of bounds
+            if ( x < 0 || x >= size.x || y < 0 || y >= size.y )
+                continue;
+            
+            // Compare radii, overwrite as light if within sight
+            if ( (veci(x,y)-origin).length() <= sightRadius )
+                tiles[x][y] = VisibilityType::Light;
+            
+            // Keep everything else as it was
+        }
+    }
     
 }
 

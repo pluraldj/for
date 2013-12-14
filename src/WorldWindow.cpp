@@ -10,16 +10,16 @@
 
 WorldWindow::WorldWindow(veci _topleft, veci _size) : Window(_topleft,_size,true)
 {
-    dungeon = NULL;
+    loc = NULL;
     entities = NULL;
     playerVis = NULL;
     
     cam = veci(0,0);
 }
 
-void WorldWindow::SetDungeon(Dungeon *_d)
+void WorldWindow::SetLocation(Location *_l)
 {
-    dungeon = _d;
+    loc = _l;
 }
 
 void WorldWindow::SetEntities(vector<Entity*> *ents)
@@ -46,7 +46,7 @@ void WorldWindow::Redraw()
 {
     Window::Redraw();
     
-    if ( !dungeon )
+    if ( !loc )
         return;
     
     // upper left corner from cam coords
@@ -58,7 +58,7 @@ void WorldWindow::Redraw()
     veci drawSize = size - veci(2,2);
     
     // Draw into string array
-    string *lines = dungeon->drawRect(ul, drawSize, true, playerVis);
+    string *lines = loc->drawRect(ul, drawSize, true, playerVis);
     
     // Draw line by line into window
     // Take box into account

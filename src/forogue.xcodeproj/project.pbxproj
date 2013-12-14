@@ -83,6 +83,7 @@
 		23419DF518489901000B9EFD /* DungeonSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DF318489901000B9EFD /* DungeonSpec.cpp */; };
 		23419DF818489A76000B9EFD /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DF618489A76000B9EFD /* Utils.cpp */; };
 		23419DFB1848A219000B9EFD /* DungeonArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DF91848A219000B9EFD /* DungeonArea.cpp */; };
+		2352898C185BF28500BC1C3F /* DungeonTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2352898A185BF28500BC1C3F /* DungeonTile.cpp */; };
 		23B0EE0C184BD9B8001C17A2 /* StatsWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */; };
 		23B0EE0F184BD9C1001C17A2 /* InventoryWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */; };
 		23B0EE12184BDAD9001C17A2 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE10184BDAD9001C17A2 /* Location.cpp */; };
@@ -277,6 +278,8 @@
 		23419DFA1848A219000B9EFD /* DungeonArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonArea.h; sourceTree = "<group>"; };
 		23528988185A05CD00BC1C3F /* dungeons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = dungeons.xml; sourceTree = "<group>"; };
 		23528989185A05DB00BC1C3F /* worldparams.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = worldparams.xml; sourceTree = "<group>"; };
+		2352898A185BF28500BC1C3F /* DungeonTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DungeonTile.cpp; sourceTree = "<group>"; };
+		2352898B185BF28500BC1C3F /* DungeonTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonTile.h; sourceTree = "<group>"; };
 		23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatsWindow.cpp; sourceTree = "<group>"; };
 		23B0EE0B184BD9B8001C17A2 /* StatsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsWindow.h; sourceTree = "<group>"; };
 		23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InventoryWindow.cpp; sourceTree = "<group>"; };
@@ -524,6 +527,7 @@
 				23419DD818486CEB000B9EFD /* Dungeon.cpp */,
 				23419DF91848A219000B9EFD /* DungeonArea.cpp */,
 				23419DF318489901000B9EFD /* DungeonSpec.cpp */,
+				2352898A185BF28500BC1C3F /* DungeonTile.cpp */,
 				23B0EE10184BDAD9001C17A2 /* Location.cpp */,
 				23419DF018488E1F000B9EFD /* Tile.cpp */,
 				230BC2F2185556D500CC65F2 /* Visibility.cpp */,
@@ -533,6 +537,7 @@
 				23419DD918486CEB000B9EFD /* Dungeon.h */,
 				23419DFA1848A219000B9EFD /* DungeonArea.h */,
 				23419DF418489901000B9EFD /* DungeonSpec.h */,
+				2352898B185BF28500BC1C3F /* DungeonTile.h */,
 				23B0EE11184BDAD9001C17A2 /* Location.h */,
 				23419DF118488E1F000B9EFD /* Tile.h */,
 				230BC2F3185556D500CC65F2 /* Visibility.h */,
@@ -667,6 +672,7 @@
 				230B7F0318584B9E009722D9 /* plane.cpp in Sources */,
 				23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */,
 				23DD7CF4184A57E100E3B265 /* Gui.cpp in Sources */,
+				2352898C185BF28500BC1C3F /* DungeonTile.cpp in Sources */,
 				230B7F4318584C0D009722D9 /* blend.cpp in Sources */,
 				230B7F5918584C0D009722D9 /* terrace.cpp in Sources */,
 				230BC3EF1856846A00CC65F2 /* TraitParser.cpp in Sources */,

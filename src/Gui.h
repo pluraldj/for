@@ -38,7 +38,7 @@ public:
     
     void Init();
     
-    void SetDungeon(Dungeon *_d);
+    void SetLocation(Location *_l);
     void SetEntities(vector<Entity*> *_e);
     void SetVisInfo(Visibility *_vis);
     

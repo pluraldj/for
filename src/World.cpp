@@ -33,7 +33,7 @@ World::World(WorldSpec spec)
     Generate(spec);
 }
 
-string* World::drawRect(veci upperleft, veci window, bool fow)
+string* World::drawRect(veci upperleft, veci window, bool fow, Visibility *vis)
 {
     int posx = upperleft.x;
     int posy = upperleft.y;
@@ -65,7 +65,7 @@ string* World::drawRect(veci upperleft, veci window, bool fow)
             }
             
             // Completely unexplored?
-            if ( fow && tiles[x][y].visible == false )
+            if ( fow && vis->tiles[x][y] == VisibilityType::Dark )
             {
                 line.append( " " );
             }
@@ -207,7 +207,7 @@ void World::Generate(WorldSpec spec)
 
 void World::Dump(string path)
 {
-    string *wholeMap = drawRect(veci(0,0), size, false);
+    string *wholeMap = drawRect(veci(0,0), size, false, NULL);
     
     ofstream outfile;
     outfile.open(path);

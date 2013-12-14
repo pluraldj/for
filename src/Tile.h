@@ -16,21 +16,16 @@
 
 using namespace std;
 
-enum class TileType { Floor, Wall, Outside, Sand, Grass, Water };
-
-
 class Tile
 {
 public:
     Tile();
     
-    string DrawSymbol();
+    virtual string DrawSymbol() = 0;
     
-    TileType type;
     bool clipMask;          // true = can move here
-    bool edgeMask;          // Is edge tile?
     
-    int visgroup;   // Used for clustering during vis testing
+    protected:
 };
 
 #endif /* defined(__forogue__Tile__) */

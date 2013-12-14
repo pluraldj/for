@@ -70,11 +70,13 @@ void Game::Init()
     
     // Start in overworld
     isInDungeon = false;
-    dungeon = NULL;
+    dungeon = NULL; // Temp override
     player->location = veci(10,10);
     
     // Vis for travelling
-    
+    player->visInfo = new Visibility(world,player);
+    player->visInfo->ClearVis();
+    player->visInfo->UpdateVis();
     
     // END TMP
     
@@ -86,9 +88,9 @@ void Game::Init()
     gui = new Gui();
     gui->Init();
     
-    gui->SetDungeon(dungeon);
+    gui->SetLocation(world);
     gui->SetEntities(activeEnts);
-    gui->SetCharData(player, dungeon);
+    gui->SetCharData(player, world);
     gui->SetVisInfo(player->visInfo);
     
     gui->PostMessage("Welcome to FOR.");
@@ -121,7 +123,7 @@ bool Game::MainLoop()
         case UiAction::MoveUp:
             moved = AttemptCharMove(veci(0,-1));
             break;
-    
+            
         case UiAction::MoveDown:
             moved = AttemptCharMove(veci(0,1));
             break;
@@ -134,7 +136,6 @@ bool Game::MainLoop()
         player->visInfo->UpdateVis();
     
     // Logic - update state
-    
     
     // Redraw screen
     
@@ -162,10 +163,15 @@ bool Game::AttemptCharMove(veci rel)
     // New pos
     veci newpos = player->location + rel;
     
-    // Can we move here?
-    Tile *target = &dungeon->tiles[newpos.x][newpos.y];
+    Tile *target = NULL;
     
-    // Ignore attempts to go through walls
+    // World or dungeon?
+    if ( isInDungeon )
+        target = &dungeon->tiles[newpos.x][newpos.y];
+    else
+        target = &world->tiles[newpos.x][newpos.y];
+    
+    // Ignore attempts to go through walls/impenetrable objects
     if ( !target->clipMask )
         return false;
     

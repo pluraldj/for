@@ -24,7 +24,7 @@ public:
     World(WorldSpec spec);
     ~World();
     
-    string* drawRect(veci upperleft, veci window, bool fow);
+    string* drawRect(veci upperleft, veci window, bool fow, Visibility *vis);
     
     // Resize world map when player nears an edge of it
     // TODO in a way so the transition is seamless
@@ -34,11 +34,6 @@ public:
     // Tiles
     veci size;
     WorldTile **tiles;
-    
-    // Much simpler vis determination since there is only one character to see it
-    // No shadow either, everything is explored/unexplored
-    bool **visibility;
-    
     
     // Debug printing of map
     void Dump(string path);

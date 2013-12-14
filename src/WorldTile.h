@@ -11,11 +11,13 @@
 
 #include <iostream>
 
+#include "Tile.h"
+
 using namespace std;
 
 enum class WorldTileType { Dirt, Desert, Grass, Forest, Ocean, River, Lake, Ruins, Hilly, Mountains, SnowyMountains, Cave, Camp, Traders, Vault, Town };
 
-class WorldTile
+class WorldTile : public Tile
 {
 public:
     WorldTile();
@@ -23,7 +25,6 @@ public:
     string DrawSymbol();
     
     WorldTileType type;
-    bool visible;
     bool canEnter;  // Just random wilderness or a place we can go to (enter dungeon)
     
     // Do we know what this place is?

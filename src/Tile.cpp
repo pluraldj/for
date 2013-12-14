@@ -10,22 +10,5 @@
 
 Tile::Tile()
 {
-    type = TileType::Outside;
     clipMask = false;
-    edgeMask = false;
-}
-
-string Tile::DrawSymbol()
-{
-    switch ( type )
-    {
-        case TileType::Outside: return " ";
-        case TileType::Floor: return ".";
-        case TileType::Wall: return "#";
-        case TileType::Sand: return "~";
-        case TileType::Grass: return "\"";
-        case TileType::Water: return "=";
-    }
-    
-    return " ";
 }

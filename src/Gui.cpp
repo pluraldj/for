@@ -145,10 +145,10 @@ void Gui::DivideWindows()
     rightMenu->Resize( veci(scrx-w,2), veci(w,h) );
 }
 
-void Gui::SetDungeon(Dungeon *_d)
+void Gui::SetLocation(Location *_l)
 {
     if ( worldWindow )
-        worldWindow->SetDungeon(_d);
+        worldWindow->SetLocation(_l);
 }
 
 void Gui::SetEntities(vector<Entity *> *_e)

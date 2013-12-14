@@ -8,10 +8,12 @@
 
 #include "WorldTile.h"
 
-WorldTile::WorldTile()
+WorldTile::WorldTile() : Tile()
 {
+    // World tiles are passable unless otherwise set
+    clipMask = true;
+    
     type = WorldTileType::Dirt;
-    visible = false;
     canEnter = false;
     known = true;
     elevation = 0.0;

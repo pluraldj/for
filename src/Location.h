@@ -12,11 +12,17 @@
 #include <iostream>
 #include <string>
 
+#include "Utils.h"
+#include "Visibility.h"
+
 using namespace std;
 
 class Location
 {
 public:
+    // Children must override and implement own drawing
+    virtual string* drawRect(veci upperleft, veci window, bool fow, Visibility *vis) = 0;
+    
     string name;
 };
 

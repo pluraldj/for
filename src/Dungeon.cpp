@@ -20,16 +20,16 @@ Dungeon::Dungeon(DungeonSpec spec)
     size.y = rnd->random_int(spec.minsize,spec.maxsize);
     
     // Allocate space for tiles
-    tiles = new Tile*[size.x];
+    tiles = new DungeonTile*[size.x];
     for(int i=0; i<size.x; i++)
-        tiles[i] = new Tile[size.y];
+        tiles[i] = new DungeonTile[size.y];
     
     // init tiles
     for(int i=0; i<size.x; i++)
         for(int j=0; j<size.y; j++)
         {
             // empty tiles
-            tiles[i][j].type = TileType::Outside;
+            tiles[i][j].type = DungeonTileType::Outside;
             
             // Not accessible
             tiles[i][j].clipMask = false;
@@ -95,11 +95,11 @@ string* Dungeon::drawRect(veci upperleft, veci window, bool fow, Visibility *vis
             // Obscured by fog of war?
             else if ( fow && vis->tiles[x][y] == VisibilityType::Fow )
             {
-                Tile *currTile = &tiles[x][y];
+                DungeonTile *currTile = &tiles[x][y];
                 
                 // Only keep persistent structures
                 // Keep walls, don't keep ground/other stuff
-                if ( currTile->type == TileType::Wall )
+                if ( currTile->type == DungeonTileType::Wall )
                 {
                     line.append( currTile->DrawSymbol() );
                 }
@@ -207,7 +207,7 @@ void Dungeon::Generate(DungeonSpec spec)
         for ( int x=ox; x<ox+sx; x++)
             for ( int y=oy; y<oy+sy; y++ )
             {
-                tiles[x][y].type = TileType::Floor;
+                tiles[x][y].type = DungeonTileType::Floor;
                 tiles[x][y].clipMask = true;
             }
     }
@@ -249,8 +249,8 @@ void Dungeon::Generate(DungeonSpec spec)
         veci aCoords;
         veci bCoords;
         
-        Tile *a;
-        Tile *b;
+        DungeonTile *a;
+        DungeonTile *b;
         
         // Random offsets to get random other starting tiles on other iterations
         int offsetx = rnd->random_int(0, size.x-1);
@@ -317,7 +317,7 @@ void Dungeon::Generate(DungeonSpec spec)
                 
                 // fuck first one up if wall
                 tiles[tempi][tempj].clipMask = true;
-                tiles[tempi][tempj].type = TileType::Floor;
+                tiles[tempi][tempj].type = DungeonTileType::Floor;
                 
                 for ( int s=0; s<steps; s++ )
                 {
@@ -344,7 +344,7 @@ void Dungeon::Generate(DungeonSpec spec)
                     
                     // Fuck it up
                     tiles[tempi][tempj].clipMask = true;
-                    tiles[tempi][tempj].type = TileType::Floor;
+                    tiles[tempi][tempj].type = DungeonTileType::Floor;
                 }
             }
         }
@@ -358,10 +358,10 @@ void Dungeon::Generate(DungeonSpec spec)
     for ( int i=0; i<size.x; i++ )
         for ( int j=0; j<size.y; j++ )
         {
-            Tile *t = &tiles[i][j];
+            DungeonTile *t = &tiles[i][j];
             
-            if ( t->edgeMask == true && t->type == TileType::Outside )
-                t->type = TileType::Wall;
+            if ( t->edgeMask == true && t->type == DungeonTileType::Outside )
+                t->type = DungeonTileType::Wall;
         }
     
     // Fill out details
@@ -404,7 +404,7 @@ void Dungeon::MakePassage(vecd A, vecd B)
             {
                 // Add as accessible
                 tiles[ti][tj].clipMask = true;
-                tiles[ti][tj].type = TileType::Floor;
+                tiles[ti][tj].type = DungeonTileType::Floor;
             }
         }
 }
@@ -422,10 +422,10 @@ void Dungeon::SetEdgeFlags()
     for ( int i=2; i<size.x-2; i++ )
         for ( int j=2; j<size.y-2; j++ )
         {
-            Tile *center = &tiles[i][j];
+            DungeonTile *center = &tiles[i][j];
             
             // Other tiles to test
-            Tile* surrounding[8];
+            DungeonTile* surrounding[8];
             surrounding[0] = &tiles[i+1][j];
             surrounding[1] = &tiles[i+1][j+1];
             surrounding[2] = &tiles[i+1][j-1];
@@ -530,7 +530,7 @@ bool Dungeon::recursiveVisFill(int x, int y, int group)
             if ( x<0 || x>=size.x || y<0 || y>=size.y )
                 continue;
             
-            Tile *curr = &tiles[newx][newy];
+            DungeonTile *curr = &tiles[newx][newy];
             
             if ( curr->clipMask == true && curr->visgroup == -1 )
             {

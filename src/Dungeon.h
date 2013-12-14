@@ -23,6 +23,7 @@
 #include "item.h"
 #include "Character.h"
 #include "Visibility.h"
+#include "DungeonTile.h"
 
 using namespace std;
 
@@ -65,7 +66,7 @@ public:
     
     // Tiles
     veci size;
-    Tile **tiles;
+    DungeonTile **tiles;
     
     // Areas
     vector<DungeonArea> areas;

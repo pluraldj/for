@@ -13,14 +13,14 @@
 
 #include "Window.h"
 #include "Dungeon.h"
-
+#include "World.h"
 
 class WorldWindow : public Window
 {
 public:
     WorldWindow(veci _topleft, veci _size);
     
-    void SetDungeon(Dungeon *_d);
+    void SetLocation(Location *_l);
     void SetEntities(vector<Entity*> *ents);
     void SetVisInfo(Visibility *_vis);
     
@@ -31,7 +31,10 @@ public:
     
 private:
     Visibility *playerVis;            // Visibility info for player char
-    Dungeon *dungeon;           // Map to draw
+    
+    // Map to draw
+    Location *loc;
+    
     vector<Entity*> *entities;  // List of active entities in map
     veci cam;                   // Camera focus coords
 };
