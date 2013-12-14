@@ -22,7 +22,7 @@ void Game::Init()
     activeEnts = new vector<Entity*>;
     
     gui = NULL;
-    dungeon = NULL;
+    location = NULL;
     world = NULL;
     player = NULL;
     
@@ -46,7 +46,7 @@ void Game::Init()
     
     // Standard dungeon
     DungeonSpec spec;
-    dungeon = new Dungeon(spec);
+    Dungeon *dungeon = new Dungeon(spec);
     
     dungeon->Dump("leveldump.txt");
     dungeon->DumpVisGroups("visdump.txt");
@@ -70,8 +70,8 @@ void Game::Init()
     
     // Start in overworld
     isInDungeon = false;
-    dungeon = NULL; // Temp override
     player->location = veci(10,10);
+    location = world;
     
     // Vis for travelling
     player->visInfo = new Visibility(world,player);
@@ -158,6 +158,7 @@ void Game::CharacterCreation()
     
 }
 
+// Returns true if we moved, false if we were blocked
 bool Game::AttemptCharMove(veci rel)
 {
     // New pos
@@ -165,11 +166,12 @@ bool Game::AttemptCharMove(veci rel)
     
     Tile *target = NULL;
     
-    // World or dungeon?
-    if ( isInDungeon )
-        target = &dungeon->tiles[newpos.x][newpos.y];
-    else
-        target = &world->tiles[newpos.x][newpos.y];
+    // World or dungeon
+    target = location->GetTile(newpos.x, newpos.y);
+    
+    // NULL if out of bounds, can't move
+    if ( !target )
+        return false;
     
     // Ignore attempts to go through walls/impenetrable objects
     if ( !target->clipMask )

@@ -29,7 +29,7 @@ string WorldTile::DrawSymbol()
     {
         // TODO: Colors!
         case WorldTileType::Dirt: return ".";
-        case WorldTileType::Desert: return "~";
+        case WorldTileType::Desert: return "-";
         case WorldTileType::Grass: return "\"";
         case WorldTileType::Forest: return "&";
         
@@ -40,7 +40,7 @@ string WorldTile::DrawSymbol()
             
         case WorldTileType::Ruins: return "#";
             
-        case WorldTileType::Hilly: return "^";
+        case WorldTileType::Hilly: return "~";
         case WorldTileType::Mountains: return "^";
         case WorldTileType::SnowyMountains: return "^";
             

@@ -31,12 +31,12 @@ public:
     // TODO smart reallocing of tile array
     void Resize(veci dir);
     
-    // Tiles
-    veci size;
     WorldTile **tiles;
     
     // Debug printing of map
     void Dump(string path);
+    
+    Tile *GetTile(int x, int y);
 private:
     void Generate(WorldSpec spec);
 };

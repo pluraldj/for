@@ -12,7 +12,7 @@
 #include "noiseutils.h"
 using namespace noise;
 
-World::World(WorldSpec spec)
+World::World(WorldSpec spec) : Location()
 {
     name = "Wasteland";
     
@@ -203,6 +203,9 @@ void World::Generate(WorldSpec spec)
             else
                 currTile->type = WorldTileType::Mountains;
         }
+    
+    // Populate with sites
+    
 }
 
 void World::Dump(string path)
@@ -218,4 +221,12 @@ void World::Dump(string path)
     }
     
     outfile.close();
+}
+
+Tile *World::GetTile(int x, int y)
+{
+    if ( x<0 || y<0 || x>=size.x || y>=size.y )
+        return NULL;
+    else
+        return &tiles[x][y];
 }

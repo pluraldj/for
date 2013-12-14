@@ -64,8 +64,9 @@ public:
     void DumpVisGroups(string path);
     void DumpEdgeMask(string path);
     
+    Tile *GetTile(int x, int y);
+    
     // Tiles
-    veci size;
     DungeonTile **tiles;
     
     // Areas

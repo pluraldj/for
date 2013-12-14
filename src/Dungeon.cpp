@@ -9,7 +9,7 @@
 #include "Dungeon.h"
 #include "Utils.h"
 
-Dungeon::Dungeon(DungeonSpec spec)
+Dungeon::Dungeon(DungeonSpec spec) : Location()
 {
     name = "Unknown Cave";
     
@@ -611,7 +611,13 @@ void Dungeon::DumpEdgeMask(string path)
     outfile.close();
 }
 
-
+Tile *Dungeon::GetTile(int x, int y)
+{
+    if ( x<0 || y<0 || x>=size.x || y>=size.y )
+        return NULL;
+    else
+        return &tiles[x][y];
+}
 
 
 

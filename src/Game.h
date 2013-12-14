@@ -51,9 +51,9 @@ private:
     Gui *gui;
     
     bool isInDungeon;       // in dungeon or travelling
-    Dungeon *dungeon;       // current dungeon
+    Location *location;       // current location
     
-    World *world;           // Wasrteland overworld
+    World *world;           // Wasteland overworld
     Character *player;
     
     // Every entity in current environment excluding player and "dumb" items on the ground (stuff that can only be picked up)
