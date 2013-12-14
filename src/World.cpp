@@ -195,7 +195,10 @@ void World::Generate(WorldSpec spec)
             currTile->height = h;
             
             if ( h < spec.lakeCut )
+            {
                 currTile->type = WorldTileType::Lake;
+                currTile->clipMask = false;
+            }
             else if ( h < spec.flatCut )
                 currTile->type = WorldTileType::Dirt;
             else if ( h < spec.hillyCut )
