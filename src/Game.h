@@ -49,7 +49,10 @@ private:
     Game(){}
     
     Gui *gui;
+    
+    bool isInDungeon;       // in dungeon or travelling
     Dungeon *dungeon;       // current dungeon
+    
     World *world;           // Wasrteland overworld
     Character *player;
     

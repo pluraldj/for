@@ -159,7 +159,7 @@ void World::Generate(WorldSpec spec)
     utils::NoiseMapBuilderPlane heightMapBuilder;
     heightMapBuilder.SetSourceModule (myModule);
     heightMapBuilder.SetDestNoiseMap (heightMap);
-    heightMapBuilder.SetDestSize (512, 512);
+    heightMapBuilder.SetDestSize (size.x, size.y);
     heightMapBuilder.SetBounds (6.0, 10.0, 1.0, 5.0);
     heightMapBuilder.Build ();
     
@@ -169,12 +169,10 @@ void World::Generate(WorldSpec spec)
     renderer.SetDestImage (image);
     renderer.ClearGradient ();
     renderer.AddGradientPoint (-1.0000, utils::Color (  0,   0, 128, 255)); // deeps
-    renderer.AddGradientPoint (-0.900, utils::Color (  0,   0, 255, 255)); // shallow
-    renderer.AddGradientPoint ( -0.600, utils::Color (  0, 128, 255, 255)); // shore
-    renderer.AddGradientPoint ( -0.45, utils::Color (240, 240,  64, 255)); // sand
-    renderer.AddGradientPoint ( 0.000, utils::Color ( 32, 160,   0, 255)); // grass
-    renderer.AddGradientPoint ( 0.2750, utils::Color (224, 224,   0, 255)); // dirt
-    renderer.AddGradientPoint ( 0.8500, utils::Color (128, 128, 128, 255)); // rock
+    renderer.AddGradientPoint (spec.lakeCut, utils::Color (  0,   0, 255, 255)); // shallow
+    renderer.AddGradientPoint ( spec.flatCut, utils::Color ( 32, 160,   0, 255)); // grass
+    renderer.AddGradientPoint ( spec.hillyCut, utils::Color (224, 224,   0, 255)); // dirt, hills
+    renderer.AddGradientPoint ( spec.mountainCut, utils::Color (128, 128, 128, 255)); // rock
     renderer.AddGradientPoint ( 1.0000, utils::Color (255, 255, 255, 255)); // snow
     renderer.EnableLight ();
     renderer.SetLightContrast (2.0); // Triple the contrast
@@ -187,13 +185,24 @@ void World::Generate(WorldSpec spec)
     writer.SetDestFilename ("heighmap.bmp");
     writer.WriteDestFile ();
     
-    // Save heightmap info
+    // Save heightmap info and assign tile type from height
     for ( int x=0; x<size.x; x++ )
         for ( int y=0; y<size.y; y++ )
         {
-            tiles[x][y].height = heightMap.GetValue(x, y);
+            WorldTile *currTile = &tiles[x][y];
+            double h = heightMap.GetValue(x, y);
+            
+            currTile->height = h;
+            
+            if ( h < spec.lakeCut )
+                currTile->type = WorldTileType::Lake;
+            else if ( h < spec.flatCut )
+                currTile->type = WorldTileType::Dirt;
+            else if ( h < spec.hillyCut )
+                currTile->type = WorldTileType::Hilly;
+            else
+                currTile->type = WorldTileType::Mountains;
         }
-    
 }
 
 void World::Dump(string path)

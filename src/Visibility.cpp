@@ -8,8 +8,10 @@
 
 #include "Visibility.h"
 #include "Dungeon.h"
+#include "World.h"
 #include "Character.h"
 
+// Construct Visibility object for vis in dungeons
 Visibility::Visibility(Dungeon *_dungeon, Character *_owner)
 {
     if ( !_dungeon )
@@ -19,9 +21,38 @@ Visibility::Visibility(Dungeon *_dungeon, Character *_owner)
         throw "Character not init'd before creating vis!";
     
     dungeon = _dungeon;
+    world = NULL;
+    
     owner = _owner;
     size = dungeon->size;
 
+    // Allocate space for tiles
+    tiles = new VisibilityType*[size.x];
+    for(int i=0; i<size.x; i++)
+        tiles[i] = new VisibilityType[size.y];
+    
+    lightMap = new double*[size.x];
+    for(int i=0; i<size.x; i++)
+        lightMap[i] = new double[size.y];
+    
+    ClearVis();
+}
+
+// Construct Visibility object for vis in overworld
+Visibility::Visibility(World *_world, Character *_owner)
+{
+    if ( !_world )
+        throw "World not init'd before creating vis!";
+    
+    if ( !_owner )
+        throw "Character not init'd before creating vis!";
+    
+    dungeon = NULL;
+    world = _world;
+    
+    owner = _owner;
+    size = world->size;
+    
     // Allocate space for tiles
     tiles = new VisibilityType*[size.x];
     for(int i=0; i<size.x; i++)
@@ -46,16 +77,26 @@ void Visibility::ClearVis()
             tiles[i][j] = VisibilityType::Dark;
 }
 
-// Stolen from
-// http://roguebasin.roguelikedevelopment.org/index.php?title=FOV_using_recursive_shadowcasting_-_improved
+// Vis calculation depends on where we are (world or in specific location)
 void Visibility::UpdateVis()
 {
-    
+    if ( world == NULL && dungeon != NULL )
+        UpdateVisInDungeon();
+    else if ( world != NULL & dungeon == NULL )
+        UpdateVisInWorld();
+    else
+        return;
+}
+
+// Stolen from
+// http://roguebasin.roguelikedevelopment.org/index.php?title=FOV_using_recursive_shadowcasting_-_improved
+void Visibility::UpdateVisInDungeon()
+{
     // Start from character position
     veci origin = owner->location;
     int startx = origin.x;
     int starty = origin.y;
-
+    
     int width = size.x;
     int height = size.y;
     
@@ -101,6 +142,11 @@ void Visibility::UpdateVis()
                 tiles[i][j] = VisibilityType::Light;
             }
         }
+}
+
+void Visibility::UpdateVisInWorld()
+{
+    
 }
 
 void Visibility::CastLight(int row, double start, double end, int xx, int xy, int yx, int yy)

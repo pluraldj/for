@@ -13,7 +13,7 @@
 
 using namespace std;
 
-enum class WorldTileType { Ground, Desert, Grass, River, Lake, Ruins, Hilly, Mountains, Cave, Camp, Traders, Vault, Town };
+enum class WorldTileType { Dirt, Desert, Grass, Forest, Ocean, River, Lake, Ruins, Hilly, Mountains, SnowyMountains, Cave, Camp, Traders, Vault, Town };
 
 class WorldTile
 {

@@ -10,7 +10,7 @@
 
 WorldTile::WorldTile()
 {
-    type = WorldTileType::Ground;
+    type = WorldTileType::Dirt;
     visible = false;
     canEnter = false;
     known = true;
@@ -26,14 +26,22 @@ string WorldTile::DrawSymbol()
     switch ( type )
     {
         // TODO: Colors!
-        case WorldTileType::Ground: return ".";
+        case WorldTileType::Dirt: return ".";
         case WorldTileType::Desert: return "~";
         case WorldTileType::Grass: return "\"";
+        case WorldTileType::Forest: return "&";
+        
+        // Don't distinguish between water tiles
+        case WorldTileType::Ocean: return "=";
         case WorldTileType::River: return "=";
         case WorldTileType::Lake: return "=";
+            
         case WorldTileType::Ruins: return "#";
+            
         case WorldTileType::Hilly: return "^";
         case WorldTileType::Mountains: return "^";
+        case WorldTileType::SnowyMountains: return "^";
+            
         case WorldTileType::Cave: return "C";
         case WorldTileType::Traders: return "M";
         case WorldTileType::Vault: return "V";

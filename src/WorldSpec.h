@@ -29,9 +29,10 @@ public:
     
     // Cutoffs for segmenting areas according to heightmap value
     // Values are in the range [-1;1]
-    // first segment is -1  to seaCut, others are preceding to their value.
-    // snowCut must be 1.0, should do this explicitly
-    double seaCut, shoreCut, grassCut, dirtCut, mountainCut, snowCut;
+    // first segment is -1  to lakeCut, others are preceding to their value.
+    // mountainCut must be 1.0, should do this explicitly
+    
+    double lakeCut, flatCut, hillyCut, mountainCut;
 };
 
 #endif /* defined(__forogue__WorldSpec__) */

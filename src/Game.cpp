@@ -68,6 +68,14 @@ void Game::Init()
     world = new World( WorldSpec() );
     world->Dump("worlddump.txt");
     
+    // Start in overworld
+    isInDungeon = false;
+    dungeon = NULL;
+    player->location = veci(10,10);
+    
+    // Vis for travelling
+    
+    
     // END TMP
     
     // Load item prototypes
