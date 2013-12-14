@@ -83,6 +83,8 @@ void Game::Init()
     gui->SetCharData(player, dungeon);
     gui->SetVisInfo(player->visInfo);
     
+    gui->PostMessage("Welcome to FOR.");
+    
     gui->Redraw();
 }
 

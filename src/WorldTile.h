@@ -31,6 +31,9 @@ public:
     // Empty tiles are always known
     bool known;
     
+    // heightmap height, related to elevation
+    double height;
+    
     // Elevation above sea level - negative=below
     double elevation;
 };

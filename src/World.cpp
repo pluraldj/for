@@ -18,7 +18,6 @@ World::World(WorldSpec spec)
     
     // Random size
     RNG *rnd = RNG::getInstance();
-    
     size.x = rnd->random_int(spec.minsize,spec.maxsize);
     size.y = rnd->random_int(spec.minsize,spec.maxsize);
     
@@ -90,6 +89,9 @@ string* World::drawRect(veci upperleft, veci window, bool fow)
 
 void World::Generate(WorldSpec spec)
 {
+    // Random numbers
+    RNG *rnd = RNG::getInstance();
+    
     module::Perlin myModule;
     myModule.SetSeed((int)time(0));
     
@@ -99,52 +101,99 @@ void World::Generate(WorldSpec spec)
     
     // TMP DBG testing of different Perlin parameters
     /*
-    int octaves[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+     int octaves[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+     
+     for (int o=0; o<10; o++ )
+     {
+     for ( double f=1.0; f<16.0; f++ )
+     {
+     
+     myModule.SetOctaveCount(octaves[o]);
+     myModule.SetFrequency(f);
+     myModule.SetPersistence(0.4);
+     
+     utils::NoiseMap heightMap;
+     utils::NoiseMapBuilderPlane heightMapBuilder;
+     heightMapBuilder.SetSourceModule (myModule);
+     heightMapBuilder.SetDestNoiseMap (heightMap);
+     heightMapBuilder.SetDestSize (512, 512);
+     heightMapBuilder.SetBounds (6.0, 10.0, 1.0, 5.0);
+     heightMapBuilder.Build ();
+     
+     utils::RendererImage renderer;
+     utils::Image image;
+     renderer.SetSourceNoiseMap (heightMap);
+     renderer.SetDestImage (image);
+     renderer.ClearGradient ();
+     renderer.AddGradientPoint (-1.0000, utils::Color (  0,   0, 128, 255)); // deeps
+     renderer.AddGradientPoint (-0.900, utils::Color (  0,   0, 255, 255)); // shallow
+     renderer.AddGradientPoint ( -0.600, utils::Color (  0, 128, 255, 255)); // shore
+     renderer.AddGradientPoint ( -0.45, utils::Color (240, 240,  64, 255)); // sand
+     renderer.AddGradientPoint ( 0.000, utils::Color ( 32, 160,   0, 255)); // grass
+     renderer.AddGradientPoint ( 0.2750, utils::Color (224, 224,   0, 255)); // dirt
+     renderer.AddGradientPoint ( 0.8500, utils::Color (128, 128, 128, 255)); // rock
+     renderer.AddGradientPoint ( 1.0000, utils::Color (255, 255, 255, 255)); // snow
+     renderer.EnableLight ();
+     renderer.SetLightContrast (2.0); // Triple the contrast
+     renderer.SetLightBrightness (2.0); // Double the brightness
+     renderer.Render ();
+     
+     utils::WriterBMP writer;
+     writer.SetSourceImage (image);
+     writer.SetDestFilename ("out/" + numberToString(octaves[o]) + "_" + numberToString(f) + ".bmp");
+     writer.WriteDestFile ();
+     
+     cout << octaves[o] << " " << f << "\n";
+     }
+     }
+     */
     
-    for (int o=0; o<10; o++ )
-    {
-        for ( double f=1.0; f<16.0; f++ )
+    int octave = 4;
+    double freq = 2;
+    
+    myModule.SetOctaveCount(octave);
+    myModule.SetFrequency(freq);
+    myModule.SetPersistence(0.4);
+    
+    utils::NoiseMap heightMap;
+    utils::NoiseMapBuilderPlane heightMapBuilder;
+    heightMapBuilder.SetSourceModule (myModule);
+    heightMapBuilder.SetDestNoiseMap (heightMap);
+    heightMapBuilder.SetDestSize (512, 512);
+    heightMapBuilder.SetBounds (6.0, 10.0, 1.0, 5.0);
+    heightMapBuilder.Build ();
+    
+    utils::RendererImage renderer;
+    utils::Image image;
+    renderer.SetSourceNoiseMap (heightMap);
+    renderer.SetDestImage (image);
+    renderer.ClearGradient ();
+    renderer.AddGradientPoint (-1.0000, utils::Color (  0,   0, 128, 255)); // deeps
+    renderer.AddGradientPoint (-0.900, utils::Color (  0,   0, 255, 255)); // shallow
+    renderer.AddGradientPoint ( -0.600, utils::Color (  0, 128, 255, 255)); // shore
+    renderer.AddGradientPoint ( -0.45, utils::Color (240, 240,  64, 255)); // sand
+    renderer.AddGradientPoint ( 0.000, utils::Color ( 32, 160,   0, 255)); // grass
+    renderer.AddGradientPoint ( 0.2750, utils::Color (224, 224,   0, 255)); // dirt
+    renderer.AddGradientPoint ( 0.8500, utils::Color (128, 128, 128, 255)); // rock
+    renderer.AddGradientPoint ( 1.0000, utils::Color (255, 255, 255, 255)); // snow
+    renderer.EnableLight ();
+    renderer.SetLightContrast (2.0); // Triple the contrast
+    renderer.SetLightBrightness (2.0); // Double the brightness
+    renderer.Render ();
+    
+    // TMP DBG: write heightmap to image
+    utils::WriterBMP writer;
+    writer.SetSourceImage (image);
+    writer.SetDestFilename ("heighmap.bmp");
+    writer.WriteDestFile ();
+    
+    // Save heightmap info
+    for ( int x=0; x<size.x; x++ )
+        for ( int y=0; y<size.y; y++ )
         {
-
-            myModule.SetOctaveCount(octaves[o]);
-            myModule.SetFrequency(f);
-            myModule.SetPersistence(0.4);
-            
-            utils::NoiseMap heightMap;
-            utils::NoiseMapBuilderPlane heightMapBuilder;
-            heightMapBuilder.SetSourceModule (myModule);
-            heightMapBuilder.SetDestNoiseMap (heightMap);
-            heightMapBuilder.SetDestSize (512, 512);
-            heightMapBuilder.SetBounds (6.0, 10.0, 1.0, 5.0);
-            heightMapBuilder.Build ();
-            
-            utils::RendererImage renderer;
-            utils::Image image;
-            renderer.SetSourceNoiseMap (heightMap);
-            renderer.SetDestImage (image);
-            renderer.ClearGradient ();
-            renderer.AddGradientPoint (-1.0000, utils::Color (  0,   0, 128, 255)); // deeps
-            renderer.AddGradientPoint (-0.900, utils::Color (  0,   0, 255, 255)); // shallow
-            renderer.AddGradientPoint ( -0.600, utils::Color (  0, 128, 255, 255)); // shore
-            renderer.AddGradientPoint ( -0.45, utils::Color (240, 240,  64, 255)); // sand
-            renderer.AddGradientPoint ( 0.000, utils::Color ( 32, 160,   0, 255)); // grass
-            renderer.AddGradientPoint ( 0.2750, utils::Color (224, 224,   0, 255)); // dirt
-            renderer.AddGradientPoint ( 0.8500, utils::Color (128, 128, 128, 255)); // rock
-            renderer.AddGradientPoint ( 1.0000, utils::Color (255, 255, 255, 255)); // snow
-            renderer.EnableLight ();
-            renderer.SetLightContrast (2.0); // Triple the contrast
-            renderer.SetLightBrightness (2.0); // Double the brightness
-            renderer.Render ();
-            
-            utils::WriterBMP writer;
-            writer.SetSourceImage (image);
-            writer.SetDestFilename ("out/" + numberToString(octaves[o]) + "_" + numberToString(f) + ".bmp");
-            writer.WriteDestFile ();
-            
-            cout << octaves[o] << " " << f << "\n";
+            tiles[x][y].height = heightMap.GetValue(x, y);
         }
-    }
-    */
+    
 }
 
 void World::Dump(string path)
