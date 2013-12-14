@@ -9,6 +9,8 @@
 #ifndef __forogue__Dungeon__
 #define __forogue__Dungeon__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 #include <fstream>

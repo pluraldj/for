@@ -9,6 +9,8 @@
 #ifndef __forogue__Utils__
 #define __forogue__Utils__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <math.h>
 #include <random>

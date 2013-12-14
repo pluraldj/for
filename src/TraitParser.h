@@ -9,6 +9,8 @@
 #ifndef __forogue__TraitParser__
 #define __forogue__TraitParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #endif /* defined(__forogue__TraitParser__) */

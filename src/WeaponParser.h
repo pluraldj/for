@@ -9,6 +9,8 @@
 #ifndef __forogue__WeaponParser__
 #define __forogue__WeaponParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <string>
 #include <iostream>
 #include <sstream>

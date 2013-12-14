@@ -9,6 +9,8 @@
 #ifndef __forogue__Perk__
 #define __forogue__Perk__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 

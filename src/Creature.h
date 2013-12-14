@@ -9,6 +9,8 @@
 #ifndef __forogue__Creature__
 #define __forogue__Creature__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 

@@ -560,13 +560,13 @@
 		23B0EDFF184B8F81001C17A2 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
-				230B7ED01857E485009722D9 /* main.cpp */,
+				230B7EE118582857009722D9 /* Ai.cpp */,
 				23419DBE184867C7000B9EFD /* Character.cpp */,
 				23322BE81849107B004CC64F /* Game.cpp */,
+				230B7ED01857E485009722D9 /* main.cpp */,
+				230B7EE218582857009722D9 /* Ai.h */,
 				23419DBF184867C7000B9EFD /* Character.h */,
 				23322BE91849107B004CC64F /* Game.h */,
-				230B7EE118582857009722D9 /* Ai.cpp */,
-				230B7EE218582857009722D9 /* Ai.h */,
 			);
 			name = Gameplay;
 			sourceTree = "<group>";

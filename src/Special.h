@@ -9,6 +9,8 @@
 #ifndef __forogue__Special__
 #define __forogue__Special__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 struct Special

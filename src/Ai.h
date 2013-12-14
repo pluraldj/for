@@ -9,6 +9,8 @@
 #ifndef __forogue__Ai__
 #define __forogue__Ai__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 using namespace std;

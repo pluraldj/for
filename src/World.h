@@ -9,6 +9,8 @@
 #ifndef __forogue__World__
 #define __forogue__World__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <fstream>
 

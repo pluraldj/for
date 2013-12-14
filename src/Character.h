@@ -9,6 +9,8 @@
 #ifndef __forogue__Character__
 #define __forogue__Character__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 #include <vector>

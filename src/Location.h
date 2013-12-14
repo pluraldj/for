@@ -9,6 +9,8 @@
 #ifndef __forogue__Location__
 #define __forogue__Location__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 

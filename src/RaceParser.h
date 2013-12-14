@@ -9,6 +9,8 @@
 #ifndef __forogue__RaceParser__
 #define __forogue__RaceParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #endif /* defined(__forogue__RaceParser__) */

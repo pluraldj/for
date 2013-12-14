@@ -9,6 +9,8 @@
 #ifndef __forogue__Skills__
 #define __forogue__Skills__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 struct Skills

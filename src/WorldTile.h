@@ -9,6 +9,8 @@
 #ifndef __forogue__WorldTile__
 #define __forogue__WorldTile__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include "Tile.h"

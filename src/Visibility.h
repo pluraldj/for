@@ -9,6 +9,8 @@
 #ifndef __forogue__Visibility__
 #define __forogue__Visibility__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 

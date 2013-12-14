@@ -9,6 +9,8 @@
 #ifndef __forogue__DungeonArea__
 #define __forogue__DungeonArea__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include "Utils.h"

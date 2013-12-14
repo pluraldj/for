@@ -9,6 +9,8 @@
 #ifndef __forogue__ArmorParser__
 #define __forogue__ArmorParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #endif /* defined(__forogue__ArmorParser__) */

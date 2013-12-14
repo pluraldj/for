@@ -9,6 +9,8 @@
 #ifndef __forogue__Armor__
 #define __forogue__Armor__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include "Item.h"

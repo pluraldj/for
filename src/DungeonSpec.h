@@ -9,6 +9,8 @@
 #ifndef __forogue__DungeonSpec__
 #define __forogue__DungeonSpec__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <random>
 #include <math.h>

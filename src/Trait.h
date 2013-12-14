@@ -9,6 +9,8 @@
 #ifndef __forogue__Trait__
 #define __forogue__Trait__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 

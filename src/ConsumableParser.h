@@ -9,6 +9,8 @@
 #ifndef __forogue__ConsumableParser__
 #define __forogue__ConsumableParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #endif /* defined(__forogue__ConsumableParser__) */

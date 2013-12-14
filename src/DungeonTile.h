@@ -9,6 +9,8 @@
 #ifndef __forogue__DungeonTile__
 #define __forogue__DungeonTile__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include "Tile.h"

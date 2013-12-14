@@ -9,6 +9,8 @@
 #ifndef __forogue__Item__
 #define __forogue__Item__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <string>
 

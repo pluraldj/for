@@ -9,6 +9,8 @@
 #ifndef __forogue__Weapon__
 #define __forogue__Weapon__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include "Item.h"

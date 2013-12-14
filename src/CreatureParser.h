@@ -9,6 +9,8 @@
 #ifndef __forogue__CreatureParser__
 #define __forogue__CreatureParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #endif /* defined(__forogue__CreatureParser__) */

@@ -9,6 +9,8 @@
 #ifndef __forogue__XmlParser__
 #define __forogue__XmlParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #include <xercesc/dom/DOM.hpp>

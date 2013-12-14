@@ -9,6 +9,8 @@
 #ifndef __forogue__AmmoParser__
 #define __forogue__AmmoParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 
 #endif /* defined(__forogue__AmmoParser__) */

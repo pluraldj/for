@@ -9,6 +9,8 @@
 #ifndef __forogue__Container__
 #define __forogue__Container__
 
+#define _XOPEN_SOURCE_EXTENDED
+
 #include <iostream>
 #include <vector>
 
