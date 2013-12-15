@@ -287,6 +287,10 @@
 		2352898F185C2A8300BC1C3F /* TileSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileSet.h; sourceTree = "<group>"; };
 		23528991185C2A9400BC1C3F /* TileSetParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileSetParser.cpp; sourceTree = "<group>"; };
 		23528992185C2A9400BC1C3F /* TileSetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileSetParser.h; sourceTree = "<group>"; };
+		23528994185D829600BC1C3F /* keys.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = keys.txt; path = ../meta/keys.txt; sourceTree = "<group>"; };
+		23528995185D829600BC1C3F /* symbols.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = symbols.txt; path = ../meta/symbols.txt; sourceTree = "<group>"; };
+		23528998185D82D200BC1C3F /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TODO; path = ../TODO; sourceTree = "<group>"; };
+		23528999185D82E000BC1C3F /* CHANGES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CHANGES; path = ../CHANGES; sourceTree = "<group>"; };
 		23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatsWindow.cpp; sourceTree = "<group>"; };
 		23B0EE0B184BD9B8001C17A2 /* StatsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsWindow.h; sourceTree = "<group>"; };
 		23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InventoryWindow.cpp; sourceTree = "<group>"; };
@@ -472,6 +476,7 @@
 		23419DA818486661000B9EFD = {
 			isa = PBXGroup;
 			children = (
+				23528996185D829E00BC1C3F /* Meta */,
 				230B7ED318580AB8009722D9 /* Data */,
 				23B0EE03184BD5B0001C17A2 /* Files */,
 				23B0EDFF184B8F81001C17A2 /* Gameplay */,
@@ -556,6 +561,17 @@
 				230B7EE81858352B009722D9 /* WorldTile.h */,
 			);
 			name = World;
+			sourceTree = "<group>";
+		};
+		23528996185D829E00BC1C3F /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				23528994185D829600BC1C3F /* keys.txt */,
+				23528995185D829600BC1C3F /* symbols.txt */,
+				23528998185D82D200BC1C3F /* TODO */,
+				23528999185D82E000BC1C3F /* CHANGES */,
+			);
+			name = Meta;
 			sourceTree = "<group>";
 		};
 		23B0EDFE184B8F74001C17A2 /* Utils */ = {
