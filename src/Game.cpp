@@ -33,13 +33,14 @@ Game::~Game()
 }
 
 void Game::Init()
-{
-    activeEnts = new vector<Entity*>;
-    
+{    
     gui = NULL;
-    location = NULL;
+    currLocation = NULL;
     world = NULL;
     player = NULL;
+    locations = NULL;
+    
+    locations = new vector<Dungeon*>;
     
     // TMP DBG
     // Standard player
@@ -72,7 +73,7 @@ void Game::Init()
     player->location = loc;
     
     // Add player to ents
-    activeEnts->push_back(player);
+    dungeon->activeEnts->push_back(player);
     
     // Init visibility for this player and current dungeon
     player->visInfo = new Visibility(dungeon,player);
@@ -86,7 +87,7 @@ void Game::Init()
     // Start in overworld
     isInDungeon = false;
     player->location = veci(10,10);
-    location = world;
+    currLocation = world;
     
     // Vis for travelling
     player->visInfo = new Visibility(world,player);
@@ -104,7 +105,7 @@ void Game::Init()
     gui->Init();
     
     gui->SetLocation(world);
-    gui->SetEntities(activeEnts);
+    gui->SetEntities(dungeon->activeEnts);
     gui->SetCharData(player, world);
     gui->SetVisInfo(player->visInfo);
     
@@ -182,7 +183,7 @@ bool Game::AttemptCharMove(veci rel)
     Tile *target = NULL;
     
     // World or dungeon
-    target = location->GetTile(newpos.x, newpos.y);
+    target = currLocation->GetTile(newpos.x, newpos.y);
     
     // NULL if out of bounds, can't move
     if ( !target )

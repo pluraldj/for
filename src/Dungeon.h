@@ -89,6 +89,9 @@ public:
     // Areas
     vector<DungeonArea> areas;
     
+    // Entities in here
+    vector<Entity*> *activeEnts;
+    
 private:
     // Generate dungeon based on parameters
     void Generate(DungeonSpec spec);

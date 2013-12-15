@@ -25,7 +25,13 @@
 
 #include <fstream>
 
+
+
 const string Savefile::savePath = "savefile.dat";
+
+// Current version info
+// TODO - track other classes
+BOOST_CLASS_VERSION(GameState, 1)
 
 Savefile::Savefile()
 {
@@ -71,6 +77,12 @@ GameState Savefile::Load()
 //
 template<class Archive>
 void serialize(Archive & ar, GameState & g, const unsigned int version)
+{
+    
+}
+
+template<class Archive>
+void serialize(Archive & ar, Game & g, const unsigned int version)
 {
     
 }

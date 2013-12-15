@@ -51,11 +51,11 @@ int main(int argc, char *argv[])
     RNG *rnd = RNG::getInstance();
     rnd->seed((int)time(NULL));
     
-    Game g = Game::getInstance();
+    Game *g = new Game();
     
-    g.Init();
+    g->Init();
     
-    while ( g.MainLoop() )
+    while ( g->MainLoop() )
         ;
     
     return 0;

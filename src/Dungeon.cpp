@@ -53,6 +53,8 @@ Dungeon::Dungeon(DungeonSpec spec) : Location()
             tiles[i][j].edgeMask = false;
         }
     
+    activeEnts = new vector<Entity*>;
+    
     // Generate!
     Generate(spec);
 }

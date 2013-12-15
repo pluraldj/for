@@ -30,9 +30,10 @@
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
 
+#include "Game.h"
+
 using namespace std;
 
-class Game;
 class Savefile;
 
 // Wrapper for everything we need to load into Game instance
@@ -42,8 +43,13 @@ class Savefile;
 class GameState
 {
 public:
+    GameState(){ g=NULL; }
+    ~GameState(){}
+    
+    Game *g;
     
 private:
+    friend class Game;
     friend class Savefile;
     friend class boost::serialization::access;
 };
@@ -62,7 +68,17 @@ public:
     void Save(GameState _g);
     
 private:
+    // Static path to file
     static const string savePath;
+    
+    // Current savefile version for backwards compat.
+    static const int currVersion = 1;
 };
+
+// Serializer functions
+template<class Archive>
+void serialize(Archive & ar, GameState & g, const unsigned int version);
+template<class Archive>
+void serialize(Archive & ar, Game & g, const unsigned int version);
 
 #endif /* defined(__forogue__Savefile__) */

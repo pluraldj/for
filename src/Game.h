@@ -31,6 +31,10 @@
 
 #include <menu.h>
 
+// Boost serialization lib
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
+
 #include "Character.h"
 #include "Entity.h"
 #include "Item.h"
@@ -46,35 +50,39 @@ using namespace std;
 class Game
 {
 public:
-    static Game &getInstance()
-    {
-        static Game g;
-        return g;
-    }
-    
+    Game(){}
     ~Game();
     
     void Init();
     bool MainLoop();
     void Exit();
     
+    void Load();
+    void Save();
+    
     void CharacterCreation();
     
     bool AttemptCharMove(veci rel);
     
 private:
-    Game(){}
+    // For serialization
+    friend class Savefile;
+    friend class boost::serialization::access;
     
     Gui *gui;
     
     bool isInDungeon;       // in dungeon or travelling
-    Location *location;       // current location
-    
+    Location *currLocation;       // current location
     World *world;           // Wasteland overworld
-    Character *player;
+    Character *player;      // Player character
+    
+    // All generated sub-locations
+    // May not be generated in detail yet (wait until visit)
+    // This excludes the overworld
+    vector<Dungeon*> *locations;
     
     // Every entity in current environment excluding player and "dumb" items on the ground (stuff that can only be picked up)
-    vector<Entity*> *activeEnts;
+    // Moved to indiv. dungeons
 };
 
 #endif /* defined(__forogue__Game__) */

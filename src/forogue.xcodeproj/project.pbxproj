@@ -613,6 +613,7 @@
 				230BC3CC1855DEC200CC65F2 /* ItemParser.cpp */,
 				230BC3EA1856845E00CC65F2 /* PerkParser.cpp */,
 				230BC3E71856845400CC65F2 /* RaceParser.cpp */,
+				2325FB3D185D9AD700DAD35E /* Savefile.cpp */,
 				23528991185C2A9400BC1C3F /* TileSetParser.cpp */,
 				230BC3ED1856846A00CC65F2 /* TraitParser.cpp */,
 				230BC3021855B4EF00CC65F2 /* WeaponParser.cpp */,
@@ -625,12 +626,11 @@
 				230BC3CD1855DEC200CC65F2 /* ItemParser.h */,
 				230BC3EB1856845E00CC65F2 /* PerkParser.h */,
 				230BC3E81856845400CC65F2 /* RaceParser.h */,
+				2325FB3E185D9AD700DAD35E /* Savefile.h */,
 				23528992185C2A9400BC1C3F /* TileSetParser.h */,
 				230BC3EE1856846A00CC65F2 /* TraitParser.h */,
 				230BC3031855B4EF00CC65F2 /* WeaponParser.h */,
 				230BC3001855B36300CC65F2 /* XmlParser.h */,
-				2325FB3D185D9AD700DAD35E /* Savefile.cpp */,
-				2325FB3E185D9AD700DAD35E /* Savefile.h */,
 			);
 			name = Files;
 			sourceTree = "<group>";
