@@ -20,9 +20,10 @@
 // You should have received a copy of the GNU General Public License
 // along with FOR (see file LICENSE).  If not, see <http://www.gnu.org/licenses/>.
 
-
 #include "Savefile.h"
 #include "Game.h"
+
+#include <fstream>
 
 const string Savefile::savePath = "savefile.dat";
 
@@ -35,7 +36,7 @@ Savefile::~Savefile()
     // Destroy children
 }
 
-void Savefile::Save(GameState *_g)
+void Savefile::Save(GameState _g)
 {
     // Open archive
     ofstream ofs(savePath.c_str());
@@ -47,4 +48,35 @@ void Savefile::Save(GameState *_g)
     oa << _g;
 }
 
-#include <fstream>
+GameState Savefile::Load()
+{
+    GameState g;
+    
+    // Everything the opposite way compared to saving
+    
+    // Open archive, in this time
+    ifstream ifs(savePath.c_str());
+    
+    // Serialize recursively and save to archive
+    boost::archive::text_iarchive ia(ifs);
+    
+    // DO IT
+    ia >> g;
+    
+    return g;
+}
+
+//
+// Serializers
+//
+template<class Archive>
+void serialize(Archive & ar, GameState & g, const unsigned int version)
+{
+    
+}
+
+
+
+
+
+

@@ -33,26 +33,19 @@
 using namespace std;
 
 class Game;
+class Savefile;
 
 // Wrapper for everything we need to load into Game instance
 // As Game also initializes UI and other stuff we DON'T want to serialize
 // we load the returned GameState object manually when returned from Load()
+// This is just a dumb struct to be read from/written to
 class GameState
 {
 public:
     
-    
-    
 private:
+    friend class Savefile;
     friend class boost::serialization::access;
-    
-    // Serialization function
-    // Operator & is << or >> depending on if we're going out/in
-    template<class Archive>
-    void serialize(Archive & ar, const unsigned int version)
-    {
-        
-    }
 };
 
 
@@ -65,8 +58,8 @@ public:
     Savefile();
     ~Savefile();
     
-    GameState *Load();
-    void Save(GameState *_g);
+    GameState Load();
+    void Save(GameState _g);
     
 private:
     static const string savePath;
