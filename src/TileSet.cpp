@@ -26,10 +26,21 @@ void TileSet::UseDefault()
     // Initialize everything with default tile symbols
     // WORLD
     worldSymbols[WorldTileType::Dirt] = L".";
+    worldSymbols[WorldTileType::Desert] = L"-";
+    worldSymbols[WorldTileType::Grass] = L",";
+    worldSymbols[WorldTileType::Forest] = L"φ";
+    worldSymbols[WorldTileType::Ocean] = L"≈";
+    worldSymbols[WorldTileType::River] = L"≈";
+    worldSymbols[WorldTileType::Lake] = L"≈";
+    worldSymbols[WorldTileType::Ruins] = L"#";
+    worldSymbols[WorldTileType::Hilly] = L"~";
+    worldSymbols[WorldTileType::Mountains] = L"^";
+    worldSymbols[WorldTileType::SnowyMountains] = L"^";
     
     // DUNGEON
     
     // STUFF
+    entitySymbols[EntityType::Player] = L"@";
 }
 
 wstring TileSet::WorldTileSymbol(WorldTileType t)
