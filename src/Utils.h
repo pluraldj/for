@@ -28,8 +28,15 @@
 
 #include <iostream>
 #include <math.h>
-#include <random>
+#include <stdlib.h>
 #include <sstream>
+
+#include <boost/random/linear_congruential.hpp>
+#include <boost/random/uniform_int.hpp>
+#include <boost/random/uniform_real.hpp>
+#include <boost/random/variate_generator.hpp>
+#include <boost/random/mersenne_twister.hpp>    // twit it baby
+#include <boost/generator_iterator.hpp>
 
 using namespace std;
 
@@ -59,7 +66,7 @@ private:
     RNG(RNG const&);              // Don't Implement
     void operator=(RNG const&); // Don't implement
     
-    std::mt19937 rng;
+    boost::random::mt19937 rng;
 };
 
 // 2D vectors

@@ -27,6 +27,7 @@
 #define _XOPEN_SOURCE_EXTENDED
 
 #include <iostream>
+#include <vector>
 
 #include "Item.h"
 #include "Ammo.h"
@@ -34,6 +35,8 @@
 enum class WeaponType { None, Melee, SmallGun, BigGun, Explosive, Energy, Thrown, Unarmed };
 enum class AttackType { None, Single, Aimed, Burst, Punch, Swing, Thrust, Throw };
 enum class DamageType { Normal, Laser, Fire, Plasma, Electrical, Explosion, EMP };
+
+using namespace std;
 
 struct AttackMode
 {

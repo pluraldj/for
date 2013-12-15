@@ -1,8 +1,8 @@
 //
-//  DungeonSpec.h
+//  Savefile.cpp
 //  forogue
 //
-//  Created by Lasse Carstensen on 29/11/13.
+//  Created by Lasse Carstensen on 15/12/13.
 //  Copyright (c) 2013 Lasse Carstensen. All rights reserved.
 //
 // This file is part of FOR.
@@ -21,34 +21,30 @@
 // along with FOR (see file LICENSE).  If not, see <http://www.gnu.org/licenses/>.
 
 
-#ifndef __forogue__DungeonSpec__
-#define __forogue__DungeonSpec__
+#include "Savefile.h"
+#include "Game.h"
 
-#define _XOPEN_SOURCE_EXTENDED
+const string Savefile::savePath = "savefile.dat";
 
-#include <iostream>
-#include <math.h>
-
-using namespace std;
-
-enum class DungeonType { Cave, Random };
-
-// Specification of parameters for dungeon creation
-struct DungeonSpec
+Savefile::Savefile()
 {
-    DungeonSpec();
-    
-    DungeonType type;
-    
-    int numareas;
-    
-    int minsize,maxsize;
-    
-    int area_minsize, area_maxsize;
-    
-    double defaultProb, creaturesProb, lootProb, rareCreaturesProb, rareLootProb;
-  
-    int roughenStepsMin, roughenStepsMax;
-};
+}
 
-#endif /* defined(__forogue__DungeonSpec__) */
+Savefile::~Savefile()
+{
+    // Destroy children
+}
+
+void Savefile::Save(GameState *_g)
+{
+    // Open archive
+    ofstream ofs(savePath.c_str());
+    
+    // Serialize recursively and save to archive
+    boost::archive::text_oarchive oa(ofs);
+    
+    // DO IT
+    oa << _g;
+}
+
+#include <fstream>

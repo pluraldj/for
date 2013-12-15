@@ -63,6 +63,7 @@
 		230BC3E91856845400CC65F2 /* RaceParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC3E71856845400CC65F2 /* RaceParser.cpp */; };
 		230BC3EC1856845E00CC65F2 /* PerkParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC3EA1856845E00CC65F2 /* PerkParser.cpp */; };
 		230BC3EF1856846A00CC65F2 /* TraitParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 230BC3ED1856846A00CC65F2 /* TraitParser.cpp */; };
+		2325FB3F185D9AD700DAD35E /* Savefile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2325FB3D185D9AD700DAD35E /* Savefile.cpp */; };
 		23322BEA1849107B004CC64F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BE81849107B004CC64F /* Game.cpp */; };
 		23322BED18491544004CC64F /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BEB18491544004CC64F /* Window.cpp */; };
 		23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BEF184915D6004CC64F /* SpecialWindow.cpp */; };
@@ -237,6 +238,9 @@
 		230BC3EB1856845E00CC65F2 /* PerkParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerkParser.h; sourceTree = "<group>"; };
 		230BC3ED1856846A00CC65F2 /* TraitParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TraitParser.cpp; sourceTree = "<group>"; };
 		230BC3EE1856846A00CC65F2 /* TraitParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraitParser.h; sourceTree = "<group>"; };
+		2325FB3C185D9A9100DAD35E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2325FB3D185D9AD700DAD35E /* Savefile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Savefile.cpp; sourceTree = "<group>"; };
+		2325FB3E185D9AD700DAD35E /* Savefile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Savefile.h; sourceTree = "<group>"; };
 		23322BE81849107B004CC64F /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		23322BE91849107B004CC64F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		23322BEB18491544004CC64F /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
@@ -566,6 +570,7 @@
 		23528996185D829E00BC1C3F /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				2325FB3C185D9A9100DAD35E /* README.md */,
 				23528994185D829600BC1C3F /* keys.txt */,
 				23528995185D829600BC1C3F /* symbols.txt */,
 				23528998185D82D200BC1C3F /* TODO */,
@@ -624,6 +629,8 @@
 				230BC3EE1856846A00CC65F2 /* TraitParser.h */,
 				230BC3031855B4EF00CC65F2 /* WeaponParser.h */,
 				230BC3001855B36300CC65F2 /* XmlParser.h */,
+				2325FB3D185D9AD700DAD35E /* Savefile.cpp */,
+				2325FB3E185D9AD700DAD35E /* Savefile.h */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -713,6 +720,7 @@
 				230B7F5418584C0D009722D9 /* rotatepoint.cpp in Sources */,
 				230BC3C51855DE9E00CC65F2 /* ArmorParser.cpp in Sources */,
 				23419DF818489A76000B9EFD /* Utils.cpp in Sources */,
+				2325FB3F185D9AD700DAD35E /* Savefile.cpp in Sources */,
 				23419DDA18486CEB000B9EFD /* Dungeon.cpp in Sources */,
 				23DD7CFA184A58E200E3B265 /* RightMenuWindow.cpp in Sources */,
 				23B0EE0F184BD9C1001C17A2 /* InventoryWindow.cpp in Sources */,
@@ -775,7 +783,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -805,7 +813,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/libnoiseheaders-1.0.0/include",
+					/usr/local/include/,
 				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -818,7 +828,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -843,7 +853,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/libnoiseheaders-1.0.0/include",
+					/usr/local/include/,
 				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
@@ -853,6 +865,7 @@
 		23419DBB18486661000B9EFD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -865,6 +878,8 @@
 				OTHER_LDFLAGS = (
 					"-lmenu",
 					"-lncurses",
+					"-lboost_iostreams-mt",
+					"-lboost_serialization-mt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -873,6 +888,7 @@
 		23419DBC18486661000B9EFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -885,6 +901,8 @@
 				OTHER_LDFLAGS = (
 					"-lmenu",
 					"-lncurses",
+					"-lboost_iostreams-mt",
+					"-lboost_serialization-mt",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

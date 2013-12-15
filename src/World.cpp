@@ -231,7 +231,7 @@ void World::Dump(string path)
     wstring *wholeMap = drawRect(veci(0,0), size, false, NULL);
     
     wofstream outfile;
-    outfile.open(path);
+    outfile.open(path.c_str());
     
     for ( int i=0; i<size.y; i++ )
     {

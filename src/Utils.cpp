@@ -31,7 +31,7 @@ void RNG::seed(int s)
 // Bewteen 0 and upper
 int RNG::random_int(int upper)
 {
-    std::uniform_int_distribution<int32_t> dist(0,upper);
+    boost::random::uniform_int_distribution<int32_t> dist(0,upper);
     
     return dist(rng);
 }
@@ -39,7 +39,7 @@ int RNG::random_int(int upper)
 // Between lower and upper
 int RNG::random_int(int lower, int upper)
 {
-    std::uniform_int_distribution<int32_t> dist(lower,upper);
+    boost::random::uniform_int_distribution<int32_t> dist(lower,upper);
     
     return dist(rng);
 }
@@ -47,7 +47,7 @@ int RNG::random_int(int lower, int upper)
 // double between 0 and 1
 double RNG::random_double()
 {
-    std::uniform_real_distribution<double> dist(0.0,1.0);
+    boost::random::uniform_real_distribution<double> dist(0.0,1.0);
     return dist(rng);
 }
 

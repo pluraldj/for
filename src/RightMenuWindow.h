@@ -28,6 +28,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 #include "Window.h"
 #include "Action.h"

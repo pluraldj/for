@@ -100,8 +100,6 @@ void Game::Init()
     vector<Weapon*> *weps = wp->Load();
     delete wp;
     
-    // Load tilesets
-    
     gui = new Gui();
     gui->Init();
     
