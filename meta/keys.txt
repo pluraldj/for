@@ -1,10 +1,10 @@
 GENERAL VIEW:
 Esc Quit
-C   enter combat
+A   enter combat
 M   move camera
 V   View (inspect) tiles
 I   Open inventory screen
-S   Open stats screen
+C   Open stats screen
 1/2 Set active slot
 U   Use active
 
@@ -15,10 +15,10 @@ O   Open container (on tile or closest)
 E   Interact with thing (on tile/closest) (like buttons/consoles)
 
 COMBAT:
-C   exit combat, may not be possible
+A   exit combat, may not be possible
 1/2 Set active slot
 F   Fire weapon (active), enters targeting mode, show AP
 U   Use active, AP
 V   Inspect tiles/critters (no AP cost)
 I   Open inventory (costs AP)
-S   Open stats (no AP cost)
+C   Open stats (no AP cost)
