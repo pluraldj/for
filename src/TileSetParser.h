@@ -26,4 +26,18 @@
 
 #include <iostream>
 
+#include "XmlParser.h"
+
+using namespace std;
+
+class TileSetParser : public XmlParser
+{
+public:
+    TileSetParser();
+    ~TileSetParser();
+    
+private:
+    
+};
+
 #endif /* defined(__forogue__TileSetParser__) */

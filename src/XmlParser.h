@@ -44,6 +44,9 @@
 #include <string>
 #include <stdexcept>
 
+// Convert string to XmlCh*
+#define TRANS(a) XMLString::transcode(a)
+
 // Error codes
 enum {
     ERROR_ARGS = 1,

@@ -42,9 +42,6 @@
 #include "XmlParser.h"
 #include "Weapon.h"
 
-// Convert string to XmlCh*
-#define TRANS(a) XMLString::transcode(a)
-
 using namespace std;
 
 class WeaponParser : public XmlParser
