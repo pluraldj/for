@@ -1,5 +1,6 @@
 FOR - A Fallout-like Roguelike
+===
 
-Copyright (c) 2013 Lasse Carstensen
+Right now a very unfinished work in progress
 
 Contact the author: lasse.car@gmail.com

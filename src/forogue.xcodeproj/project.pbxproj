@@ -241,6 +241,7 @@
 		2325FB3C185D9A9100DAD35E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2325FB3D185D9AD700DAD35E /* Savefile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Savefile.cpp; sourceTree = "<group>"; };
 		2325FB3E185D9AD700DAD35E /* Savefile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Savefile.h; sourceTree = "<group>"; };
+		2325FB40185DF42200DAD35E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		23322BE81849107B004CC64F /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		23322BE91849107B004CC64F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		23322BEB18491544004CC64F /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
@@ -570,6 +571,7 @@
 		23528996185D829E00BC1C3F /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				2325FB40185DF42200DAD35E /* LICENSE */,
 				2325FB3C185D9A9100DAD35E /* README.md */,
 				23528994185D829600BC1C3F /* keys.txt */,
 				23528995185D829600BC1C3F /* symbols.txt */,
