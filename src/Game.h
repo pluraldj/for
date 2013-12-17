@@ -44,6 +44,7 @@
 #include "Gui.h"
 #include "Visibility.h"
 #include "WeaponParser.h"
+#include "TileSet.h"
 
 using namespace std;
 

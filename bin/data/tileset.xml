@@ -31,7 +31,6 @@
     
     <things
     player="@"
-    npc="@"
     rat="r"
     mutant="M"
     ghoul="g"

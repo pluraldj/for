@@ -32,5 +32,5 @@ DungeonTile::DungeonTile() : Tile()
 
 wstring DungeonTile::DrawSymbol()
 {
-    return TileSet::getInstance()->DungeonTileSymbol(type);
+    return TileSet::GetInstance()->DungeonTileSymbol(type);
 }

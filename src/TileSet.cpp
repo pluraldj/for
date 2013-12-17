@@ -23,9 +23,24 @@
 
 #include "TileSet.h"
 
+TileSet *TileSet::ts = NULL;
+
 void TileSet::LoadFromFile(string path)
 {
-    //TODO
+    // Attempt load from XML
+    TileSetParser *tp = new TileSetParser();
+    
+    // New tile set
+    TileSet *newTileSet = tp->Load();
+    
+    // Delete old
+    delete this;
+    
+    // Set static pointer to new one
+    SetInstance(newTileSet);
+    
+    // Clean up parser object
+    delete tp;
 }
 
 TileSet::~TileSet()

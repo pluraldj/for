@@ -40,6 +40,10 @@ void Game::Init()
     player = NULL;
     locations = NULL;
     
+    // Init default tileset early, we need it for dumping debug maps
+    TileSet *tileset = new TileSet();
+    TileSet::SetInstance(tileset);
+    
     locations = new vector<Dungeon*>;
     
     // TMP DBG

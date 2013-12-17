@@ -93,6 +93,50 @@
             endingLineNumber = "44"
             landmarkName = "Character::SetBaseStats()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Character::~Character()"
+                  moduleName = "forogue"
+                  urlString = "file:///Users/lbc/forogue/src/Character.cpp"
+                  timestampString = "408971898.260792"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Character::~Character()"
+                  moduleName = "forogue"
+                  urlString = "file:///Users/lbc/forogue/src/Character.cpp"
+                  timestampString = "408971898.260976"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Character::~Character()"
+                  moduleName = "forogue"
+                  urlString = "file:///Users/lbc/forogue/src/Character.cpp"
+                  timestampString = "408971898.261138"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

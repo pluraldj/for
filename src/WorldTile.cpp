@@ -41,5 +41,5 @@ wstring WorldTile::DrawSymbol()
     if ( !known )
         return L"!";
     
-    return TileSet::getInstance()->WorldTileSymbol(type);
+    return TileSet::GetInstance()->WorldTileSymbol(type);
 }

@@ -30,6 +30,7 @@ Entity::Entity()
     name = "Entity";
     location = veci(0,0);
     type = EntityType::None;
+    specificSymbol = L"";
 }
 
 Entity::~Entity()
@@ -41,7 +42,7 @@ wstring Entity::DrawSymbol()
     if ( specificSymbol != L"" )
         return specificSymbol;
     
-    return TileSet::getInstance()->EntitySymbol(type);
+    return TileSet::GetInstance()->EntitySymbol(type);
     
     // OLD
     /*

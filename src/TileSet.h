@@ -31,6 +31,7 @@
 #include "WorldTile.h"
 #include "DungeonTile.h"
 #include "Entity.h"
+#include "TileSetParser.h"
 
 using namespace std;
 
@@ -38,7 +39,9 @@ using namespace std;
 class TileSet
 {
 public:
-    static TileSet *getInstance(){ static TileSet s; return &s; }
+    static TileSet *GetInstance(){ return ts; }
+    static void SetInstance(TileSet *_ts) { ts = _ts; }
+    TileSet() { UseDefault(); }
     ~TileSet();
     
     void LoadFromFile(string path);
@@ -48,12 +51,13 @@ public:
     wstring EntitySymbol(EntityType t);
     
 private:
-    TileSet() { UseDefault(); }
     void UseDefault();
     
     map<WorldTileType,wstring> worldSymbols;
     map<DungeonTileType,wstring> dungeonSymbols;
     map<EntityType,wstring> entitySymbols;
+    
+    static TileSet *ts;
 };
 
 

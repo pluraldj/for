@@ -102,7 +102,7 @@ Gui::~Gui()
 void Gui::Init()
 {
     // Load tileset
-    TileSet *tileset = TileSet::getInstance();
+    TileSet *tileset = TileSet::GetInstance();
     tileset->LoadFromFile("data/tileset.xml");
     
     // init ncurses

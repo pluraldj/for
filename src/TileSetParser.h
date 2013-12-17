@@ -27,6 +27,10 @@
 #include <iostream>
 
 #include "XmlParser.h"
+#include "Tile.h"
+#include "DungeonTile.h"
+#include "WorldTile.h"
+#include "Entity.h"
 
 using namespace std;
 
@@ -35,6 +39,13 @@ class TileSetParser : public XmlParser
 public:
     TileSetParser();
     ~TileSetParser();
+    
+    // XML string to tile enum conversion
+    DungeonTileType StringToDungeonTileType(string str);
+    WorldTileType StringToWorldTileType(string str);
+    EntityType StringToEntityType(string str);
+    
+    TileSet *Load();
     
 private:
     
