@@ -54,7 +54,7 @@ WeaponType WeaponParser::StringToWeaponType(string str)
     else if ( str == "unarmed" )
         return WeaponType::Unarmed;
     else
-        throw "Unrecognized weapon type " + str;
+        throw std::runtime_error("Unrecognized weapon type string" + str);
 }
 
 AttackType WeaponParser::StringToAttackType(string str)
@@ -74,7 +74,7 @@ AttackType WeaponParser::StringToAttackType(string str)
     else if ( str == "throw" )
         return AttackType::Throw;
     else
-        throw "Unrecognized attack type " + str;
+        throw std::runtime_error("Unrecognized attack type string " + str);
 }
 
 DamageType WeaponParser::StringToDamageType(string str)
@@ -94,7 +94,7 @@ DamageType WeaponParser::StringToDamageType(string str)
     else if ( str == "emp" )
         return DamageType::EMP;
     else
-        throw "Unrecognized damage type " + str;
+        throw std::runtime_error("Unrecognized damage type string " + str);
 }
 
 AmmoType WeaponParser::StringToAmmoType(string str)
@@ -108,7 +108,7 @@ AmmoType WeaponParser::StringToAmmoType(string str)
     else if ( str == "mfc" )
         return AmmoType::MFC;
     else
-        throw "Unrecognized ammo type " + str;
+        throw std::runtime_error("Unrecognized ammo type string " + str);
 }
 
 // Load all, fill in information and return alloc'ed list of prototypes

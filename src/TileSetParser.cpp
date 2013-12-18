@@ -24,6 +24,8 @@
 #include "TileSetParser.h"
 #include "TileSet.h"
 
+using namespace xercesc;
+
 TileSetParser::TileSetParser()
 {
 }
@@ -48,8 +50,7 @@ DungeonTileType TileSetParser::StringToDungeonTileType(string str)
         return DungeonTileType::Water;
     else
     {
-        throw "Unrecognized dungeon tile string " + str;
-        return DungeonTileType::Floor;
+        throw std::runtime_error("Unrecognized dungeon tile string " + str);
     }
 }
 
@@ -89,8 +90,7 @@ WorldTileType TileSetParser::StringToWorldTileType(string str)
         return WorldTileType::Town;
     else
     {
-        throw "Unrecognized world tile string " + str;
-        return WorldTileType::Dirt;
+        throw std::runtime_error("Unrecognized world tile string " + str);
     }
 }
 
@@ -105,12 +105,66 @@ EntityType TileSetParser::StringToEntityType(string str)
 
 TileSet *TileSetParser::Load()
 {
-    // Dummy values to start with
+    // Default values to start with
     TileSet *result = new TileSet();
     
     // We want the default key/value pairs in the hashmaps as we're just overwriting any defined in XML
     // This way we keep default tiles for any not specified
     
+    // Load (or fail spectacularly if not exist/syntax errors)
+    ReadFile("data/tileset.xml");
+    
+    // Get the top-level element
+    DOMElement* elementRoot = xmlDoc->getDocumentElement();
+    
+    if( !elementRoot )
+        throw std::runtime_error( "Empty XML document!" );
+    
+    // Get possible types of tiles, not all need be defined
+    DOMNodeList *worldTags = elementRoot->getElementsByTagName(TRANS("overworld"));
+    DOMNodeList *dungeonTags = elementRoot->getElementsByTagName(TRANS("dungeon"));
+    DOMNodeList *thingsTags = elementRoot->getElementsByTagName(TRANS("things"));
+    
+    // We skip if length of any is 0
+    XMLSize_t numWorld = worldTags->getLength();
+    XMLSize_t numDungeon = dungeonTags->getLength();
+    XMLSize_t numThings = thingsTags->getLength();
+    
+    if ( numWorld == 1 )
+    {
+        // The node
+        DOMNode *worldNode = worldTags->item(0);
+        
+        // Get attributes
+        DOMNamedNodeMap *attr = worldNode->getAttributes();
+        
+        
+        
+    }
+    
+    if ( numDungeon == 1 )
+    {
+    }
+    
+    if ( numThings == 1 )
+    {
+    }
     
     return result;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

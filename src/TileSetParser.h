@@ -24,7 +24,19 @@
 #ifndef __forogue__TileSetParser__
 #define __forogue__TileSetParser__
 
+#define _XOPEN_SOURCE_EXTENDED
+
+#include <string>
 #include <iostream>
+#include <sstream>
+#include <stdexcept>
+#include <list>
+#include <vector>
+#include <algorithm>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <errno.h>
 
 #include "XmlParser.h"
 #include "Tile.h"
