@@ -1,5 +1,5 @@
 Bugs:
-
+- ncurses screws up OSX terminal after exit sometimes
 
 Features:
 - Karma
