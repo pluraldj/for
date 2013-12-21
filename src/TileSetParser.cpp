@@ -24,6 +24,8 @@
 #include "TileSetParser.h"
 #include "TileSet.h"
 
+#include <locale>
+
 using namespace xercesc;
 
 TileSetParser::TileSetParser()
@@ -138,8 +140,40 @@ TileSet *TileSetParser::Load()
         // Get attributes
         DOMNamedNodeMap *attr = worldNode->getAttributes();
         
-        
-        
+        // Iterate over attributes and attempt to look them up
+        XMLSize_t nattr = attr->getLength();
+        for ( XMLSize_t a=0; a<nattr; ++a )
+        {
+            DOMNode *currAttr = attr->item(a);
+            
+            // Name and value
+            string name = TRANS(currAttr->getNodeName());
+            string val = TRANS(currAttr->getNodeValue());
+            
+            // Convert value to wide string for UTF8 characters
+            std::wstring wval(val.size(), L' '); // Overestimate number of code points.
+            wval.resize(mbstowcs(&wval[0], val.c_str(), val.size())); // Shrink to fit.
+            
+            // look up, ignore if exception thrown (name not found)
+            /*
+            WorldTileType wtt;
+            try
+            {
+                wtt = StringToWorldTileType(name);
+            }
+            catch ( std::runtime_error &e )
+            {
+                continue;
+            }
+            
+            result->worldSymbols[wtt] = ws;
+             */
+            
+            // Actually, _don't_ catch the exception. We want to crash and burn if something's wrong
+            // Just set it, if we get to here everything went ok
+            WorldTileType wtt = StringToWorldTileType(name);
+            result->worldSymbols[wtt] = wval;
+        }
     }
     
     if ( numDungeon == 1 )

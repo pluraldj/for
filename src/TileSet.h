@@ -51,6 +51,7 @@ public:
     wstring EntitySymbol(EntityType t);
     
 private:
+    friend class TileSetParser;
     void UseDefault();
     
     map<WorldTileType,wstring> worldSymbols;
