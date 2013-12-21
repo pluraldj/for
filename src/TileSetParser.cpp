@@ -178,10 +178,58 @@ TileSet *TileSetParser::Load()
     
     if ( numDungeon == 1 )
     {
+        // The node
+        DOMNode *dungeonNode = dungeonTags->item(0);
+        
+        // Get attributes
+        DOMNamedNodeMap *attr = dungeonNode->getAttributes();
+        
+        // Iterate over attributes and attempt to look them up
+        XMLSize_t nattr = attr->getLength();
+        for ( XMLSize_t a=0; a<nattr; ++a )
+        {
+            DOMNode *currAttr = attr->item(a);
+            
+            // Name and value
+            string name = TRANS(currAttr->getNodeName());
+            string val = TRANS(currAttr->getNodeValue());
+            
+            // Convert value to wide string for UTF8 characters
+            std::wstring wval(val.size(), L' '); // Overestimate number of code points.
+            wval.resize(mbstowcs(&wval[0], val.c_str(), val.size())); // Shrink to fit.
+            
+            // Just set it, if we get to here everything went ok
+            DungeonTileType dtt = StringToDungeonTileType(name);
+            result->dungeonSymbols[dtt] = wval;
+        }
     }
     
     if ( numThings == 1 )
     {
+        // The node
+        DOMNode *thingsNode = thingsTags->item(0);
+        
+        // Get attributes
+        DOMNamedNodeMap *attr = thingsNode->getAttributes();
+        
+        // Iterate over attributes and attempt to look them up
+        XMLSize_t nattr = attr->getLength();
+        for ( XMLSize_t a=0; a<nattr; ++a )
+        {
+            DOMNode *currAttr = attr->item(a);
+            
+            // Name and value
+            string name = TRANS(currAttr->getNodeName());
+            string val = TRANS(currAttr->getNodeValue());
+            
+            // Convert value to wide string for UTF8 characters
+            std::wstring wval(val.size(), L' '); // Overestimate number of code points.
+            wval.resize(mbstowcs(&wval[0], val.c_str(), val.size())); // Shrink to fit.
+            
+            // Just set it, if we get to here everything went ok
+            EntityType ett = StringToEntityType(name);
+            result->entitySymbols[ett] = wval;
+        }
     }
     
     return result;
