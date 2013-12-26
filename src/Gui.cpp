@@ -138,8 +138,6 @@ void Gui::Init()
     // Input timeout - return ERR if no input during tick
     timeout(100);
     
-    int c = COLOR_PAIRS;
-    
     // hide cursor
     curs_set(0);
     
@@ -185,34 +183,18 @@ void Gui::DivideWindows()
 
 void Gui::InitColors()
 {
-    // Instantiate
-    Colors::Black = new Colors::Color(0,0,0);
-    Colors::White = new Colors::Color(100,100,100);
-    Colors::Green = new Colors::Color(200,200,0);
+    // Instantiate single colors
+    Colors::Black = new Colors::Color(233);
+    Colors::White = new Colors::Color(255);
+    Colors::Green = new Colors::Color(10);
     
-    // Bind ids
-    Colors::Black->BindCursesId(100);
-    Colors::White->BindCursesId(101);
-    Colors::Green->BindCursesId(102);
-    
-    // Instantiate
+    // Instantiate pairs
     Colors::DefaultPair = new Colors::ColorPair(Colors::White, Colors::Black);
     Colors::GreenOnBlack = new Colors::ColorPair(Colors::Green, Colors::Black);
     
-    // Make pairs for common ones
-    Colors::DefaultPair->BindCursesId(100);
-    Colors::GreenOnBlack->BindCursesId(101);
-    
-    short r,g,b;
-    
-    color_content(100, &r, &g, &b);
-    color_content(101, &r, &g, &b);
-    color_content(102, &r, &g, &b);
-    
-    short p1,p2;
-    pair_content(100, &p1, &p2);
-    
-    
+    // Allocate IDs
+    Colors::DefaultPair->BindCursesId(1);
+    Colors::GreenOnBlack->BindCursesId(2);
 }
 
 void Gui::SetLocation(Location *_l)

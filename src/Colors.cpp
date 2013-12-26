@@ -26,34 +26,13 @@ namespace Colors
 {
     Color::Color()
     {
-        r=g=b=0;
-        
         cursesId = -1;
     }
     
-    Color::Color(int _r, int _g, int _b)
+    Color::Color(short _id)
     {
-        r = _r;
-        g = _g;
-        b = _b;
+        cursesId = _id;
     }
-    
-    void Color::BindCursesId(short i)
-    {
-        cursesId = i;
-     
-        short rc = ScaleToCursesValue(r);
-        short gc = ScaleToCursesValue(g);
-        short bc = ScaleToCursesValue(b);
-        
-        int result = init_color(i,rc,gc,bc);
-    }
-    
-    short Color::ScaleToCursesValue(short c)
-    {
-        return (short)((double)c)*(1000.0/255.0);
-    }
-    
     
     // Standard colors
     Color *Black = NULL;
@@ -89,6 +68,15 @@ namespace Colors
             return;
         
         wcolor_set(cursesWin, cursesId, NULL);
+    }
+    
+    void ColorPair::UseAsWindowBackground(WINDOW *cursesWin)
+    {
+        // ID not bound? do nothing
+        if ( cursesId == -1 )
+            return;
+        
+        wbkgd(cursesWin, COLOR_PAIR(cursesId));
     }
     
     // Standard color pairs

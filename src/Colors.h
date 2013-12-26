@@ -38,16 +38,11 @@ namespace Colors
     {
     public:
         Color();
-        Color(int _r, int _g, int _b);
         
-        short r,g,b;      // 0-255
-        
-        void BindCursesId(short i);
+        Color(short xtermId);   // From xterm 256 color palette
         
     private:
         friend class ColorPair;
-        short ScaleToCursesValue(short c);
-        
         short cursesId;
     };
     
@@ -67,6 +62,7 @@ namespace Colors
         
         void BindCursesId(short i);
         void MakeActive(WINDOW *cursesWin);
+        void UseAsWindowBackground(WINDOW *cursesWin);
         
     private:
         short cursesId;

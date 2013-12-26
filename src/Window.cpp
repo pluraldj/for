@@ -37,7 +37,8 @@ Window::Window(veci _topleft, veci _size, bool _hasBox)
     
     // OHMIGOD COLORS
     // Set default for now, can overwrite later
-    //Colors::DefaultPair.MakeActive(cursesWin);
+    Colors::GreenOnBlack->MakeActive(cursesWin);
+    Colors::GreenOnBlack->UseAsWindowBackground(cursesWin);
 }
 
 Window::~Window()

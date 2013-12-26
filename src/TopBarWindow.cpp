@@ -28,18 +28,6 @@ TopBarWindow::TopBarWindow(veci _topleft, veci _size) : Window(_topleft,_size,fa
 {
     hp = hpmax = ap = apmax = caps = xp = level = 0;
     isRadiated = isPoisoned = false;
-    
-    Colors::DefaultPair->MakeActive(cursesWin);
-    
-    // TMP DEBUG
-    /*
-    init_color(100, 1000, 1000, 1000);
-    init_color(101, 0, 0, 0);
-    init_pair(100, 101, 100);
-    
-    init_pair(1,COLOR_GREEN,COLOR_RED);
-     
-    wcolor_set(cursesWin, 1, NULL);*/
 }
 
 void TopBarWindow::SetCaptions(string _pln, string _tit, string _loc, int _hp, int _hpm, int _ap, int _apm, int _cap, int _xp, int _lev, bool _cri, bool _rad, bool _poi)
