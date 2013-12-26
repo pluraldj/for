@@ -101,7 +101,7 @@
                   symbolName = "Character::~Character()"
                   moduleName = "forogue"
                   urlString = "file:///Users/lbc/forogue/src/Character.cpp"
-                  timestampString = "409744240.682434"
+                  timestampString = "409746151.181044"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -115,7 +115,7 @@
                   symbolName = "Character::~Character()"
                   moduleName = "forogue"
                   urlString = "file:///Users/lbc/forogue/src/Character.cpp"
-                  timestampString = "409744240.682625"
+                  timestampString = "409746151.181268"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -129,7 +129,7 @@
                   symbolName = "Character::~Character()"
                   moduleName = "forogue"
                   urlString = "file:///Users/lbc/forogue/src/Character.cpp"
-                  timestampString = "409744240.682795"
+                  timestampString = "409746151.181452"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -359,6 +359,22 @@
                   offsetFromSymbolStart = "99">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gui.cpp"
+            timestampString = "409746124.046576"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "Gui::DivideWindows()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -163,22 +163,19 @@ void Gui::DivideWindows()
 {
     // TODO: Check if too small for proper display
     
-    // Top bar - height 2 across entire width with no border
-    topBar->Resize( veci(0,0), veci(scrx,2));
+    int h_top = 3;
+    int h_bot = max(scry/8,3);
+    int h_world = scry-h_top-h_bot;
+    int w_right = max(scrx/3,24);
+    int w_leftsub = scrx-w_right;
     
-    // Bottom bar takes up some %, minimum 3 height
-    int h = max(scry/6,3);
-    bottomWindow->Resize(veci(0,scry-h), veci(scrx,h));
-    bottomWindow->SetScrollbackLines(h-2);
+    rightMenu->Resize(veci(w_leftsub,0), veci(w_right,scry));
     
-    // height of middle windows
-    h = scry-h-2;
+    topBar->Resize(veci(0,0), veci(w_leftsub,h_top));
+    worldWindow->Resize(veci(0,h_top), veci(w_leftsub,h_world));
+    bottomWindow->Resize(veci(0,h_top+h_world),veci(w_leftsub,h_bot));
     
-    // right bar takes up some %, with minimum to ensure we can draw text without wrapping
-    int w = max(scrx/4,24);
-    
-    worldWindow->Resize( veci(0,2), veci(scrx-w,h) );
-    rightMenu->Resize( veci(scrx-w,2), veci(w,h) );
+    bottomWindow->SetScrollbackLines(h_bot);
 }
 
 void Gui::SetLocation(Location *_l)
