@@ -38,6 +38,10 @@ namespace Colors
     Color *Black = NULL;
     Color *White = NULL;
     Color *Green = NULL;
+    Color *Blue = NULL;
+    Color *Yellow = NULL;
+    Color *Brown = NULL;
+    Color *Gray = NULL;
     
     ColorPair::ColorPair()
     {
@@ -81,5 +85,10 @@ namespace Colors
     
     // Standard color pairs
     ColorPair *DefaultPair = NULL;
+    
     ColorPair *GreenOnBlack = NULL;
+    ColorPair *BlueOnBlack = NULL;
+    ColorPair *YellowOnBlack = NULL;
+    ColorPair *BrownOnBlack = NULL;
+    ColorPair *GrayOnBlack = NULL;
 }

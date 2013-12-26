@@ -184,17 +184,31 @@ void Gui::DivideWindows()
 void Gui::InitColors()
 {
     // Instantiate single colors
-    Colors::Black = new Colors::Color(233);
+    Colors::Black = new Colors::Color(0);
     Colors::White = new Colors::Color(255);
+    
     Colors::Green = new Colors::Color(10);
+    Colors::Blue = new Colors::Color(12);
+    Colors::Yellow = new Colors::Color(11);
+    Colors::Brown = new Colors::Color(130);
+    Colors::Gray = new Colors::Color(244);
     
     // Instantiate pairs
     Colors::DefaultPair = new Colors::ColorPair(Colors::White, Colors::Black);
+    
     Colors::GreenOnBlack = new Colors::ColorPair(Colors::Green, Colors::Black);
+    Colors::BlueOnBlack = new Colors::ColorPair(Colors::Blue, Colors::Black);
+    Colors::YellowOnBlack = new Colors::ColorPair(Colors::Yellow, Colors::Black);
+    Colors::BrownOnBlack = new Colors::ColorPair(Colors::Brown, Colors::Black);
+    Colors::GrayOnBlack = new Colors::ColorPair(Colors::Gray, Colors::Black);
     
     // Allocate IDs
     Colors::DefaultPair->BindCursesId(1);
     Colors::GreenOnBlack->BindCursesId(2);
+    Colors::BlueOnBlack->BindCursesId(3);
+    Colors::YellowOnBlack->BindCursesId(4);
+    Colors::BrownOnBlack->BindCursesId(5);
+    Colors::GrayOnBlack->BindCursesId(6);
 }
 
 void Gui::SetLocation(Location *_l)

@@ -49,7 +49,12 @@ namespace Colors
     // Statically defined standard colors
     extern Color *Black;
     extern Color *White;
+    
     extern Color *Green;
+    extern Color *Blue;
+    extern Color *Yellow;
+    extern Color *Brown;
+    extern Color *Gray;
     
     class ColorPair
     {
@@ -70,7 +75,13 @@ namespace Colors
     
     // Statically defined standard color pairs
     extern ColorPair *DefaultPair;
+    
     extern ColorPair *GreenOnBlack;
+    extern ColorPair *BlueOnBlack;
+    extern ColorPair *YellowOnBlack;
+    extern ColorPair *BrownOnBlack;
+    extern ColorPair *GrayOnBlack;
+    
 };
 
 #endif /* defined(__forogue__Colors__) */
