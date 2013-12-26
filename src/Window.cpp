@@ -22,6 +22,7 @@
 
 
 #include "Window.h"
+#include "Colors.h"
 
 Window::Window(veci _topleft, veci _size, bool _hasBox)
 {
@@ -36,7 +37,7 @@ Window::Window(veci _topleft, veci _size, bool _hasBox)
     
     // OHMIGOD COLORS
     // Set default for now, can overwrite later
-    wattron(cursesWin, COLOR_PAIR(1));
+    //Colors::DefaultPair.MakeActive(cursesWin);
 }
 
 Window::~Window()

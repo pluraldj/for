@@ -90,6 +90,7 @@
 		23B0EE0C184BD9B8001C17A2 /* StatsWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE0A184BD9B8001C17A2 /* StatsWindow.cpp */; };
 		23B0EE0F184BD9C1001C17A2 /* InventoryWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */; };
 		23B0EE12184BDAD9001C17A2 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE10184BDAD9001C17A2 /* Location.cpp */; };
+		23B4A1FE186C405F00195265 /* Colors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A1FC186C405F00195265 /* Colors.cpp */; };
 		23DD7CF4184A57E100E3B265 /* Gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DD7CF2184A57E100E3B265 /* Gui.cpp */; };
 		23DD7CF7184A58D100E3B265 /* TopBarWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DD7CF5184A58D100E3B265 /* TopBarWindow.cpp */; };
 		23DD7CFA184A58E200E3B265 /* RightMenuWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DD7CF8184A58E200E3B265 /* RightMenuWindow.cpp */; };
@@ -302,6 +303,8 @@
 		23B0EE0E184BD9C1001C17A2 /* InventoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryWindow.h; sourceTree = "<group>"; };
 		23B0EE10184BDAD9001C17A2 /* Location.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Location.cpp; sourceTree = "<group>"; };
 		23B0EE11184BDAD9001C17A2 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		23B4A1FC186C405F00195265 /* Colors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Colors.cpp; sourceTree = "<group>"; };
+		23B4A1FD186C405F00195265 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		23DD7CF2184A57E100E3B265 /* Gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gui.cpp; sourceTree = "<group>"; };
 		23DD7CF3184A57E100E3B265 /* Gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gui.h; sourceTree = "<group>"; };
 		23DD7CF5184A58D100E3B265 /* TopBarWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopBarWindow.cpp; sourceTree = "<group>"; };
@@ -454,6 +457,7 @@
 			children = (
 				230B7EDE18580E73009722D9 /* Action.cpp */,
 				23DD7CFB184A58FE00E3B265 /* BottomWindow.cpp */,
+				23B4A1FC186C405F00195265 /* Colors.cpp */,
 				23DD7CF2184A57E100E3B265 /* Gui.cpp */,
 				23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */,
 				23DD7CF8184A58E200E3B265 /* RightMenuWindow.cpp */,
@@ -465,6 +469,7 @@
 				23DD7CFE184A5A4800E3B265 /* WorldWindow.cpp */,
 				230B7EDF18580E73009722D9 /* Action.h */,
 				23DD7CFC184A58FE00E3B265 /* BottomWindow.h */,
+				23B4A1FD186C405F00195265 /* Colors.h */,
 				23DD7CF3184A57E100E3B265 /* Gui.h */,
 				23B0EE0E184BD9C1001C17A2 /* InventoryWindow.h */,
 				23DD7CF9184A58E200E3B265 /* RightMenuWindow.h */,
@@ -709,6 +714,7 @@
 				23528990185C2A8300BC1C3F /* TileSet.cpp in Sources */,
 				230B7F0318584B9E009722D9 /* plane.cpp in Sources */,
 				23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */,
+				23B4A1FE186C405F00195265 /* Colors.cpp in Sources */,
 				23DD7CF4184A57E100E3B265 /* Gui.cpp in Sources */,
 				2352898C185BF28500BC1C3F /* DungeonTile.cpp in Sources */,
 				230B7F4318584C0D009722D9 /* blend.cpp in Sources */,

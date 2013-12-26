@@ -39,6 +39,7 @@
 #include "WorldWindow.h"
 #include "RightMenuWindow.h"
 #include "BottomWindow.h"
+#include "Colors.h"
 
 using namespace std;
 
@@ -83,6 +84,9 @@ public:
 private:
     // Divide screen real estate between the windows
     void DivideWindows();
+    
+    // Initialize ncurses color bindings
+    void InitColors();
     
     int scrx, scry; // term dimensions
     

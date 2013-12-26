@@ -117,6 +117,13 @@ void Gui::Init()
     noecho();
     refresh();
     
+    // Test if terminal supports colors at all
+    if ( !has_colors() )
+    {
+        // TODO: Gentler error
+        throw new std::runtime_error("Terminal does not support colors");
+    }
+    
     // Test that we can redefine colors as we like
     // The terminal must support it
     if ( !can_change_color() )
@@ -125,15 +132,13 @@ void Gui::Init()
         throw new std::runtime_error("Terminal does not support redefining colors");
     }
     
-    // TMP
-    // random color pair for testing
-    init_color(COLOR_GREEN,0,700,0);
-    init_color(COLOR_BLACK,0,0,0);
-    
-    init_pair(1, COLOR_GREEN, COLOR_BLACK);
+    // Initialize bindings from internal -> ncurses colors
+    InitColors();
     
     // Input timeout - return ERR if no input during tick
     timeout(100);
+    
+    int c = COLOR_PAIRS;
     
     // hide cursor
     curs_set(0);
@@ -176,6 +181,38 @@ void Gui::DivideWindows()
     bottomWindow->Resize(veci(0,h_top+h_world),veci(w_leftsub,h_bot));
     
     bottomWindow->SetScrollbackLines(h_bot);
+}
+
+void Gui::InitColors()
+{
+    // Instantiate
+    Colors::Black = new Colors::Color(0,0,0);
+    Colors::White = new Colors::Color(100,100,100);
+    Colors::Green = new Colors::Color(200,200,0);
+    
+    // Bind ids
+    Colors::Black->BindCursesId(100);
+    Colors::White->BindCursesId(101);
+    Colors::Green->BindCursesId(102);
+    
+    // Instantiate
+    Colors::DefaultPair = new Colors::ColorPair(Colors::White, Colors::Black);
+    Colors::GreenOnBlack = new Colors::ColorPair(Colors::Green, Colors::Black);
+    
+    // Make pairs for common ones
+    Colors::DefaultPair->BindCursesId(100);
+    Colors::GreenOnBlack->BindCursesId(101);
+    
+    short r,g,b;
+    
+    color_content(100, &r, &g, &b);
+    color_content(101, &r, &g, &b);
+    color_content(102, &r, &g, &b);
+    
+    short p1,p2;
+    pair_content(100, &p1, &p2);
+    
+    
 }
 
 void Gui::SetLocation(Location *_l)

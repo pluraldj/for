@@ -22,11 +22,24 @@
 
 
 #include "TopBarWindow.h"
+#include "Colors.h"
 
 TopBarWindow::TopBarWindow(veci _topleft, veci _size) : Window(_topleft,_size,false)
 {
     hp = hpmax = ap = apmax = caps = xp = level = 0;
     isRadiated = isPoisoned = false;
+    
+    Colors::DefaultPair->MakeActive(cursesWin);
+    
+    // TMP DEBUG
+    /*
+    init_color(100, 1000, 1000, 1000);
+    init_color(101, 0, 0, 0);
+    init_pair(100, 101, 100);
+    
+    init_pair(1,COLOR_GREEN,COLOR_RED);
+     
+    wcolor_set(cursesWin, 1, NULL);*/
 }
 
 void TopBarWindow::SetCaptions(string _pln, string _tit, string _loc, int _hp, int _hpm, int _ap, int _apm, int _cap, int _xp, int _lev, bool _cri, bool _rad, bool _poi)
@@ -48,6 +61,9 @@ void TopBarWindow::SetCaptions(string _pln, string _tit, string _loc, int _hp, i
 
 void TopBarWindow::Redraw()
 {
+    // number of "points" to draw on HP bar
+    const int nHpPoints = 15;
+    
     Window::Redraw();
     
     // Top line
@@ -65,6 +81,8 @@ void TopBarWindow::Redraw()
     
     wprintw(cursesWin, (" - Lvl " + numberToString(level) + " - XP " + numberToString(xp) + " (" + numberToString(xpnext) + ")").c_str());
     
+    wprintw(cursesWin, (" - $" + numberToString(caps)).c_str());
+    
     // Second line
     wmove(cursesWin,1,0);
 
@@ -72,12 +90,28 @@ void TopBarWindow::Redraw()
     double hppd = ((double)hp)/((double)hpmax);
     int hppi = (int)round(hppd*100.0);
     
+    // Number of filled points on HP bar
+    int hpFilled = (int)round(hppd*nHpPoints);
+    
+    // if we're not dead, always show at least one
+    if ( hp > 0 )
+        hpFilled = max(1,hpFilled);
+    
+    wprintw(cursesWin, "HP ");
+    
+    wprintw(cursesWin, (numberToString(hp) + "/" + numberToString(hpmax) + " ").c_str());
+    
+    // HP bar
+    
     // Color hp based on percentage
     // TODO
     
-    wprintw(cursesWin, ( "HP " + numberToString(hp) + "/" + numberToString(hpmax) + " [" + numberToString(hppi) + "%%]").c_str());
-    wprintw(cursesWin, ( " - AP " + numberToString(ap) + "/" + numberToString(apmax)).c_str());
-    wprintw(cursesWin, (" - $" + numberToString(caps)).c_str());
+    wprintw(cursesWin, "[");
+    for ( int i=0; i<hpFilled; ++i )
+        wprintw(cursesWin, "X");
+    for ( int i=hpFilled; i<nHpPoints; ++i )
+        wprintw(cursesWin, " ");
+    wprintw(cursesWin, "]");
     
     // Status markers
     if ( isCrippled || isRadiated || isPoisoned )
@@ -93,6 +127,20 @@ void TopBarWindow::Redraw()
         if ( isPoisoned )
             wprintw(cursesWin, " *POISON*");
     }
+    
+    // Third line
+    wmove(cursesWin,2,0);
+    
+    wprintw(cursesWin, ( "AP " + numberToString(ap) + "/" + numberToString(apmax)+ " ").c_str());
+    
+    // AP bar
+    
+    wprintw(cursesWin, "[");
+    for ( int i=0; i<ap; ++i )
+        wprintw(cursesWin, "X");
+    for ( int i=ap; i<apmax; ++i )
+        wprintw(cursesWin, " ");
+    wprintw(cursesWin, "]");
     
     wrefresh(cursesWin);
 }
