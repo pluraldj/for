@@ -75,7 +75,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "WorldWindow::Redraw()"
+            landmarkName = "WorldWindow::GetCamCenter()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -101,7 +101,7 @@
                   symbolName = "Character::~Character()"
                   moduleName = "forogue"
                   urlString = "file:///Users/lbc/forogue/src/Character.cpp"
-                  timestampString = "409276714.49545"
+                  timestampString = "409744240.682434"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -115,7 +115,7 @@
                   symbolName = "Character::~Character()"
                   moduleName = "forogue"
                   urlString = "file:///Users/lbc/forogue/src/Character.cpp"
-                  timestampString = "409276714.495661"
+                  timestampString = "409744240.682625"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -129,7 +129,7 @@
                   symbolName = "Character::~Character()"
                   moduleName = "forogue"
                   urlString = "file:///Users/lbc/forogue/src/Character.cpp"
-                  timestampString = "409276714.495828"
+                  timestampString = "409744240.682795"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -274,13 +274,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TileSetParser.cpp"
-            timestampString = "409276712.269742"
+            timestampString = "409289892.921162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "TileSetParser::Load()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gui.cpp"
+            timestampString = "409744198.515347"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "Gui::Init()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gui.cpp"
+            timestampString = "409744196.97622"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "Gui::~Gui()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game.cpp"
+            timestampString = "409744233.670998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "Game::~Game()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game::~Game()"
+                  moduleName = "forogue"
+                  urlString = "file:///Users/lbc/forogue/src/Game.cpp"
+                  timestampString = "409744240.682996"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game::~Game()"
+                  moduleName = "forogue"
+                  urlString = "file:///Users/lbc/forogue/src/Game.cpp"
+                  timestampString = "409744240.683216"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "99">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -31,9 +31,6 @@
     
     <things
     player="@"
-    rat="r"
-    mutant="M"
-    ghoul="g"
     />
     
 </tileset>

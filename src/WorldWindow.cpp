@@ -113,4 +113,6 @@ void WorldWindow::Redraw()
     }
 
     wrefresh(cursesWin);
+    
+    attroff(COLOR_PAIR(1));
 }

@@ -107,10 +107,30 @@ void Gui::Init()
     
     // init ncurses
     initscr();
+    
+    // enable color output
+    start_color();
+    
+    // setup input handling
     cbreak();
     keypad(stdscr, true);
     noecho();
     refresh();
+    
+    // Test that we can redefine colors as we like
+    // The terminal must support it
+    if ( !can_change_color() )
+    {
+        // TODO: Gentler error
+        throw new std::runtime_error("Terminal does not support redefining colors");
+    }
+    
+    // TMP
+    // random color pair for testing
+    init_color(COLOR_GREEN,0,700,0);
+    init_color(COLOR_BLACK,0,0,0);
+    
+    init_pair(1, COLOR_GREEN, COLOR_BLACK);
     
     // Input timeout - return ERR if no input during tick
     timeout(100);

@@ -33,7 +33,7 @@
 
 using namespace std;
 
-class Container
+class Container : public Entity
 {
 public:
     Container();

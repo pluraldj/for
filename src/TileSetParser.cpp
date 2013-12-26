@@ -98,9 +98,10 @@ WorldTileType TileSetParser::StringToWorldTileType(string str)
 
 EntityType TileSetParser::StringToEntityType(string str)
 {
-
     // TODO
-    
+    if ( str == "player" )
+        return EntityType::Player;
+    else
     return EntityType::Player;
     
 }

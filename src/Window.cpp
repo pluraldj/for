@@ -33,6 +33,10 @@ Window::Window(veci _topleft, veci _size, bool _hasBox)
     
     cursesWin = newwin(size.y, size.x, topleft.y, topleft.x);
     Clear();
+    
+    // OHMIGOD COLORS
+    // Set default for now, can overwrite later
+    wattron(cursesWin, COLOR_PAIR(1));
 }
 
 Window::~Window()

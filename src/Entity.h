@@ -34,12 +34,13 @@
 using namespace std;
 
 enum class EntityType {
-    None,            // Should never be used
-    
-    Rock,
+    None,            // Should never be used, overwrite after instantiation
     
     Critter,         // Should not be used, use subtype
+    
     Player,          // ONLY one allowed
+    
+    // Use subtypes generally
     Human,
     Ghoul,
     Mutant,

@@ -170,7 +170,7 @@ bool Game::MainLoop()
 
 void Game::Exit()
 {
-    endwin();
+    // TODO: save game to disk on exit
 }
 
 void Game::CharacterCreation()

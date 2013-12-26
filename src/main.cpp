@@ -58,5 +58,7 @@ int main(int argc, char *argv[])
     while ( g->MainLoop() )
         ;
     
+    delete g;
+    
     return 0;
 }
