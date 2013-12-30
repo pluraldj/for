@@ -120,11 +120,10 @@ private:
 // Heuristic for the distance function
 // This calculates the Manhattan distance (taxicab metric) between a vertex and a goal
 // vertex.
-class heuristic:
-public boost::astar_heuristic<filtered_grid, dist>
+class manhattan_heuristic : public boost::astar_heuristic<filtered_grid, dist>
 {
 public:
-    heuristic(vertex_descriptor goal):m_goal(goal) {};
+    manhattan_heuristic(vertex_descriptor goal):m_goal(goal) {};
     
     dist operator()(vertex_descriptor v)
     {

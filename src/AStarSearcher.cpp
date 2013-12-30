@@ -65,3 +65,60 @@ filtered_grid AStarSearcher::create_barrier_grid(Location *loc)
 
     return boost::make_vertex_subset_complement_filter(m_grid, m_barriers);
 }
+
+bool AStarSearcher::solve()
+{
+    // Clear old solution
+    m_solution.clear();
+    m_solution_length = 0;
+    
+    // Uniform weight map, all edges have weight 1
+    boost::static_property_map<dist> weight(1);
+    
+    // Predecessors of nodes
+    pred_map predecessor;
+    boost::associative_property_map<pred_map> pred_pmap(predecessor);
+    
+    // Distances for nodes based on the heuristic
+    dist_map distance;
+    boost::associative_property_map<dist_map> dist_pmap(distance);
+    
+    // Source and goal
+    vertex_descriptor s = source();
+    vertex_descriptor g = goal();
+    
+    // Instances of heuristic and visitor
+    manhattan_heuristic heuristic(g);
+    astar_goal_visitor visitor(g);
+    
+    // Attempt search, catch struct to check if found
+    try {
+        astar_search(m_barrier_grid, s, heuristic,
+                     boost::weight_map(weight).
+                     predecessor_map(pred_pmap).
+                     distance_map(dist_pmap).
+                     visitor(visitor) );
+    } catch(found_goal fg) {
+        // Walk backwards from the goal through the predecessor chain adding
+        // vertices to the solution path.
+        for (vertex_descriptor u = g; u != s; u = predecessor[u])
+            m_solution.insert(u);
+        m_solution.insert(s);
+        m_solution_length = distance[g];
+        return true;
+    }
+    
+    // Nope, didn't work.
+    return false;
+}
+
+bool AStarSearcher::solved()
+{
+    // Any vertices in solution set?
+    return !m_solution.empty();
+}
+
+
+
+
+
