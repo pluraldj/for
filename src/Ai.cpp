@@ -20,7 +20,6 @@
 // You should have received a copy of the GNU General Public License
 // along with FOR (see file LICENSE).  If not, see <http://www.gnu.org/licenses/>.
 
-
 #include "Ai.h"
 
 Ai::Ai()
@@ -63,4 +62,9 @@ AiCombatAction Ai::GetNextCombatAction(Creature *us, vector<Creature*> *combatan
     
     // Otherwise end turn
     return AiCombatAction::EndTurn;
+}
+
+veci Ai::GetMoveDir()
+{
+    return veci(1,0);
 }

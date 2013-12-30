@@ -67,6 +67,7 @@
 		23322BEA1849107B004CC64F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BE81849107B004CC64F /* Game.cpp */; };
 		23322BED18491544004CC64F /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BEB18491544004CC64F /* Window.cpp */; };
 		23322BF1184915D6004CC64F /* SpecialWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23322BEF184915D6004CC64F /* SpecialWindow.cpp */; };
+		23351C0218715EA9004B5033 /* AStarSearcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23351C0018715EA9004B5033 /* AStarSearcher.cpp */; };
 		23419DC0184867C7000B9EFD /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DBE184867C7000B9EFD /* Character.cpp */; };
 		23419DC318486807000B9EFD /* Special.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DC118486807000B9EFD /* Special.cpp */; };
 		23419DC918486A58000B9EFD /* Perk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23419DC718486A58000B9EFD /* Perk.cpp */; };
@@ -250,6 +251,8 @@
 		23322BEC18491544004CC64F /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		23322BEF184915D6004CC64F /* SpecialWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpecialWindow.cpp; sourceTree = "<group>"; };
 		23322BF0184915D6004CC64F /* SpecialWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialWindow.h; sourceTree = "<group>"; };
+		23351C0018715EA9004B5033 /* AStarSearcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AStarSearcher.cpp; sourceTree = "<group>"; };
+		23351C0118715EA9004B5033 /* AStarSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStarSearcher.h; sourceTree = "<group>"; };
 		23419DB118486661000B9EFD /* forogue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = forogue; sourceTree = BUILT_PRODUCTS_DIR; };
 		23419DBE184867C7000B9EFD /* Character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
 		23419DBF184867C7000B9EFD /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -592,6 +595,8 @@
 		23B0EDFE184B8F74001C17A2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				23351C0018715EA9004B5033 /* AStarSearcher.cpp */,
+				23351C0118715EA9004B5033 /* AStarSearcher.h */,
 				23419DF618489A76000B9EFD /* Utils.cpp */,
 				23419DF718489A76000B9EFD /* Utils.h */,
 			);
@@ -743,6 +748,7 @@
 				230B7F5518584C0D009722D9 /* scalebias.cpp in Sources */,
 				23419DC0184867C7000B9EFD /* Character.cpp in Sources */,
 				23419DE0184873C4000B9EFD /* Weapon.cpp in Sources */,
+				23351C0218715EA9004B5033 /* AStarSearcher.cpp in Sources */,
 				230B7F4118584C0D009722D9 /* add.cpp in Sources */,
 				23419DF218488E1F000B9EFD /* Tile.cpp in Sources */,
 				230BC3EC1856845E00CC65F2 /* PerkParser.cpp in Sources */,
