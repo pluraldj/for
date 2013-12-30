@@ -52,7 +52,7 @@ filtered_grid AStarSearcher::create_barrier_grid(Location *loc)
             if ( tile ->clipMask == false )
             {
                 // Convert to vertex index
-                int index = y*sy+sx;
+                int index = y*sy+x;
                 
                 // get vertex descriptor
                 vertex_descriptor u = vertex(index,m_grid);
@@ -66,8 +66,20 @@ filtered_grid AStarSearcher::create_barrier_grid(Location *loc)
     return boost::make_vertex_subset_complement_filter(m_grid, m_barriers);
 }
 
-bool AStarSearcher::solve()
+bool AStarSearcher::solve(veci start, veci goal)
 {
+    // Ineligible start/goal? No path can exist then
+    if ( location->GetTile(start.x,start.y)->clipMask == false ||
+         location->GetTile(goal.x,goal.y)->clipMask == false )
+        return false;
+    
+    // Convert start/goal coords to vertex descriptors
+    int s_index = start.y*location->size.y + start.x;
+    int g_index = goal.y*location->size.y + goal.x;
+    
+    vertex_descriptor s = vertex(s_index, m_grid);
+    vertex_descriptor g = vertex(g_index, m_grid);
+    
     // Clear old solution
     m_solution.clear();
     m_solution_length = 0;
@@ -82,10 +94,6 @@ bool AStarSearcher::solve()
     // Distances for nodes based on the heuristic
     dist_map distance;
     boost::associative_property_map<dist_map> dist_pmap(distance);
-    
-    // Source and goal
-    vertex_descriptor s = source();
-    vertex_descriptor g = goal();
     
     // Instances of heuristic and visitor
     manhattan_heuristic heuristic(g);
@@ -117,6 +125,39 @@ bool AStarSearcher::solved()
     // Any vertices in solution set?
     return !m_solution.empty();
 }
+
+void AStarSearcher::DumpSolution(string path)
+{
+    ofstream outfile;
+    outfile.open(path.c_str());
+    
+    for ( int y=0; y<location->size.y; y++ )
+    {
+        for ( int x=0; x<location->size.x; x++ )
+        {
+            // Passable?
+            bool mask = location->GetTile(x,y)->clipMask;
+            
+            vertex_descriptor v = vertex(y*location->size.y+x, m_grid);
+            
+            // Part of path?
+            if ( solution_contains(v) )
+            {
+                outfile << "o";
+            }
+            else if ( mask )
+                outfile << ".";
+            else
+                outfile << "x";
+        }
+        
+        outfile << "\n";
+    }
+    
+    outfile.close();
+}
+
+
 
 
 

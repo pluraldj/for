@@ -39,6 +39,8 @@
 #include <boost/unordered_set.hpp>
 #include <ctime>
 #include <iostream>
+#include <string>
+#include <fstream>
 
 #include "Location.h"
 
@@ -82,9 +84,11 @@ public:
     AStarSearcher(Location *_loc);
     ~AStarSearcher();
     
-    // TODO
-    vertex_descriptor source() const { return vertex(0, m_grid);}
-    vertex_descriptor goal() const { return vertex(num_vertices(m_grid)-1, m_grid);}
+    bool solve(veci start, veci goal);   // Attempt solution
+    
+    bool solved();  // solution found?
+    
+    void DumpSolution(string path); // Dump map/solution path to a file for debugging
     
 private:
     // Create the underlying rank-2 grid with the specified dimensions.
@@ -92,9 +96,6 @@ private:
 
     // Filter the barrier vertices out of the underlying grid.
     filtered_grid create_barrier_grid(Location *loc);
-    
-    bool solve();
-    bool solved();  // solution found?
     
     // Is vertex part of shortest path?
     bool solution_contains(vertex_descriptor u) const
