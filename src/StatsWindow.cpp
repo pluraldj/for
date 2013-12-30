@@ -23,7 +23,16 @@
 
 #include "StatsWindow.h"
 
-StatsWindow::StatsWindow(veci _topleft, veci _size) : Window(_topleft,_size,true)
+StatsWindow::StatsWindow(veci _topleft, veci _size, Character *_chara) : Window(_topleft,_size,true)
 {
+    // Bind and grab initial stats
+    player = _chara;
+}
+
+void StatsWindow::Redraw()
+{
+    Window::Redraw();
+    
+    
     
 }

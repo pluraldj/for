@@ -91,6 +91,7 @@
 		23B0EE0F184BD9C1001C17A2 /* InventoryWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE0D184BD9C1001C17A2 /* InventoryWindow.cpp */; };
 		23B0EE12184BDAD9001C17A2 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B0EE10184BDAD9001C17A2 /* Location.cpp */; };
 		23B4A1FE186C405F00195265 /* Colors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A1FC186C405F00195265 /* Colors.cpp */; };
+		23B4A201186D7D7C00195265 /* Combat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A1FF186D7D7C00195265 /* Combat.cpp */; };
 		23DD7CF4184A57E100E3B265 /* Gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DD7CF2184A57E100E3B265 /* Gui.cpp */; };
 		23DD7CF7184A58D100E3B265 /* TopBarWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DD7CF5184A58D100E3B265 /* TopBarWindow.cpp */; };
 		23DD7CFA184A58E200E3B265 /* RightMenuWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DD7CF8184A58E200E3B265 /* RightMenuWindow.cpp */; };
@@ -305,6 +306,8 @@
 		23B0EE11184BDAD9001C17A2 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		23B4A1FC186C405F00195265 /* Colors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Colors.cpp; sourceTree = "<group>"; };
 		23B4A1FD186C405F00195265 /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		23B4A1FF186D7D7C00195265 /* Combat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Combat.cpp; sourceTree = "<group>"; };
+		23B4A200186D7D7C00195265 /* Combat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combat.h; sourceTree = "<group>"; };
 		23DD7CF2184A57E100E3B265 /* Gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gui.cpp; sourceTree = "<group>"; };
 		23DD7CF3184A57E100E3B265 /* Gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gui.h; sourceTree = "<group>"; };
 		23DD7CF5184A58D100E3B265 /* TopBarWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopBarWindow.cpp; sourceTree = "<group>"; };
@@ -605,6 +608,8 @@
 				230B7EE218582857009722D9 /* Ai.h */,
 				23419DBF184867C7000B9EFD /* Character.h */,
 				23322BE91849107B004CC64F /* Game.h */,
+				23B4A1FF186D7D7C00195265 /* Combat.cpp */,
+				23B4A200186D7D7C00195265 /* Combat.h */,
 			);
 			name = Gameplay;
 			sourceTree = "<group>";
@@ -766,6 +771,7 @@
 				230B7F5A18584C0D009722D9 /* translatepoint.cpp in Sources */,
 				23B0EE0C184BD9B8001C17A2 /* StatsWindow.cpp in Sources */,
 				230B7F0218584B9E009722D9 /* line.cpp in Sources */,
+				23B4A201186D7D7C00195265 /* Combat.cpp in Sources */,
 				230B7F4C18584C0D009722D9 /* invert.cpp in Sources */,
 				230B7F4918584C0D009722D9 /* cylinders.cpp in Sources */,
 				230B7F4A18584C0D009722D9 /* displace.cpp in Sources */,

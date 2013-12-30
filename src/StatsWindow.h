@@ -30,13 +30,18 @@
 
 #include "Window.h"
 
+#include "Character.h"
+
 class StatsWindow : public Window
 {
 public:
-    StatsWindow(veci _topleft, veci _size);
+    StatsWindow(veci _topleft, veci _size, Character *_chara);
+
+    
+    void Redraw();
     
 private:
-    // Data contained in window
+    Character *player;
 };
 
 #endif /* defined(__forogue__StatsWindow__) */

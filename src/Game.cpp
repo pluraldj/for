@@ -22,6 +22,7 @@
 
 
 #include "Game.h"
+#include "Creature.h"
 
 Game::~Game()
 {
@@ -30,6 +31,8 @@ Game::~Game()
     
     if ( gui )
         delete gui;
+    
+    isInDungeon = false;
 }
 
 void Game::Init()
@@ -75,6 +78,8 @@ void Game::Init()
     // Spawn player into dungeon near start
     veci loc = dungeon->GetPlayerSpawnCoords();
     player->location = loc;
+    isInDungeon = true;
+    currLocation = dungeon;
     
     // Add player to ents
     dungeon->activeEnts->push_back(player);
@@ -84,19 +89,27 @@ void Game::Init()
     player->visInfo->ClearVis();
     player->visInfo->UpdateVis();
     
+    // Spawn rat
+    Creature *rat = new Creature();
+    rat->name = "Rat";
+    rat->type = EntityType::Critter;
+    rat->specificSymbol = L"r";
+    rat->location = player->location + veci(2,2);
+    dungeon->activeEnts->push_back(rat);
+    
     // Create wasteland
-    world = new World( WorldSpec() );
-    world->Dump("worlddump.txt");
+    //world = new World( WorldSpec() );
+    //world->Dump("worlddump.txt");
     
     // Start in overworld
-    isInDungeon = false;
-    player->location = veci(10,10);
-    currLocation = world;
+    //isInDungeon = false;
+    //player->location = veci(10,10);
+    //currLocation = world;
     
     // Vis for travelling
-    player->visInfo = new Visibility(world,player);
-    player->visInfo->ClearVis();
-    player->visInfo->UpdateVis();
+    //player->visInfo = new Visibility(world,player);
+    //player->visInfo->ClearVis();
+    //player->visInfo->UpdateVis();
     
     // END TMP
     
@@ -108,9 +121,9 @@ void Game::Init()
     gui = new Gui();
     gui->Init();
     
-    gui->SetLocation(world);
+    gui->SetLocation(currLocation);
     gui->SetEntities(dungeon->activeEnts);
-    gui->SetCharData(player, world);
+    gui->SetCharData(player, currLocation);
     gui->SetVisInfo(player->visInfo);
     
     gui->PostMessage("Welcome to FOR.");

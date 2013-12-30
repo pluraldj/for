@@ -72,10 +72,10 @@ private:
     
     Gui *gui;
     
-    bool isInDungeon;       // in dungeon or travelling
-    Location *currLocation;       // current location
-    World *world;           // Wasteland overworld
-    Character *player;      // Player character
+    bool isInDungeon;           // in dungeon or travelling
+    Location *currLocation;     // current location
+    World *world;               // Wasteland overworld
+    Character *player;          // Player character
     
     // All generated sub-locations
     // May not be generated in detail yet (wait until visit)

@@ -27,13 +27,13 @@ DungeonSpec::DungeonSpec()
 {
     type = DungeonType::Cave;
     
-    numareas = 120;
+    numareas = 2;
     
-    minsize = 200;
-    maxsize = 400;
+    minsize = 50;
+    maxsize = 50;
     
-    area_minsize = 2;
-    area_maxsize = 7;
+    area_minsize = 10;
+    area_maxsize = 15;
     
     // Probabilities of assigning area type
     // THESE MUST ADD TO ONE YOU NUB
