@@ -54,6 +54,18 @@ public:
     // When out of AP or nothing more to do this turn, action is end turn
     void DoNextAction();
     
+    void NextTurn();
+    
+    // Check if combat should expire naturally
+    // This happens if no one is hostile towards each other anymore
+    // Usually because all the hostile ones are dead!
+    bool DoesCombatEndNaturally();
+    
+    // A single creature unilaterally decides to flee/cease hostilities
+    // This is different from combat ending naturally, and only requires that
+    // we can escape from the others (based on distance)
+    bool AttemptCombatEnd(Creature *c);
+    
 private:
     Creature *instigator;               // First attacker and combat starter
     Creature *firstAttacked;            // First to get attacked, gets to go second
@@ -66,8 +78,6 @@ private:
     int currentTurn;            // Index of creature with current turn
     
     bool isFirstTurn;       // Currently on suprise turn or regular turn?
-    
-    bool playerTurn;
 };
 
 #endif /* defined(__forogue__Combat__) */

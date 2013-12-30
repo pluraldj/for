@@ -27,16 +27,21 @@
 #define _XOPEN_SOURCE_EXTENDED
 
 #include <iostream>
+#include <vector>
+
+#include "Creature.h"
+#include "Dungeon.h"
+#include "Utils.h"
 
 using namespace std;
 
 // What an NPC is currently doing or wants to do
 enum class AiMode
 {
-    AiModeNone,   // nothing in particular
-    Wander,
-    Attack,
-    Flee
+    AiModeNone,     // nothing in particular, just standing around
+    Wander,         // Wander randomly around
+    Attack,         // Wants to hurt the player
+    Flee            // Wants to quit combat/escape certain death
 };
 
 // General disposition towards player/other NPCS
@@ -49,16 +54,55 @@ enum class AiAttitude {
     Aggressive
 };
 
+// Things we can do _out_ of combat
+// Queried every (non-combat) turn from elsewhere
+// After getting action we query what to do specifically, like where to move to
+enum class AiAction
+{
+    None,
+    Move,
+    EnterCombat,
+    Attack
+};
+
+// Things we can do _in_ combat
+// Queried as long as its our turn during combat (from Combat instance)
+// Like AiAction, afterwards we query for specific action, like who to attack with what weapon
+enum class AiCombatAction
+{
+    None,
+    Move,
+    Attack,
+    EndTurn,
+    EndCombat,
+    UseItem
+};
+
 // Every NPC has an AI object which determines how they react to situations.
 class Ai
 {
 public:
     Ai();
     
+    // Decide if we want to run
+    // Based on health and what enemies we are facing in combat
+    bool WantsToFlee(int hp, int hpmax, vector<Creature*> combatParticipants);
+    
+    // Query general action
+    // These take pointers to creature since many creatures can share an Ai instance (similar behavior)
+    AiAction GetNextAction(Creature *c, Dungeon *dungeon);
+    AiCombatAction GetNextCombatAction(Creature *us, vector<Creature*> *combatants, Dungeon *dungeon);
+    
+    veci GetMoveDir();  // Relative vector with next move
+    
+    
     AiMode mode;
     AiAttitude attitude;
     bool canTalk;
     bool wantsToBarter;
+    
+    // Where we would like to move over a number of turns
+    veci moveTarget;
 };
 
 #endif /* defined(__forogue__Ai__) */

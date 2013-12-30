@@ -26,7 +26,41 @@
 Ai::Ai()
 {
     mode = AiMode::Wander;
-    attitude = AiAttitude::Neutral;
+    attitude = AiAttitude::Hostile;
     canTalk = false;
     wantsToBarter = false;
+}
+
+bool Ai::WantsToFlee(int hp, int hpmax, vector<Creature*> combatParticipants)
+{
+    // TODO
+    // For now, fight until death
+    
+    return false;
+}
+
+AiAction Ai::GetNextAction(Creature *us, Dungeon *dungeon)
+{
+    // TODO: Take environment into account
+    
+    // nothing in particular
+    return AiAction::None;
+}
+
+AiCombatAction Ai::GetNextCombatAction(Creature *us, vector<Creature*> *combatants, Dungeon *dungeon)
+{
+    // TODO: Take other combatants into account
+    // TODO: NPC on NPC combat
+    // TODO: Ranged combat
+    // TODO: Fleeing
+    // TODO: Flee and end combat entirely
+    
+    // Close enough to player to attack? otherwise get close enough
+    
+    // Enough ap to attack?
+    if ( us->AP <= 3 )
+        return AiCombatAction::Attack;
+    
+    // Otherwise end turn
+    return AiCombatAction::EndTurn;
 }

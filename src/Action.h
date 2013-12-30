@@ -61,7 +61,8 @@ enum class UiAction {
     
     OpenContainer,
     TalkTo,
-    BarterWith };
+    BarterWith
+};
 
 // Container for action metadata displayed in the right-hand bar
 class Action
