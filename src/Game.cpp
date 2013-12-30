@@ -111,6 +111,11 @@ void Game::Init()
     //player->visInfo->ClearVis();
     //player->visInfo->UpdateVis();
     
+    // A-star test
+    //AStarSearcher ass(dungeon);
+    //ass.solve(player->location, player->location+veci(3,3));
+    //ass.DumpSolution("pathdump.txt");
+    
     // END TMP
     
     // Load item prototypes

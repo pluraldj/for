@@ -45,6 +45,7 @@
 #include "Visibility.h"
 #include "WeaponParser.h"
 #include "TileSet.h"
+#include "AStarSearcher.h"
 
 using namespace std;
 
