@@ -31,7 +31,15 @@
 #include <iostream>
 
 #include <locale.h>
+
+#ifdef OSX
 #include <ncurses.h>
+#endif
+
+#ifdef LINUX
+#include <ncursesw/curses.h>
+#endif
+
 #include <menu.h>
 
 #include "Utils.h"

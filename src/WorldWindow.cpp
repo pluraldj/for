@@ -23,6 +23,8 @@
 
 #include "WorldWindow.h"
 
+#include <curses.h>
+
 WorldWindow::WorldWindow(veci _topleft, veci _size) : Window(_topleft,_size,true)
 {
     loc = NULL;
