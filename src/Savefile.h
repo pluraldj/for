@@ -23,6 +23,10 @@
 #ifndef __forogue__Savefile__
 #define __forogue__Savefile__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
+#define _XOPEN_SOURCE_EXTENDED
+#endif
+
 #include <iostream>
 #include <string>
 

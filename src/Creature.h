@@ -24,7 +24,9 @@
 #ifndef __forogue__Creature__
 #define __forogue__Creature__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 #include <string>

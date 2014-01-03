@@ -26,6 +26,10 @@
 #ifndef __forogue__AStarSearcher__
 #define __forogue__AStarSearcher__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
+#define _XOPEN_SOURCE_EXTENDED
+#endif
+
 #include <iostream>
 
 #include <boost/graph/astar_search.hpp>
