@@ -23,6 +23,10 @@
 #ifndef __forogue__Combat__
 #define __forogue__Combat__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
+#define _XOPEN_SOURCE_EXTENDED
+#endif
+
 #include <iostream>
 #include <vector>
 

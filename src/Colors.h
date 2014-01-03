@@ -23,7 +23,9 @@
 #ifndef __forogue__Colors__
 #define __forogue__Colors__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 

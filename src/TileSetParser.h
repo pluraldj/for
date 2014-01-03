@@ -24,7 +24,9 @@
 #ifndef __forogue__TileSetParser__
 #define __forogue__TileSetParser__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <string>
 #include <iostream>

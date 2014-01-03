@@ -24,7 +24,9 @@
 #ifndef __forogue__SpecialWindow__
 #define __forogue__SpecialWindow__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 

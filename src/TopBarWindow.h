@@ -24,7 +24,9 @@
 #ifndef __forogue__TopBarWindow__
 #define __forogue__TopBarWindow__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 #include <string>

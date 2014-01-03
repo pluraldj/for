@@ -24,6 +24,10 @@
 #ifndef __forogue__TileSet__
 #define __forogue__TileSet__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
+#define _XOPEN_SOURCE_EXTENDED
+#endif
+
 #include <iostream>
 #include <string>
 #include <map>

@@ -24,7 +24,9 @@
 #ifndef __forogue__Skills__
 #define __forogue__Skills__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 

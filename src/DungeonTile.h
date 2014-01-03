@@ -24,7 +24,9 @@
 #ifndef __forogue__DungeonTile__
 #define __forogue__DungeonTile__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 

@@ -24,7 +24,9 @@
 #ifndef __forogue__PerkParser__
 #define __forogue__PerkParser__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 

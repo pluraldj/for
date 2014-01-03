@@ -24,7 +24,9 @@
 #ifndef __forogue__Armor__
 #define __forogue__Armor__
 
+#ifndef _XOPEN_SOURCE_EXTENDED
 #define _XOPEN_SOURCE_EXTENDED
+#endif
 
 #include <iostream>
 
