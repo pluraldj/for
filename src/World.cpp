@@ -23,8 +23,8 @@
 
 #include "World.h"
 
-#include "noise.h"
-#include "noiseutils.h"
+#include <noise/noise.h>
+#include <noiseutils.h>
 using namespace noise;
 
 World::World(WorldSpec spec) : Location()

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "23419DB018486661000B9EFD"
-               BuildableName = "forogue"
-               BlueprintName = "forogue"
-               ReferencedContainer = "container:forogue.xcodeproj">
+               BlueprintIdentifier = "231CFFA71876E2D800C72B8F"
+               BuildableName = "FOR"
+               BlueprintName = "FOR"
+               ReferencedContainer = "container:FOR.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,17 +32,17 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "23419DB018486661000B9EFD"
-            BuildableName = "forogue"
-            BlueprintName = "forogue"
-            ReferencedContainer = "container:forogue.xcodeproj">
+            BlueprintIdentifier = "231CFFA71876E2D800C72B8F"
+            BuildableName = "FOR"
+            BlueprintName = "FOR"
+            ReferencedContainer = "container:FOR.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "1"
+      launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "23419DB018486661000B9EFD"
-            BuildableName = "forogue"
-            BlueprintName = "forogue"
-            ReferencedContainer = "container:forogue.xcodeproj">
+            BlueprintIdentifier = "231CFFA71876E2D800C72B8F"
+            BuildableName = "FOR"
+            BlueprintName = "FOR"
+            ReferencedContainer = "container:FOR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "23419DB018486661000B9EFD"
-            BuildableName = "forogue"
-            BlueprintName = "forogue"
-            ReferencedContainer = "container:forogue.xcodeproj">
+            BlueprintIdentifier = "231CFFA71876E2D800C72B8F"
+            BuildableName = "FOR"
+            BlueprintName = "FOR"
+            ReferencedContainer = "container:FOR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

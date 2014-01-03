@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>forogue.xcscheme</key>
+		<key>FOR.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23419DB018486661000B9EFD</key>
+		<key>231CFFA71876E2D800C72B8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
