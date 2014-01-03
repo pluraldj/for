@@ -37,7 +37,7 @@
 #include "DungeonSpec.h"
 #include "DungeonArea.h"
 #include "Location.h"
-#include "item.h"
+#include "Item.h"
 #include "Character.h"
 #include "Visibility.h"
 #include "DungeonTile.h"
