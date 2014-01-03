@@ -49,13 +49,13 @@ INCLUDES = -I$(SRC_ROOT) -I$(DEPS_ROOT)/noiseutils -I$(DEPS_ROOT)/libnoiseheader
 all: $(TARGET)
 	cp $(TARGET) $(BIN_DIR)
 
-$(TARGET): $(OBJS) libnoise
+$(TARGET): $(OBJS) libnoise noiseutils.o
 	$(CXX) $(OBJS) $(LIBNOISE_OBJS) noiseutils.o -o $(TARGET) $(LFLAGS) $(LIBS) 
 
-%.o: $(SRC_ROOT)/%.cpp
+noiseutils.o: $(DEPS_ROOT)/noiseutils/noiseutils.cpp
 	$(CXX) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-noiseutils.o: $(DEPS_ROOT)/noiseutils/noiseutils.cpp
+%.o: $(SRC_ROOT)/%.cpp
 	$(CXX) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 libnoise: $(LIBNOISE_SRCS)
