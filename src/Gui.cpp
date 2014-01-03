@@ -128,6 +128,7 @@ void Gui::Init()
     // The terminal must support it
     
     // CHANGED: For now, we just use built in colors
+    // TODO: Uncomment if we're ever going to redefine colors
     //if ( !can_change_color() )
     //{
     //    // TODO: Gentler error
