@@ -126,11 +126,13 @@ void Gui::Init()
     
     // Test that we can redefine colors as we like
     // The terminal must support it
-    if ( !can_change_color() )
-    {
-        // TODO: Gentler error
-        throw new std::runtime_error("Terminal does not support redefining colors");
-    }
+    
+    // CHANGED: For now, we just use built in colors
+    //if ( !can_change_color() )
+    //{
+    //    // TODO: Gentler error
+    //    throw new std::runtime_error("Terminal does not support redefining colors");
+    //}
     
     // Initialize bindings from internal -> ncurses colors
     InitColors();
