@@ -138,11 +138,14 @@ void Gui::Init()
     // Initialize bindings from internal -> ncurses colors
     InitColors();
     
-    // Input timeout - return ERR if no input during tick
-    timeout(100);
-    
     // hide cursor
     curs_set(0);
+    
+    // Dump color table and exit
+    Colors::colorTest();
+    
+    // Input timeout - return ERR if no input during tick
+    timeout(100);
     
     // Get term size
     getmaxyx(stdscr,scry,scrx);

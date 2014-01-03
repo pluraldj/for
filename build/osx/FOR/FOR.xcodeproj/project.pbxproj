@@ -301,6 +301,23 @@
 		231CFFFD1876E33F00C72B8F /* Tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tile.cpp; path = ../../../src/Tile.cpp; sourceTree = "<group>"; };
 		231CFFFE1876E33F00C72B8F /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tile.h; path = ../../../src/Tile.h; sourceTree = "<group>"; };
 		231CFFFF1876E33F00C72B8F /* TileSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TileSet.cpp; path = ../../../src/TileSet.cpp; sourceTree = "<group>"; };
+		234B55C91877231B00430E9C /* CHANGES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CHANGES; path = ../../../CHANGES; sourceTree = "<group>"; };
+		234B55CA1877231B00430E9C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../LICENSE; sourceTree = "<group>"; };
+		234B55CB1877231B00430E9C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
+		234B55CC1877231B00430E9C /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TODO; path = ../../../TODO; sourceTree = "<group>"; };
+		234B55CD1877232600430E9C /* keys.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = keys.txt; path = ../../../meta/keys.txt; sourceTree = "<group>"; };
+		234B55CE1877232600430E9C /* symbols.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = symbols.txt; path = ../../../meta/symbols.txt; sourceTree = "<group>"; };
+		234B55D01877235400430E9C /* ammo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ammo.xml; path = ../../../bin/data/ammo.xml; sourceTree = "<group>"; };
+		234B55D11877235400430E9C /* armor.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = armor.xml; path = ../../../bin/data/armor.xml; sourceTree = "<group>"; };
+		234B55D21877235400430E9C /* consumables.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = consumables.xml; path = ../../../bin/data/consumables.xml; sourceTree = "<group>"; };
+		234B55D31877235400430E9C /* creatures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = creatures.xml; path = ../../../bin/data/creatures.xml; sourceTree = "<group>"; };
+		234B55D41877235400430E9C /* factions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = factions.xml; path = ../../../bin/data/factions.xml; sourceTree = "<group>"; };
+		234B55D51877235400430E9C /* items.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = items.xml; path = ../../../bin/data/items.xml; sourceTree = "<group>"; };
+		234B55D61877235400430E9C /* perks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = perks.xml; path = ../../../bin/data/perks.xml; sourceTree = "<group>"; };
+		234B55D71877235400430E9C /* races.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = races.xml; path = ../../../bin/data/races.xml; sourceTree = "<group>"; };
+		234B55D81877235400430E9C /* tileset.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tileset.xml; path = ../../../bin/data/tileset.xml; sourceTree = "<group>"; };
+		234B55D91877235400430E9C /* traits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = traits.xml; path = ../../../bin/data/traits.xml; sourceTree = "<group>"; };
+		234B55DA1877235400430E9C /* weapons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = weapons.xml; path = ../../../bin/data/weapons.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,84 +344,84 @@
 			isa = PBXGroup;
 			children = (
 				231C00731876EC6300C72B8F /* abs.cpp */,
-				231C00741876EC6300C72B8F /* abs.h */,
 				231C00751876EC6300C72B8F /* add.cpp */,
-				231C00761876EC6300C72B8F /* add.h */,
 				231C00771876EC6300C72B8F /* billow.cpp */,
-				231C00781876EC6300C72B8F /* billow.h */,
 				231C00791876EC6300C72B8F /* blend.cpp */,
-				231C007A1876EC6300C72B8F /* blend.h */,
 				231C007B1876EC6300C72B8F /* cache.cpp */,
-				231C007C1876EC6300C72B8F /* cache.h */,
 				231C007D1876EC6300C72B8F /* checkerboard.cpp */,
-				231C007E1876EC6300C72B8F /* checkerboard.h */,
 				231C007F1876EC6300C72B8F /* clamp.cpp */,
-				231C00801876EC6300C72B8F /* clamp.h */,
 				231C00811876EC6300C72B8F /* const.cpp */,
-				231C00821876EC6300C72B8F /* const.h */,
 				231C00831876EC6300C72B8F /* curve.cpp */,
-				231C00841876EC6300C72B8F /* curve.h */,
-				231C00851876EC6300C72B8F /* cylinders.cpp */,
-				231C00861876EC6300C72B8F /* cylinders.h */,
-				231C00871876EC6300C72B8F /* displace.cpp */,
-				231C00881876EC6300C72B8F /* displace.h */,
-				231C00891876EC6300C72B8F /* exponent.cpp */,
-				231C008A1876EC6300C72B8F /* exponent.h */,
-				231C008B1876EC6300C72B8F /* invert.cpp */,
-				231C008C1876EC6300C72B8F /* invert.h */,
-				231C008D1876EC6300C72B8F /* max.cpp */,
-				231C008E1876EC6300C72B8F /* max.h */,
-				231C008F1876EC6300C72B8F /* min.cpp */,
-				231C00901876EC6300C72B8F /* min.h */,
-				231C00911876EC6300C72B8F /* module.h */,
-				231C00921876EC6300C72B8F /* modulebase.cpp */,
-				231C00931876EC6300C72B8F /* modulebase.h */,
-				231C00941876EC6300C72B8F /* multiply.cpp */,
-				231C00951876EC6300C72B8F /* multiply.h */,
-				231C00961876EC6300C72B8F /* perlin.cpp */,
-				231C00971876EC6300C72B8F /* perlin.h */,
-				231C00981876EC6300C72B8F /* power.cpp */,
-				231C00991876EC6300C72B8F /* power.h */,
-				231C009A1876EC6300C72B8F /* ridgedmulti.cpp */,
-				231C009B1876EC6300C72B8F /* ridgedmulti.h */,
-				231C009C1876EC6300C72B8F /* rotatepoint.cpp */,
-				231C009D1876EC6300C72B8F /* rotatepoint.h */,
-				231C009E1876EC6300C72B8F /* scalebias.cpp */,
-				231C009F1876EC6300C72B8F /* scalebias.h */,
-				231C00A01876EC6300C72B8F /* scalepoint.cpp */,
-				231C00A11876EC6300C72B8F /* scalepoint.h */,
-				231C00A21876EC6300C72B8F /* select.cpp */,
-				231C00A31876EC6300C72B8F /* select.h */,
-				231C00A41876EC6300C72B8F /* spheres.cpp */,
-				231C00A51876EC6300C72B8F /* spheres.h */,
-				231C00A61876EC6300C72B8F /* terrace.cpp */,
-				231C00A71876EC6300C72B8F /* terrace.h */,
-				231C00A81876EC6300C72B8F /* translatepoint.cpp */,
-				231C00A91876EC6300C72B8F /* translatepoint.h */,
-				231C00AA1876EC6300C72B8F /* turbulence.cpp */,
-				231C00AB1876EC6300C72B8F /* turbulence.h */,
-				231C00AC1876EC6300C72B8F /* voronoi.cpp */,
-				231C00AD1876EC6300C72B8F /* voronoi.h */,
 				231C00661876EBFB00C72B8F /* cylinder.cpp */,
-				231C00671876EBFB00C72B8F /* cylinder.h */,
-				231C00681876EBFB00C72B8F /* line.cpp */,
-				231C00691876EBFB00C72B8F /* line.h */,
-				231C006A1876EBFB00C72B8F /* model.h */,
-				231C006B1876EBFB00C72B8F /* plane.cpp */,
-				231C006C1876EBFB00C72B8F /* plane.h */,
-				231C006D1876EBFB00C72B8F /* sphere.cpp */,
-				231C006E1876EBFB00C72B8F /* sphere.h */,
-				231C00591876EBD400C72B8F /* basictypes.h */,
-				231C005A1876EBD400C72B8F /* exception.h */,
-				231C005B1876EBD400C72B8F /* interp.h */,
+				231C00851876EC6300C72B8F /* cylinders.cpp */,
+				231C00871876EC6300C72B8F /* displace.cpp */,
+				231C00891876EC6300C72B8F /* exponent.cpp */,
+				231C008B1876EC6300C72B8F /* invert.cpp */,
 				231C005C1876EBD400C72B8F /* latlon.cpp */,
-				231C005D1876EBD400C72B8F /* latlon.h */,
-				231C005E1876EBD400C72B8F /* mathconsts.h */,
-				231C005F1876EBD400C72B8F /* misc.h */,
-				231C00601876EBD400C72B8F /* noise.h */,
+				231C00681876EBFB00C72B8F /* line.cpp */,
+				231C008D1876EC6300C72B8F /* max.cpp */,
+				231C008F1876EC6300C72B8F /* min.cpp */,
+				231C00921876EC6300C72B8F /* modulebase.cpp */,
+				231C00941876EC6300C72B8F /* multiply.cpp */,
 				231C00611876EBD400C72B8F /* noisegen.cpp */,
+				231C00961876EC6300C72B8F /* perlin.cpp */,
+				231C006B1876EBFB00C72B8F /* plane.cpp */,
+				231C00981876EC6300C72B8F /* power.cpp */,
+				231C009A1876EC6300C72B8F /* ridgedmulti.cpp */,
+				231C009C1876EC6300C72B8F /* rotatepoint.cpp */,
+				231C009E1876EC6300C72B8F /* scalebias.cpp */,
+				231C00A01876EC6300C72B8F /* scalepoint.cpp */,
+				231C00A21876EC6300C72B8F /* select.cpp */,
+				231C006D1876EBFB00C72B8F /* sphere.cpp */,
+				231C00A41876EC6300C72B8F /* spheres.cpp */,
+				231C00A61876EC6300C72B8F /* terrace.cpp */,
+				231C00A81876EC6300C72B8F /* translatepoint.cpp */,
+				231C00AA1876EC6300C72B8F /* turbulence.cpp */,
+				231C00AC1876EC6300C72B8F /* voronoi.cpp */,
+				231C00741876EC6300C72B8F /* abs.h */,
+				231C00761876EC6300C72B8F /* add.h */,
+				231C00591876EBD400C72B8F /* basictypes.h */,
+				231C00781876EC6300C72B8F /* billow.h */,
+				231C007A1876EC6300C72B8F /* blend.h */,
+				231C007C1876EC6300C72B8F /* cache.h */,
+				231C007E1876EC6300C72B8F /* checkerboard.h */,
+				231C00801876EC6300C72B8F /* clamp.h */,
+				231C00821876EC6300C72B8F /* const.h */,
+				231C00841876EC6300C72B8F /* curve.h */,
+				231C00671876EBFB00C72B8F /* cylinder.h */,
+				231C00861876EC6300C72B8F /* cylinders.h */,
+				231C00881876EC6300C72B8F /* displace.h */,
+				231C005A1876EBD400C72B8F /* exception.h */,
+				231C008A1876EC6300C72B8F /* exponent.h */,
+				231C005B1876EBD400C72B8F /* interp.h */,
+				231C008C1876EC6300C72B8F /* invert.h */,
+				231C005D1876EBD400C72B8F /* latlon.h */,
+				231C00691876EBFB00C72B8F /* line.h */,
+				231C005E1876EBD400C72B8F /* mathconsts.h */,
+				231C008E1876EC6300C72B8F /* max.h */,
+				231C00901876EC6300C72B8F /* min.h */,
+				231C005F1876EBD400C72B8F /* misc.h */,
+				231C006A1876EBFB00C72B8F /* model.h */,
+				231C00911876EC6300C72B8F /* module.h */,
+				231C00931876EC6300C72B8F /* modulebase.h */,
+				231C00951876EC6300C72B8F /* multiply.h */,
+				231C00601876EBD400C72B8F /* noise.h */,
 				231C00621876EBD400C72B8F /* noisegen.h */,
+				231C00971876EC6300C72B8F /* perlin.h */,
+				231C006C1876EBFB00C72B8F /* plane.h */,
+				231C00991876EC6300C72B8F /* power.h */,
+				231C009B1876EC6300C72B8F /* ridgedmulti.h */,
+				231C009D1876EC6300C72B8F /* rotatepoint.h */,
+				231C009F1876EC6300C72B8F /* scalebias.h */,
+				231C00A11876EC6300C72B8F /* scalepoint.h */,
+				231C00A31876EC6300C72B8F /* select.h */,
+				231C006E1876EBFB00C72B8F /* sphere.h */,
+				231C00A51876EC6300C72B8F /* spheres.h */,
+				231C00A71876EC6300C72B8F /* terrace.h */,
+				231C00A91876EC6300C72B8F /* translatepoint.h */,
+				231C00AB1876EC6300C72B8F /* turbulence.h */,
 				231C00631876EBD400C72B8F /* vectortable.h */,
+				231C00AD1876EC6300C72B8F /* voronoi.h */,
 			);
 			name = libnoise;
 			sourceTree = "<group>";
@@ -420,59 +437,141 @@
 		231CFF9F1876E2D800C72B8F = {
 			isa = PBXGroup;
 			children = (
-				231CFFB41876E33F00C72B8F /* Action.cpp */,
+				234B55CF1877234400430E9C /* Data */,
+				234B55C5187721FE00430E9C /* Files */,
+				234B55C1187721D000430E9C /* Gameplay */,
+				234B55C8187722DD00430E9C /* Include */,
+				231C00581876EAEF00C72B8F /* libnoise */,
+				234B55C61877220500430E9C /* Meta */,
+				231C00551876EAD000C72B8F /* noiseutils */,
+				231CFFA91876E2D800C72B8F /* Products */,
+				234B55C2187721D700430E9C /* Stuff */,
+				234B55C4187721E600430E9C /* UI */,
+				234B55C7187722A300430E9C /* Utility */,
+				234B55C3187721E000430E9C /* World */,
+				231C00CB1876EC7200C72B8F /* xerces */,
+			);
+			sourceTree = "<group>";
+		};
+		231CFFA91876E2D800C72B8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				231CFFA81876E2D800C72B8F /* for */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		234B55C1187721D000430E9C /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
 				231CFFB61876E33F00C72B8F /* Ai.cpp */,
-				231CFFB81876E33F00C72B8F /* Ammo.cpp */,
-				231CFFBA1876E33F00C72B8F /* AmmoParser.cpp */,
-				231CFFBC1876E33F00C72B8F /* Armor.cpp */,
-				231CFFBE1876E33F00C72B8F /* ArmorParser.cpp */,
-				231CFFC01876E33F00C72B8F /* AStarSearcher.cpp */,
-				231CFFC21876E33F00C72B8F /* BottomWindow.cpp */,
 				231CFFC41876E33F00C72B8F /* Character.cpp */,
-				231CFFC61876E33F00C72B8F /* Colors.cpp */,
 				231CFFC81876E33F00C72B8F /* Combat.cpp */,
-				231CFFCA1876E33F00C72B8F /* ConsumableParser.cpp */,
+				231CFFDE1876E33F00C72B8F /* Game.cpp */,
+				231CFFEA1876E33F00C72B8F /* main.cpp */,
+				231CFFEB1876E33F00C72B8F /* Perk.cpp */,
+				231CFFF51876E33F00C72B8F /* Skills.cpp */,
+				231CFFF71876E33F00C72B8F /* Special.cpp */,
+				231C00051876E33F00C72B8F /* Trait.cpp */,
+			);
+			name = Gameplay;
+			sourceTree = "<group>";
+		};
+		234B55C2187721D700430E9C /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				231CFFB81876E33F00C72B8F /* Ammo.cpp */,
+				231CFFBC1876E33F00C72B8F /* Armor.cpp */,
 				231CFFCC1876E33F00C72B8F /* Container.cpp */,
 				231CFFCE1876E33F00C72B8F /* Creature.cpp */,
-				231CFFD01876E33F00C72B8F /* CreatureParser.cpp */,
+				231CFFDA1876E33F00C72B8F /* Entity.cpp */,
+				231CFFE41876E33F00C72B8F /* Item.cpp */,
+				231C000D1876E33F00C72B8F /* Weapon.cpp */,
+			);
+			name = Stuff;
+			sourceTree = "<group>";
+		};
+		234B55C3187721E000430E9C /* World */ = {
+			isa = PBXGroup;
+			children = (
+				231CFFC01876E33F00C72B8F /* AStarSearcher.cpp */,
 				231CFFD21876E33F00C72B8F /* Dungeon.cpp */,
 				231CFFD41876E33F00C72B8F /* DungeonArea.cpp */,
 				231CFFD61876E33F00C72B8F /* DungeonSpec.cpp */,
 				231CFFD81876E33F00C72B8F /* DungeonTile.cpp */,
-				231CFFDA1876E33F00C72B8F /* Entity.cpp */,
-				231CFFDC1876E33F00C72B8F /* FactionParser.cpp */,
-				231CFFDE1876E33F00C72B8F /* Game.cpp */,
-				231CFFE01876E33F00C72B8F /* Gui.cpp */,
-				231CFFE21876E33F00C72B8F /* InventoryWindow.cpp */,
-				231CFFE41876E33F00C72B8F /* Item.cpp */,
-				231CFFE61876E33F00C72B8F /* ItemParser.cpp */,
 				231CFFE81876E33F00C72B8F /* Location.cpp */,
-				231CFFEA1876E33F00C72B8F /* main.cpp */,
-				231CFFEB1876E33F00C72B8F /* Perk.cpp */,
-				231CFFED1876E33F00C72B8F /* PerkParser.cpp */,
-				231CFFEF1876E33F00C72B8F /* RaceParser.cpp */,
-				231CFFF11876E33F00C72B8F /* RightMenuWindow.cpp */,
-				231CFFF31876E33F00C72B8F /* Savefile.cpp */,
-				231CFFF51876E33F00C72B8F /* Skills.cpp */,
-				231CFFF71876E33F00C72B8F /* Special.cpp */,
-				231CFFF91876E33F00C72B8F /* SpecialWindow.cpp */,
-				231CFFFB1876E33F00C72B8F /* StatsWindow.cpp */,
 				231CFFFD1876E33F00C72B8F /* Tile.cpp */,
 				231CFFFF1876E33F00C72B8F /* TileSet.cpp */,
-				231C00011876E33F00C72B8F /* TileSetParser.cpp */,
-				231C00031876E33F00C72B8F /* TopBarWindow.cpp */,
-				231C00051876E33F00C72B8F /* Trait.cpp */,
-				231C00071876E33F00C72B8F /* TraitParser.cpp */,
-				231C00091876E33F00C72B8F /* Utils.cpp */,
 				231C000B1876E33F00C72B8F /* Visibility.cpp */,
-				231C000D1876E33F00C72B8F /* Weapon.cpp */,
-				231C000F1876E33F00C72B8F /* WeaponParser.cpp */,
-				231C00111876E33F00C72B8F /* Window.cpp */,
 				231C00131876E33F00C72B8F /* World.cpp */,
 				231C00151876E33F00C72B8F /* WorldSpec.cpp */,
 				231C00171876E33F00C72B8F /* WorldTile.cpp */,
+			);
+			name = World;
+			sourceTree = "<group>";
+		};
+		234B55C4187721E600430E9C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				231CFFB41876E33F00C72B8F /* Action.cpp */,
+				231CFFC21876E33F00C72B8F /* BottomWindow.cpp */,
+				231CFFC61876E33F00C72B8F /* Colors.cpp */,
+				231CFFE01876E33F00C72B8F /* Gui.cpp */,
+				231CFFE21876E33F00C72B8F /* InventoryWindow.cpp */,
+				231CFFF11876E33F00C72B8F /* RightMenuWindow.cpp */,
+				231CFFF91876E33F00C72B8F /* SpecialWindow.cpp */,
+				231CFFFB1876E33F00C72B8F /* StatsWindow.cpp */,
+				231C00031876E33F00C72B8F /* TopBarWindow.cpp */,
+				231C00111876E33F00C72B8F /* Window.cpp */,
 				231C00191876E33F00C72B8F /* WorldWindow.cpp */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		234B55C5187721FE00430E9C /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				231CFFBA1876E33F00C72B8F /* AmmoParser.cpp */,
+				231CFFBE1876E33F00C72B8F /* ArmorParser.cpp */,
+				231CFFCA1876E33F00C72B8F /* ConsumableParser.cpp */,
+				231CFFD01876E33F00C72B8F /* CreatureParser.cpp */,
+				231CFFDC1876E33F00C72B8F /* FactionParser.cpp */,
+				231CFFE61876E33F00C72B8F /* ItemParser.cpp */,
+				231CFFED1876E33F00C72B8F /* PerkParser.cpp */,
+				231CFFEF1876E33F00C72B8F /* RaceParser.cpp */,
+				231CFFF31876E33F00C72B8F /* Savefile.cpp */,
+				231C00011876E33F00C72B8F /* TileSetParser.cpp */,
+				231C00071876E33F00C72B8F /* TraitParser.cpp */,
+				231C000F1876E33F00C72B8F /* WeaponParser.cpp */,
 				231C001B1876E33F00C72B8F /* XmlParser.cpp */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		234B55C61877220500430E9C /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				234B55C91877231B00430E9C /* CHANGES */,
+				234B55CA1877231B00430E9C /* LICENSE */,
+				234B55CC1877231B00430E9C /* TODO */,
+				234B55CB1877231B00430E9C /* README.md */,
+				234B55CD1877232600430E9C /* keys.txt */,
+				234B55CE1877232600430E9C /* symbols.txt */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
+		234B55C7187722A300430E9C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				231C00091876E33F00C72B8F /* Utils.cpp */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		234B55C8187722DD00430E9C /* Include */ = {
+			isa = PBXGroup;
+			children = (
 				231CFFB51876E33F00C72B8F /* Action.h */,
 				231CFFB71876E33F00C72B8F /* Ai.h */,
 				231CFFB91876E33F00C72B8F /* Ammo.h */,
@@ -525,19 +624,26 @@
 				231C00181876E33F00C72B8F /* WorldTile.h */,
 				231C001A1876E33F00C72B8F /* WorldWindow.h */,
 				231C001C1876E33F00C72B8F /* XmlParser.h */,
-				231C00581876EAEF00C72B8F /* libnoise */,
-				231C00551876EAD000C72B8F /* noiseutils */,
-				231CFFA91876E2D800C72B8F /* Products */,
-				231C00CB1876EC7200C72B8F /* xerces */,
 			);
+			name = Include;
 			sourceTree = "<group>";
 		};
-		231CFFA91876E2D800C72B8F /* Products */ = {
+		234B55CF1877234400430E9C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				231CFFA81876E2D800C72B8F /* for */,
+				234B55D01877235400430E9C /* ammo.xml */,
+				234B55D11877235400430E9C /* armor.xml */,
+				234B55D21877235400430E9C /* consumables.xml */,
+				234B55D31877235400430E9C /* creatures.xml */,
+				234B55D41877235400430E9C /* factions.xml */,
+				234B55D51877235400430E9C /* items.xml */,
+				234B55D61877235400430E9C /* perks.xml */,
+				234B55D71877235400430E9C /* races.xml */,
+				234B55D81877235400430E9C /* tileset.xml */,
+				234B55D91877235400430E9C /* traits.xml */,
+				234B55DA1877235400430E9C /* weapons.xml */,
 			);
-			name = Products;
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -732,6 +838,11 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-D",
+					OSX,
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -777,6 +888,11 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-D",
+					OSX,
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;

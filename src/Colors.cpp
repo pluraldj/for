@@ -24,6 +24,38 @@
 
 namespace Colors
 {
+    // Dum a table of terminal colors for debugging
+    // Uses main curses window, must call this before creating others
+    void colorTest()
+    {
+        move(0,0);
+        
+        for ( int i=0; i<LINES; ++i )
+        {
+            move(i,0);
+            for ( int j=0; j<10; j++ )
+            {
+                // Get next color, set as background
+                int id = i*10 + j;
+                
+                init_pair(10+id, 1, id);
+                
+                attron(COLOR_PAIR(10+id));
+                addwstr(L"   ");
+                attroff(COLOR_PAIR(10+id));
+            }
+        }
+        
+        refresh();
+        
+        
+        getch();
+        
+        endwin();
+        exit(0);
+        
+    }
+    
     Color::Color()
     {
         cursesId = -1;
