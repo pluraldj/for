@@ -318,7 +318,6 @@
 		234B55D81877235400430E9C /* tileset.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tileset.xml; path = ../../../bin/data/tileset.xml; sourceTree = "<group>"; };
 		234B55D91877235400430E9C /* traits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = traits.xml; path = ../../../bin/data/traits.xml; sourceTree = "<group>"; };
 		234B55DA1877235400430E9C /* weapons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = weapons.xml; path = ../../../bin/data/weapons.xml; sourceTree = "<group>"; };
-		237ED388187F9E030062393F /* ;.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ";.h"; path = "../../../src/;.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -438,7 +437,6 @@
 		231CFF9F1876E2D800C72B8F = {
 			isa = PBXGroup;
 			children = (
-				237ED388187F9E030062393F /* ;.h */,
 				234B55CF1877234400430E9C /* Data */,
 				234B55C5187721FE00430E9C /* Files */,
 				234B55C1187721D000430E9C /* Gameplay */,

@@ -243,7 +243,7 @@ void AStarSearcher::DumpSolution(string path)
         for ( int j=0; j<graph->sizex; j++ )
         {
             // Should use iterators but whatthefuckever
-            GridGraphVertex *node = graph->vertices->at(i)->at(j);
+            GridGraphVertex *node = graph->vertices->at(j)->at(i);
             
             // Part of solution? (or part of the problem?)
             if ( std::find(solution->begin(), solution->end(), node) != solution->end() )

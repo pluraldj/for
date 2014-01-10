@@ -104,7 +104,7 @@ void WorldWindow::Redraw()
         veci drawPos = entpos-ul;
         
         // Outside bounds?
-        if ( drawPos.x < 0 || drawPos.x >= drawSize.x || drawPos.y < 0 || drawPos.y > drawSize.y)
+        if ( drawPos.x < 1 || drawPos.x >= drawSize.x-1 || drawPos.y < 1 || drawPos.y > drawSize.y-1)
             continue;
         
         wmove(cursesWin,drawPos.y+1, drawPos.x+1);
