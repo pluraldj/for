@@ -32,131 +32,123 @@
 
 #include <iostream>
 
-#include <boost/graph/astar_search.hpp>
-#include <boost/graph/filtered_graph.hpp>
-#include <boost/graph/grid_graph.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/random/mersenne_twister.hpp>
-#include <boost/random/uniform_int.hpp>
-#include <boost/random/variate_generator.hpp>
-#include <boost/unordered_map.hpp>
-#include <boost/unordered_set.hpp>
 #include <ctime>
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
+#include <limits>
 
 #include "Location.h"
 
 using namespace std;
 
-// The domain of the distance function is _integers_, that is the number of steps we need to walk to get somewhere.
-// This is different from using Euclidean distance (direct line)
-// This shouldn't really make much difference
-typedef unsigned int dist;
+// Floating point infinity, used for unreachable nodes
+#define MAX_COST numeric_limits<double>::max()
 
-// typedef Boost types for this particular problem
-typedef boost::grid_graph<2> grid;
-typedef boost::graph_traits<grid>::vertex_descriptor vertex_descriptor;
-typedef boost::graph_traits<grid>::vertices_size_type vertices_size_type;
+// What set a node belongs to
+#define OPEN 1
+#define CLOSED 2
+#define CAME_FROM 3
 
-// Hashing of vertices
-struct vertex_hash:unary_function<vertex_descriptor, size_t> {
-    size_t operator()(vertex_descriptor const& u) const {
-        size_t seed = 0;
-        boost::hash_combine(seed, u[0]);
-        boost::hash_combine(seed, u[1]);
-        return seed;
+struct GridGraphVertex
+{
+public:
+    GridGraphVertex()
+    {
+        coord = veci(0,0);
+        
+        outNeighbors = new vector<GridGraphVertex*>;
+        
+        f_score = 0.0;
+        g_score = 0.0;
+        state = OPEN;
+        
+        cameFrom = NULL;
     }
+    
+    ~GridGraphVertex()
+    {
+        if ( outNeighbors )
+            delete outNeighbors;
+    }
+    
+    veci coord; // coordinates in grid
+    
+    int state;      // open,closed,came_from
+    
+    double f_score, g_score;    // real and heuristic score for node in path
+    
+    // The node we came from last, for rebuilding the optimal path after search
+    GridGraphVertex *cameFrom;
+    
+    vector<GridGraphVertex *> *outNeighbors;
 };
 
-// Specific data types we use
-typedef boost::unordered_set<vertex_descriptor, vertex_hash> vertex_set;
-typedef boost::vertex_subset_complement_filter<grid, vertex_set>::type
-filtered_grid;
-typedef boost::unordered_map<vertex_descriptor,vertex_descriptor,vertex_hash> pred_map;
-typedef boost::unordered_map<vertex_descriptor,dist,vertex_hash> dist_map;
+struct GridGraph
+{
+public:
+    GridGraph(int _sizex, int _sizey)
+    {
+        sizex = _sizex;
+        sizey = _sizey;
+        
+        vertices = new vector< vector<GridGraphVertex*>* >(_sizex);
+        for ( auto it1=vertices->begin(); it1 != vertices->end(); ++it1 )
+        {
+            (*it1) = new vector<GridGraphVertex*>(_sizey);
+            for ( auto it2=(*it1)->begin(); it2!=(*it1)->end(); it2++ )
+                *it2 = new GridGraphVertex();
+        }
+    }
+    
+    ~GridGraph()
+    {
+        if ( vertices )
+        {
+            for ( auto it1=vertices->begin(); it1 != vertices->end(); ++it1 )
+            {
+                for ( auto it2=(*it1)->begin(); it2!=(*it1)->end(); it2++ )
+                    delete (*it2);
+                
+                delete (*it1);
+            }
+            
+            delete vertices;
+        }
+    }
 
+    int sizex, sizey;
+    
+    vector<vector<GridGraphVertex*>*> *vertices;
+};
 
-// Abstracted representation of a graph to search and methods to do it using A*
-// For example, dungeons construct an instance of this for pathfinding
 class AStarSearcher
 {
 public:
-    // Make from world or object
-    // TODO
     AStarSearcher(Location *_loc);
     ~AStarSearcher();
     
-    bool solve(veci start, veci goal);   // Attempt solution
+    bool Solve();   // Returns success/failure
     
-    bool solved();  // solution found?
+    // Construct path (vector of nodes) if solution found
+    void ReconstructPath(GridGraphVertex *node);
     
-    void DumpSolution(string path); // Dump map/solution path to a file for debugging
+    void DumpSolution(string path);
     
-private:
-    // Create the underlying rank-2 grid with the specified dimensions.
-    grid create_grid(size_t x, size_t y);
-
-    // Filter the barrier vertices out of the underlying grid.
-    filtered_grid create_barrier_grid(Location *loc);
+    Location *loc;
+    veci start, goal;
     
-    // Is vertex part of shortest path?
-    bool solution_contains(vertex_descriptor u) const
-    {
-        return m_solution.find(u) != m_solution.end();
-    }
-    
-    // The grid underlying the maze
-    grid m_grid;
-    // The underlying maze grid with barrier vertices filtered out
-    filtered_grid m_barrier_grid;
-    // The barriers in the maze
-    vertex_set m_barriers;
-    // The vertices on a solution path through the maze
-    vertex_set m_solution;
-    // The length of the solution path
-    dist m_solution_length;
-    
-    // Tile-containing object we are building search graph for
-    Location *location;
-};
-
-// Heuristic for the distance function
-// This calculates the Manhattan distance (taxicab metric) between a vertex and a goal
-// vertex.
-class manhattan_heuristic : public boost::astar_heuristic<filtered_grid, dist>
-{
-public:
-    manhattan_heuristic(vertex_descriptor goal):m_goal(goal) {};
-    
-    dist operator()(vertex_descriptor v)
-    {
-        return abs((int)(m_goal[0] - v[0])) + abs((int)(m_goal[1] - v[1]));
-    }
+    GridGraph *graph;
+    vector<GridGraphVertex*> *solution;
     
 private:
-    vertex_descriptor m_goal;
+    void CreateGraph();
+    
+    // Compute heuristic function based on relative vector, distance based
+    double Heuristic(GridGraphVertex *a, GridGraphVertex *b);
 };
 
-// Something for Boost to throw when a solution is found
-// It doesn't need any structure
-struct found_goal {};
 
-// Visitor class for travering nodes
-// Throw found_goal to signal goal found for termination
-struct astar_goal_visitor : public boost::default_astar_visitor
-{
-    astar_goal_visitor(vertex_descriptor goal) : m_goal(goal) {};
-    
-    void examine_vertex(vertex_descriptor u, const filtered_grid&)
-    {
-        if (u == m_goal)
-            throw found_goal();
-    }
-    
-private:
-    vertex_descriptor m_goal;
-};
 
 #endif /* defined(__forogue__AStarSearcher__) */

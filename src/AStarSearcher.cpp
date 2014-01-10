@@ -22,108 +22,215 @@
 
 #include "AStarSearcher.h"
 
-AStarSearcher::AStarSearcher(Location *_loc) : m_grid(create_grid(_loc->size.x,_loc->size.y)), m_barrier_grid(create_barrier_grid(_loc))
+#include <signal.h>
+
+AStarSearcher::AStarSearcher(Location *_loc)
 {
-    location = _loc;
+    loc = _loc;
+    
+    graph = new GridGraph(loc->size.x, loc->size.y);
+    solution = new vector<GridGraphVertex*>;
+    
+    start = goal = veci(0,0);
+    
+    CreateGraph();
 }
 
 AStarSearcher::~AStarSearcher()
 {
+    if ( graph )
+        delete graph;
+    
+    if ( solution )
+        delete solution;
 }
 
-// Initialise grid structure based on dimensions of tilemap
-grid AStarSearcher::create_grid(size_t x, size_t y)
-{
-    boost::array<size_t, 2> lengths = { {x, y} };
-    return grid(lengths);
-}
 
-filtered_grid AStarSearcher::create_barrier_grid(Location *loc)
+void AStarSearcher::CreateGraph()
 {
-    // Iterate over all tiles, add inaccessible to barrier vertex set
-    int sx = loc->size.x;
-    int sy = loc->size.y;
-    for ( int x=0; x<sx; ++x)
+    for ( int iy = 0; iy < graph->sizey; ++iy )
     {
-        for ( int y=0; y<sy; ++y )
+        for ( int ix = 0; ix < graph->sizex; ++ix )
         {
-            Tile *tile = loc->GetTile(x,y);
+            // Tentative new node
+            GridGraphVertex *newnode = graph->vertices->at(ix)->at(iy);
+            newnode->coord = veci(ix,iy);
             
-            if ( tile ->clipMask == false )
+            // Tile corresponding to node
+            Tile *tile = loc->GetTile(ix, iy);
+            
+            // Is it passable? (clipmask true)
+            if ( !tile->clipMask )
             {
-                // Convert to vertex index
-                int index = y*sy+x;
-                
-                // get vertex descriptor
-                vertex_descriptor u = vertex(index,m_grid);
-                
-                // Add to barrier vertex set
-                m_barriers.insert(u);
+                // Guess we ain't got to do no thing
+                continue;
+            }
+            
+            // Add neighbors
+            for ( int dx=-1; dx<=1; dx++ )
+            {
+                for ( int dy=-1; dy<=1; dy++ )
+                {
+                    // Exclude ourself
+                    if ( dx == 0 && dy == 0 )
+                        continue;
+                    
+                    // Exclude diagonals
+                    if ( abs(dx) == 1 && abs(dy) == 1 )
+                        continue;
+                    
+                    int newx = ix+dx;
+                    int newy = iy+dy;
+                    
+                    // Out of bounds?
+                    if ( newx < 0 || newy < 0 || newx >= graph->sizex || newy >= graph->sizey )
+                        continue;
+                    
+                    GridGraphVertex *neighborVertex = graph->vertices->at(newx)->at(newy);
+                    
+                    Tile *neighborTile = loc->GetTile(newx, newy);
+                    
+                    // Only link if we can get there from here
+                    if ( neighborTile->clipMask == true )
+                    {
+                        // Remember to _not_ link both ways
+                        // The other link will be made when we reach that node
+                        newnode->outNeighbors->push_back(neighborVertex);
+                        //neighborVertex->outNeighbors->push_back(newnode);
+                    }
+                }
             }
         }
     }
-
-    return boost::make_vertex_subset_complement_filter(m_grid, m_barriers);
 }
 
-bool AStarSearcher::solve(veci start, veci goal)
+bool AStarSearcher::Solve()
 {
-    // Ineligible start/goal? No path can exist then
-    if ( location->GetTile(start.x,start.y)->clipMask == false ||
-         location->GetTile(goal.x,goal.y)->clipMask == false )
+    // Clear old stored solution, if any
+    solution->clear();
+    
+    // Same tile? no path to find, just stay put
+    if ( start == goal)
+        return true;    // True return value distinguishes this from a failed search (no path)
+    
+    Tile *start_tile = loc->GetTile(start.x, start.y);
+    Tile *goal_tile = loc->GetTile(goal.x, goal.y);
+    
+    // Is a solution even possible? Both start, end tiles must be passable
+    if ( start_tile->clipMask == false || goal_tile->clipMask == false )
         return false;
     
-    // Convert start/goal coords to vertex descriptors
-    int s_index = start.y*location->size.y + start.x;
-    int g_index = goal.y*location->size.y + goal.x;
+    // Start and goal nodes
+    GridGraphVertex *startNode = graph->vertices->at(start.x)->at(start.y);
+    GridGraphVertex *goalNode = graph->vertices->at(goal.x)->at(goal.y);
     
-    vertex_descriptor s = vertex(s_index, m_grid);
-    vertex_descriptor g = vertex(g_index, m_grid);
+    // The list of open nodes on the frontier
+    vector<GridGraphVertex*> openSet;
+    openSet.push_back(startNode);
     
-    // Clear old solution
-    m_solution.clear();
-    m_solution_length = 0;
-    
-    // Uniform weight map, all edges have weight 1
-    boost::static_property_map<dist> weight(1);
-    
-    // Predecessors of nodes
-    pred_map predecessor;
-    boost::associative_property_map<pred_map> pred_pmap(predecessor);
-    
-    // Distances for nodes based on the heuristic
-    dist_map distance;
-    boost::associative_property_map<dist_map> dist_pmap(distance);
-    
-    // Instances of heuristic and visitor
-    manhattan_heuristic heuristic(g);
-    astar_goal_visitor visitor(g);
-    
-    // Attempt search, catch struct to check if found
-    try {
-        astar_search(m_barrier_grid, s, heuristic,
-                     boost::weight_map(weight).
-                     predecessor_map(pred_pmap).
-                     distance_map(dist_pmap).
-                     visitor(visitor) );
-    } catch(found_goal fg) {
-        // Walk backwards from the goal through the predecessor chain adding
-        // vertices to the solution path.
-        for (vertex_descriptor u = g; u != s; u = predecessor[u])
-            m_solution.insert(u);
-        m_solution.insert(s);
-        m_solution_length = distance[g];
-        return true;
+    // Mark all as open and init scores to inf, also erase came from map
+    for ( auto it1=graph->vertices->begin(); it1!=graph->vertices->end(); it1++ )
+    {
+        for ( auto it2=(*it1)->begin(); it2!=(*it1)->end(); it2++ )
+        {
+            (*it2)->state = OPEN;
+            
+            (*it2)->f_score = MAX_COST;
+            (*it2)->g_score = MAX_COST;
+            
+            (*it2)->cameFrom = NULL;
+        }
     }
     
-    // Nope, didn't work.
+    // Initil cost along best path
+    startNode->g_score = 0.0;
+    
+    // Initial heuristic guess for best path
+    startNode->f_score = startNode->g_score + Heuristic(startNode, goalNode);
+    
+    while ( openSet.size() != 0 )
+    {
+        // Determine which node has lowest f_score
+        GridGraphVertex *current = openSet[0]; // initial guess
+        for ( auto it=openSet.begin(); it!=openSet.end(); it++ )
+        {
+            if ( (*it)->f_score < current->f_score )
+                current = (*it);
+        }
+        
+        // Reached goal?
+        if ( current->coord == goal )
+        {
+            ReconstructPath(current);
+            return true;
+        }
+        
+        // remove current from open and close it
+        auto currIt = std::find(openSet.begin(), openSet.end(), current);
+        openSet.erase(currIt);
+        current->state = CLOSED;
+        
+        // Iterate over successors
+        for ( auto succIt=current->outNeighbors->begin(); succIt!=current->outNeighbors->end(); succIt++ )
+        {
+            GridGraphVertex *neighbor = (*succIt);
+            
+            // Already closed? don't search again
+            // Our cost function is monotonic
+            if ( neighbor->state == CLOSED )
+                continue;
+            
+            // Tentative score to assign to neighbor
+            double g_score_tentative = current->g_score + Heuristic(current, neighbor);
+
+            // Search again if not open or seems to be optimal by the heuristic
+            if ( neighbor->state != OPEN || g_score_tentative < neighbor->g_score )
+            {
+                neighbor->cameFrom = current;
+                neighbor->g_score = g_score_tentative;
+                neighbor->f_score = neighbor->g_score + Heuristic(neighbor, goalNode);
+                
+                // Mark as open if not already marked
+                // And add to open set
+                neighbor->state = OPEN;
+                openSet.push_back(neighbor);
+            }
+        }
+    }
+    
+    // If we ever get here the open set is empty, and we're out of luck.
+    // No path exists
     return false;
 }
 
-bool AStarSearcher::solved()
+
+double AStarSearcher::Heuristic(GridGraphVertex *a, GridGraphVertex *b)
 {
-    // Any vertices in solution set?
-    return !m_solution.empty();
+    // Coords in grid
+    veci ca = a->coord;
+    veci cb = b->coord;
+    
+    // Euclidean distance, Manhattan is also admissible but produces "unnatural" move pattern
+    return (ca-cb).length();
+}
+
+void AStarSearcher::ReconstructPath(GridGraphVertex *node)
+{
+    // Found start?
+    bool foundStart = false;
+    
+    GridGraphVertex *curr = node;
+    while (!foundStart)
+    {
+        solution->push_back(curr);
+        
+        // Found start?
+        if ( curr->coord == start )
+            return;
+    
+        // Else get next
+        curr = curr->cameFrom;
+    }
 }
 
 void AStarSearcher::DumpSolution(string path)
@@ -131,35 +238,25 @@ void AStarSearcher::DumpSolution(string path)
     ofstream outfile;
     outfile.open(path.c_str());
     
-    for ( int y=0; y<location->size.y; y++ )
+    for ( int i=0; i<graph->sizey; i++ )
     {
-        for ( int x=0; x<location->size.x; x++ )
+        for ( int j=0; j<graph->sizex; j++ )
         {
-            // Passable?
-            bool mask = location->GetTile(x,y)->clipMask;
+            // Should use iterators but whatthefuckever
+            GridGraphVertex *node = graph->vertices->at(i)->at(j);
             
-            vertex_descriptor v = vertex(y*location->size.y+x, m_grid);
-            
-            // Part of path?
-            if ( solution_contains(v) )
-            {
-                outfile << "o";
-            }
-            else if ( mask )
-                outfile << ".";
-            else
+            // Part of solution? (or part of the problem?)
+            if ( std::find(solution->begin(), solution->end(), node) != solution->end() )
                 outfile << "x";
+            else if ( node->outNeighbors->size() == 0 )
+                outfile << " ";
+            else
+                outfile << numberToString(node->outNeighbors->size());
         }
-        
         outfile << "\n";
     }
     
     outfile.close();
 }
-
-
-
-
-
 
 

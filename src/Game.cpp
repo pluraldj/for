@@ -23,6 +23,7 @@
 
 #include "Game.h"
 #include "Creature.h"
+#include "AStarSearcher.h"
 
 Game::~Game()
 {
@@ -112,9 +113,11 @@ void Game::Init()
     //player->visInfo->UpdateVis();
     
     // A-star test
-    //AStarSearcher ass(dungeon);
-    //ass.solve(player->location, player->location+veci(3,3));
-    //ass.DumpSolution("pathdump.txt");
+    AStarSearcher ass(dungeon);
+    ass.start = player->location;
+    ass.goal = ass.start + veci(2,5);
+    ass.Solve();
+    ass.DumpSolution("pathdump.txt");
     
     // END TMP
     

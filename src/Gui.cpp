@@ -142,7 +142,7 @@ void Gui::Init()
     curs_set(0);
     
     // Dump color table and exit
-    Colors::colorTest();
+    //Colors::colorTest();
     
     // Input timeout - return ERR if no input during tick
     timeout(100);

@@ -25,11 +25,19 @@
 
 BottomWindow::BottomWindow(veci _topleft, veci _size, int _msgLines) : Window(_topleft,_size,false)
 {
-    msgLines = _msgLines;
+    msgLines = 0;
+    scrollBack = new deque<string>;
+    
+    SetScrollbackLines(_msgLines);
     
     // init scrollback lines to empty
-    for ( int i=0; i<msgLines; i++ )
-        scrollBack.push_back("");
+    ClearLines();
+}
+
+BottomWindow::~BottomWindow()
+{
+    if ( scrollBack )
+        delete scrollBack;
 }
 
 // Set number of lines shown in scrollback
@@ -41,27 +49,33 @@ void BottomWindow::SetScrollbackLines(int _msgLines)
     if ( _msgLines == msgLines )
         return;
     
-    // Enlarging? add empty lines TO FRONT
+    // Enlarging? add empty lines TO BACK
     if ( _msgLines > msgLines )
     {
         for ( int i=0; i < _msgLines-msgLines; i++ )
-            scrollBack.push_front("");
+            scrollBack->push_back("");
     }
     // Removing, pop from FRONT
     else
     {
         for ( int i=0; i < _msgLines-msgLines; i++ )
-            scrollBack.pop_front();
+            scrollBack->pop_front();
     }
+    
+    // Update for following calls
+    msgLines = _msgLines;
 }
 
 void BottomWindow::AddLine(string msg)
 {
+    if ( scrollBack->empty() )
+        return;
+    
     // Pop top msg from top
-    scrollBack.pop_front();
+    scrollBack->pop_front();
     
     // Push new on bottom
-    scrollBack.push_back(msg);
+    scrollBack->push_back(msg);
     
     Redraw();
 }
@@ -69,10 +83,10 @@ void BottomWindow::AddLine(string msg)
 // Clear all, replace with empty
 void BottomWindow::ClearLines()
 {
-    scrollBack.clear();
+    scrollBack->clear();
     
     for ( int i=0; i<msgLines; i++ )
-        scrollBack.push_back("");
+        scrollBack->push_back("");
 }
 
 void BottomWindow::Redraw()
@@ -94,7 +108,7 @@ void BottomWindow::Redraw()
     for ( int i=0; i<msgLines; i++ )
     {
         wmove(cursesWin, i,0);
-        wprintw(cursesWin, scrollBack.at(i).c_str());
+        wprintw(cursesWin, scrollBack->at(i).c_str());
     }
     
     wrefresh(cursesWin);

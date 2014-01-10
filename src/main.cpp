@@ -29,6 +29,7 @@
 #include <ncurses.h>
 #include <menu.h>
 #include <time.h>
+#include <signal.h>
 
 #include "Game.h"
 #include "Weapon.h"

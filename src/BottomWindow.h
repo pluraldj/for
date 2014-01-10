@@ -41,6 +41,7 @@ class BottomWindow : public Window
 {
 public:
     BottomWindow(veci _topleft, veci _size, int _msgLines);
+    ~BottomWindow();
     
     void SetScrollbackLines(int _msgLines);
     
@@ -51,7 +52,7 @@ public:
     
 private:
     int msgLines;
-    deque<string> scrollBack;
+    deque<string> *scrollBack;
 };
 
 #endif /* defined(__forogue__BottomWindow__) */
