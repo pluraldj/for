@@ -467,6 +467,7 @@
 		234B55C1187721D000430E9C /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				237ED38918801D570062393F /* Path.cpp */,
 				231CFFB61876E33F00C72B8F /* Ai.cpp */,
 				231CFFC41876E33F00C72B8F /* Character.cpp */,
 				231CFFC81876E33F00C72B8F /* Combat.cpp */,
@@ -509,7 +510,6 @@
 				231C00131876E33F00C72B8F /* World.cpp */,
 				231C00151876E33F00C72B8F /* WorldSpec.cpp */,
 				231C00171876E33F00C72B8F /* WorldTile.cpp */,
-				237ED38918801D570062393F /* Path.cpp */,
 			);
 			name = World;
 			sourceTree = "<group>";
