@@ -97,6 +97,7 @@
 		231C00C81876EC6300C72B8F /* translatepoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 231C00A81876EC6300C72B8F /* translatepoint.cpp */; };
 		231C00C91876EC6300C72B8F /* turbulence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 231C00AA1876EC6300C72B8F /* turbulence.cpp */; };
 		231C00CA1876EC6300C72B8F /* voronoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 231C00AC1876EC6300C72B8F /* voronoi.cpp */; };
+		237ED38B18801D570062393F /* Path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 237ED38918801D570062393F /* Path.cpp */; };
 		23FAB7CC1876ECF800516383 /* for in CopyFiles */ = {isa = PBXBuildFile; fileRef = 231CFFA81876E2D800C72B8F /* for */; };
 /* End PBXBuildFile section */
 
@@ -318,6 +319,8 @@
 		234B55D81877235400430E9C /* tileset.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tileset.xml; path = ../../../bin/data/tileset.xml; sourceTree = "<group>"; };
 		234B55D91877235400430E9C /* traits.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = traits.xml; path = ../../../bin/data/traits.xml; sourceTree = "<group>"; };
 		234B55DA1877235400430E9C /* weapons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = weapons.xml; path = ../../../bin/data/weapons.xml; sourceTree = "<group>"; };
+		237ED38918801D570062393F /* Path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Path.cpp; sourceTree = "<group>"; };
+		237ED38A18801D570062393F /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,6 +509,7 @@
 				231C00131876E33F00C72B8F /* World.cpp */,
 				231C00151876E33F00C72B8F /* WorldSpec.cpp */,
 				231C00171876E33F00C72B8F /* WorldTile.cpp */,
+				237ED38918801D570062393F /* Path.cpp */,
 			);
 			name = World;
 			sourceTree = "<group>";
@@ -572,6 +576,7 @@
 		234B55C8187722DD00430E9C /* Include */ = {
 			isa = PBXGroup;
 			children = (
+				237ED38A18801D570062393F /* Path.h */,
 				231CFFB51876E33F00C72B8F /* Action.h */,
 				231CFFB71876E33F00C72B8F /* Ai.h */,
 				231CFFB91876E33F00C72B8F /* Ammo.h */,
@@ -751,6 +756,7 @@
 				231C00311876E33F00C72B8F /* FactionParser.cpp in Sources */,
 				231C00381876E33F00C72B8F /* main.cpp in Sources */,
 				231C00C51876EC6300C72B8F /* select.cpp in Sources */,
+				237ED38B18801D570062393F /* Path.cpp in Sources */,
 				231C00401876E33F00C72B8F /* SpecialWindow.cpp in Sources */,
 				231C003A1876E33F00C72B8F /* PerkParser.cpp in Sources */,
 				231C00C91876EC6300C72B8F /* turbulence.cpp in Sources */,
