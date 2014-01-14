@@ -55,9 +55,7 @@ public:
     virtual Tile *GetTile(int x, int y) = 0;
     
     string name;
-    
     veci size;
-    
 };
 
 #endif /* defined(__forogue__Location__) */

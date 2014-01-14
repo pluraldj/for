@@ -33,8 +33,9 @@ using namespace std;
 
 class GridGraphVertex;
 class AStarSearcher;
+class Location;
 
-enum class PathDirection { Left, Right, Up, Down };
+enum class PathDirection { None, Left, Right, Up, Down };
 
 // A planned path through the game world, ie. an ordered list of tiles to visit
 // Used by AIs to plan their movement, created by path finding implementation
@@ -42,14 +43,20 @@ struct Path
 {
 public:
     Path();
+    Path(vector<GridGraphVertex*> *verts, Location *loc);
+    
     ~Path();
 
-    int currIndex;  // Index into array, where we're currently standing
+    Tile *GetCurrentTile();
+    PathDirection GetCurrentDir();
     
+    void Advance();     // Move forward one step
+    
+    int currIndex;  // Index into array, where we're currently standing
     bool active;    // path active => AI follows it rather than doing other things
     
-    vector<Tile*> path;         // Every tile along the way
-    vector<PathDirection> deltas;    // What direction to move to get to next tile
+    vector<Tile*> *path;         // Every tile along the way
+    vector<PathDirection> *deltas;    // What direction to move to get to next tile
 };
 
 #endif /* defined(__FOR__Path__) */

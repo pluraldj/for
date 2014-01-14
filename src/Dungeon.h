@@ -43,6 +43,7 @@
 #include "Character.h"
 #include "Visibility.h"
 #include "DungeonTile.h"
+#include "AStarSearcher.h"
 
 using namespace std;
 
@@ -77,6 +78,9 @@ public:
     // Get player spawn coords for when we enter the dungeon
     veci GetPlayerSpawnCoords();
     
+    // Dungeon has changed enough to affect path-finding, recreate A* graph
+    void InitPathfinding();
+    
     // Dump tile map to file
     void Dump(string path);
     
@@ -106,6 +110,9 @@ private:
     
     // Populate with loot, both on ground and in containers
     void SeedWithItems();
+    
+    // A* object, must be updated whenever map changes enough to affect path-finding
+    AStarSearcher *aStarSearcher;
 };
 
 #endif /* defined(__forogue__Dungeon__) */

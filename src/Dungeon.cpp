@@ -55,6 +55,8 @@ Dungeon::Dungeon(DungeonSpec spec) : Location()
     
     activeEnts = new vector<Entity*>;
     
+    aStarSearcher = NULL;
+    
     // Generate!
     Generate(spec);
 }
@@ -68,6 +70,9 @@ Dungeon::~Dungeon()
         
         delete[] tiles;
     }
+    
+    if ( aStarSearcher )
+        delete aStarSearcher;
 }
 
 // Draw tiles as list of strings (horizontal lines of symbols)
@@ -386,6 +391,9 @@ void Dungeon::Generate(DungeonSpec spec)
     // Populate with items
     
     // Populate with creatures
+    
+    // Ready for path finding init
+    InitPathfinding();
 }
 
 void Dungeon::MakePassage(vecd A, vecd B)
@@ -567,6 +575,14 @@ veci Dungeon::GetPlayerSpawnCoords()
     
     // Somewhere near the entry tile
     return (veci)entry.center + veci(1,1);
+}
+
+void Dungeon::InitPathfinding()
+{
+    if ( aStarSearcher )
+        delete aStarSearcher;
+        
+    aStarSearcher = new AStarSearcher(this);
 }
 
 void Dungeon::Dump(string path)

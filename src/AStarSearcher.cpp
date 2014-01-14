@@ -231,6 +231,9 @@ void AStarSearcher::ReconstructPath(GridGraphVertex *node)
         // Else get next
         curr = curr->cameFrom;
     }
+    
+    // Reverse to get correct ordering
+    std::reverse(solution->begin(), solution->end());
 }
 
 void AStarSearcher::DumpSolution(string path)
