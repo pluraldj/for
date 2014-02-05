@@ -46,7 +46,7 @@ public:
     
     bool clipMask;          // true = can move here
     
-    protected:
+protected:
 };
 
 #endif /* defined(__forogue__Tile__) */

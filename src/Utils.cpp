@@ -51,6 +51,12 @@ double RNG::random_double()
     return dist(rng);
 }
 
+// double between lower and upper
+double RNG::random_double(double lower, double upper)
+{
+    return lower + (upper-lower)*random_double();
+}
+
 // Throw a die to select an index from among a set of possible outcomes
 // nsides is number of outcomes, probs is an array of length nsides with their associated probs
 // all probabilities must add up to one
