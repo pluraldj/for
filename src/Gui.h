@@ -34,6 +34,7 @@
 #include <locale.h>
 #include <ncurses.h>
 #include <menu.h>
+#include <cdk.h>
 
 #include "Action.h"
 #include "Window.h"
@@ -42,11 +43,12 @@
 #include "RightMenuWindow.h"
 #include "BottomWindow.h"
 #include "Colors.h"
+#include "CdkWindow.h"
 
 using namespace std;
 
 // Overarching UI mode - popups obscure the normal display
-enum class GuiMode { Quit, CharCreation, MainView, StatsView, InventoryView, ContainerView, TradeView, BarterView, InspectView, CameraView };
+enum class GuiMode { None, Quit, MainMenu, CharCreation, MainView, StatsView, InventoryView, ContainerView, TradeView, BarterView, InspectView, CameraView };
 
 class Gui
 {
@@ -72,7 +74,6 @@ public:
     
     // Enter/exit modes and modify available actions accordingly
     void EnterMode(GuiMode _mode);
-    void ExitMode(GuiMode _mode);
     
     // Write message in log
     void PostMessage(string msg);
@@ -99,6 +100,10 @@ private:
     WorldWindow *worldWindow;
     RightMenuWindow *rightMenu;
     BottomWindow *bottomWindow;
+    
+    // Active popup window, if any
+    // Is null if no active window to draw over main view
+    CdkWindow *popup;
     
     // Overarching GUI mode determines what info is presented and what actions are possible
     GuiMode mode;

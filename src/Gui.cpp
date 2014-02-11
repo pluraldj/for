@@ -33,7 +33,7 @@ Gui::Gui()
     rightMenu = NULL;
     bottomWindow = NULL;
     
-    mode = GuiMode::MainView;
+    mode = GuiMode::None;
     
     currSlot = 1;
     slot1 = NULL;
@@ -166,6 +166,12 @@ void Gui::Init()
     worldWindow = new WorldWindow( veci(0,0), veci(1,1) );
     rightMenu = new RightMenuWindow( veci(0,0), veci(1,1) );
     DivideWindows();
+    
+    // No active popup right after init
+    popup = NULL;
+    
+    // Default empty mode after init
+    EnterMode(GuiMode::None);
 }
 
 void Gui::DivideWindows()
@@ -281,6 +287,27 @@ bool Gui::Resize()
     return true;
 }
 
+// Change UI mode (popup special windows or return to main view)
+void Gui::EnterMode(GuiMode _mode)
+{
+    // Where we came from
+    GuiMode oldmode = mode;
+    mode = _mode;
+    
+    switch ( mode )
+    {
+        case GuiMode::None:
+            if ( popup )
+            {
+                delete popup;
+                popup = NULL;
+            }
+            
+            break;
+    }
+    
+}
+
 void Gui::PostMessage(string msg)
 {
     bottomWindow->AddLine(msg);
@@ -288,11 +315,18 @@ void Gui::PostMessage(string msg)
 
 void Gui::Redraw()
 {
-    // repaint children
-    topBar->Redraw();
-    worldWindow->Redraw();
-    rightMenu->Redraw(currSlot, slot1, slot2);
-    bottomWindow->Redraw();
+    if ( mode == GuiMode::None )
+        return;
+    else if ( mode == GuiMode::MainView )
+    {
+        // repaint children
+        topBar->Redraw();
+        worldWindow->Redraw();
+        rightMenu->Redraw(currSlot, slot1, slot2);
+        bottomWindow->Redraw();
+    }
+    else if ( popup )
+        popup->Redraw();
 }
 
 void Gui::SetCharData(Character *chara, Location *loc)

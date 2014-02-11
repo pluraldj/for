@@ -137,6 +137,8 @@ void Game::Init()
     gui = new Gui();
     gui->Init();
     
+    gui->EnterMode(GuiMode::MainView);
+    
     gui->SetLocation(currLocation);
     gui->SetEntities(dungeon->activeEnts);
     gui->SetCharData(player, currLocation);
