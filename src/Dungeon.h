@@ -60,13 +60,7 @@ public:
     // of symbols to be written to screen
     wstring* drawRect(veci upperleft, veci window, bool fow, Visibility *vis);
     
-    // Create passage between areas
-    void MakePassage(DungeonArea *A, DungeonArea *B);
-    
-    // Create passage between tiles (straight-through)
-    void MakePassage(vecd A, vecd B);
-    
-    // Sete edge flags on tiles
+    // Set edge flags on tiles
     void SetEdgeFlags();
     
     // Create visgroups. Returns number of groups
@@ -76,7 +70,8 @@ public:
     bool recursiveVisFill(int x, int y, int group);
     
     // Get player spawn coords for when we enter the dungeon
-    veci GetPlayerSpawnCoords();
+    // Children must implement
+    virtual veci GetPlayerSpawnCoords() = 0;
     
     // Dungeon has changed enough to affect path-finding, recreate A* graph
     void InitPathfinding();
@@ -98,18 +93,10 @@ public:
     // Entities in here
     vector<Entity*> *activeEnts;
     
-private:
+protected:
     // Generate dungeon based on parameters
-    void Generate(DungeonSpec spec);
-    
-    // Populate with objects that can be interacted with
-    void SeedWithObjects();
-    
-    // Populate with enemies/NPCs
-    void SeedWithCreatures();
-    
-    // Populate with loot, both on ground and in containers
-    void SeedWithItems();
+    // Children must implement
+    virtual void Generate(DungeonSpec spec) = 0;
     
     // A* object, must be updated whenever map changes enough to affect path-finding
     AStarSearcher *aStarSearcher;

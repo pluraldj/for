@@ -24,6 +24,8 @@
 #include "Game.h"
 #include "Creature.h"
 #include "AStarSearcher.h"
+#include "Cave.h"
+#include "Junktown.h"
 
 Game::~Game()
 {
@@ -70,7 +72,13 @@ void Game::Init()
     
     // Standard dungeon
     DungeonSpec spec;
-    Dungeon *dungeon = new Dungeon(spec);
+    spec.minsize = 70;
+    spec.maxsize = 70;
+    spec.numareas = 5;
+    spec.area_minsize = 10;
+    spec.area_maxsize = 15;
+    
+    Junktown *dungeon = new Junktown(spec);
     
     dungeon->Dump("leveldump.txt");
     dungeon->DumpVisGroups("visdump.txt");

@@ -1,9 +1,137 @@
 Bugs:
-- ncurses screws up OSX terminal after bad exit sometimes
+
+Small fixes:
 
 Features:
 - Karma
 - Kill counter
 - Prettier walls in caves
 
-Small fixes:
+- locations:
+    most inhabited places have majority population human, few ghouls
+    special places are ghoul or mutant only
+    
+    cave: natural walls
+    vault: abandoned, inhabited (raiders etc.) or sealed with original inhabitants
+    farmer: farmer community, mostly fields and few buildings
+    junktown: makeshift town made primarily from scrap. mostly settlers and traders
+    town: built mostly in ruined pre-war buildings. as above
+    bunker: abandoned, inhabited (raiders etc.) or original inhabitants
+        special types: BoS, Enclave
+    tribe: simple structures, tents
+    raider camp: simple structures, tents
+        special types: Khans, Vipers etc.
+    military base: abandoned or inhabited (raiders etc.)
+        special types: Master's Army mutants, Enclave, Gun Runners
+    special encounters: natural wilderness dep. on biome
+        dumb critters
+
+- races:
+    human:
+        stat constraints: none
+    ghoul:
+        stat constraints:
+        COMPLETE radiation immunity
+        heals by radiation?
+    mutant:
+        stat constraints: min strength, max intelligence
+
+- factions:
+    there are no traditional classes, this is determined by stats.
+    factions are allegiances, and determines how NPCs view you and where you start.
+    you can go undercover by wearing clothing: practically no one will figure out you're BoS if you do not wear power armor and so on
+    for humans:
+        vault dweller: starts in friendly vault
+        settler/trader: starts in friendly town
+        farmer: starts in friendly farm community
+        tribal: starts in friendly tribe
+        raider: starts in friendly raider camp
+        NCR: starts in friendly NCR controlled settlement
+        BoS knight/scribe: starts in friendly bunker
+        Enclave private: starts in friendly bunker
+    for ghouls:
+        settler/trader/farmer/tribal: starts in ghoul community
+        NCR: starts in NCR controlled settlement
+        TODO: more interesting ghoul classes?
+    for mutants:
+        "green" super mutant: start in friendly mutant community
+        nightkin: start in friendly mutant community
+
+- starting armor:
+    depending on faction:
+        vault dweller: vault dweller suit
+        settler/trader: simple outfit
+        farmer: simple farmer outfit
+        tribal: simple tribal outfit
+        raider: bad raider armor
+        NCR: bad NCR armor
+        BoS knight: bad BoS power armor
+        BoS scribe: bad scribe robes
+        Enclave: bad Enclave power armor
+        super mutant: super mutant armor
+        nightkin: nightkin outfit
+        
+- starting weapons:
+    depends on TWO highest skills, not counting explosives
+    some factions have inadmissible types, then use next lower skill
+    example: 10mm+knife for small guns+melee
+    guns include a small amount of ammo for it
+    faction weapons:
+        below: unarmed, melee, throwing, small, big, energy
+        vault dweller: brass knuckles, knife, throwing knife, 10mm, NONE, NONE
+        settler/trader: brass knuckles, knife, throwing knife, 9mm, NONE, NONE
+        farmer: brass knuckles, cattle prod, throwing knife, bad shotgun, NONE, NONE
+        tribal: brass knuckles, spear, throwing spear, 9mm, NONE, NONE
+        raider: spiked brass knuckles, spear/sledge, throwing spear, 10mm, NONE, NONE
+        NCR: NONE, knife, NONE, bad rifle, NONE, NONE
+        BoS knight: power fist, sledge, NONE, NONE, bad minigun, bad laser pistol
+        BoS scribe: power fist, sledge, NONE, 10mm, NONE, bad laser pistol
+        Enclave: power fist, sledge, NONE, NONE, bad minigun, bad laser pistol
+        super mutant: spiked brass knuckles, sledge, throwing spear, NONE, bad minigun, NONE
+        nightkin: same as mutant
+        
+- starting items:
+    for all:
+    additional items for factions:
+        vault dweller: stimpak
+        settler/trader: iguana-on-a-stick
+        farmer: fruit/vegetable
+        tribal: healing powder
+        raider: booze or random drug?
+        NCR: stimpak
+        BoS knight: stimpak, radaway?
+        BoS scribe: stimpak, random skill book
+        Enclave: stimpak
+        super mutant: stimpak
+        nightkin: stealth boy
+        
+- race relations:
+    goes as hate, dislike, neutral, like, love
+    hate: attack on sight
+    dislike: bad treatment but not necessarily combat hostility
+    neutral: doesn't care
+    like: favorable treatment
+    love: kinship, very good treatment, aids in combat
+    charisma influences this
+
+- faction relations:
+    NPCs disposition towards other factions.
+    player need not follow this
+    "dumb" NPCs (animals etc.) don't care
+    scale as above, if nothing else noted then neutral
+    is combined with race modifier
+    everyone "likes" own faction unless noted otherwise
+    everyone in same location loyal: starting trouble may cause NPCs that dislike each other to nevertheless aid each other in combat
+    one "hate", even if not reciprocated, is enough for combat to start
+    charisma influences this
+
+- skills:
+
+- items:
+
+- props:
+
+- NPCs:
+
+- companion NPCs:
+    "dogmeat"
